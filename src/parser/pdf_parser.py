@@ -8,7 +8,7 @@ import os
 from dataclasses import dataclass, field
 from typing import Optional
 import pdfplumber
-import fitz  # pymupdf
+import pymupdf as fitz  # nama modul "fitz" sudah deprecated
 
 
 @dataclass

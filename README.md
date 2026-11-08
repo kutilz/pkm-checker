@@ -30,8 +30,8 @@ Upload PDF proposal → sistem menganalisis → laporan terstruktur dengan statu
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/<username>/pkm-check.git
-cd pkm-check
+git clone https://github.com/kutilz/pkm-checker.git
+cd pkm-checker
 
 # 2. Buat virtual environment (direkomendasikan)
 python -m venv .venv
@@ -52,6 +52,24 @@ python -m streamlit run app.py
 ```
 
 Buka browser: **http://localhost:8501**
+
+---
+
+## ☁️ Deploy ke Streamlit Community Cloud (gratis)
+
+1. Login ke https://share.streamlit.io pakai akun GitHub.
+2. **Create app** → *Deploy a public app from GitHub*:
+   - Repository: `kutilz/pkm-checker`, Branch: `main`, Main file: `app.py`
+   - **App URL**: isi subdomain, misalnya `pkm-checker` → `https://pkm-checker.streamlit.app`
+3. **Advanced settings**:
+   - Python version: `3.11` atau `3.12`
+   - Secrets (opsional, untuk fitur Gemini):
+     ```toml
+     GEMINI_API_KEY = "isi_api_key_kamu"
+     ```
+4. Klik **Deploy**. Setiap `git push` ke `main` akan otomatis redeploy.
+
+> App gratis akan "tidur" kalau lama tidak dikunjungi; pengunjung berikutnya cukup klik tombol bangunkan (±30 detik).
 
 ---
 

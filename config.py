@@ -4,7 +4,8 @@ from dotenv import load_dotenv
 load_dotenv()
 
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
-GEMINI_MODEL = "gemini-1.5-flash"
+# Bisa di-override lewat env/secrets GEMINI_MODEL kalau model ini dipensiunkan Google.
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.5-flash")
 
 MAX_FILE_SIZE_MB = 5
 MAX_CORE_PAGES = 10
