@@ -63,18 +63,73 @@ def _extract_page_numbers(page) -> list[str]:
     return nums
 
 
+def _page_number_position(page) -> tuple[str, str] | None:
+    """(teks, posisi) nomor halaman, posisi mis. 'kanan-atas' / 'tengah-bawah'."""
+    for span in page.font_spans:
+        if _is_page_number_span(span, page.height_pt):
+            x0, y0, x1, y1 = span["bbox"]
+            vert = "atas" if (y0 + y1) / 2 < page.height_pt / 2 else "bawah"
+            cx = (x0 + x1) / 2
+            horz = "kanan" if cx > page.width_pt * 0.6 else ("kiri" if cx < page.width_pt * 0.4 else "tengah")
+            return span["text"].strip(), f"{horz}-{vert}"
+    return None
+
+
+def _similarity_start(doc) -> int | None:
+    """Halaman awal lampiran hasil uji similaritas (Turnitin dsb.), jika ada."""
+    for n in doc.lampiran_pages:
+        text = doc.pages[n - 1].text
+        if re.search(r'Lampiran\s*\d+\.?\s*(?:Surat\s+)?Hasil\s+Uji|Hasil\s+Uji\s+(?:Periksa\s+)?Similaritas',
+                     text, re.IGNORECASE):
+            return n
+    return None
+
+
 class FormatChecker(BaseChecker):
+
+    def __init__(self, doc):
+        super().__init__(doc)
+        # Halaman laporan Turnitin bukan buatan tim (font/ukuran kertas bawaan Turnitin),
+        # jadi tidak ikut dinilai formatnya.
+        sim = _similarity_start(doc)
+        self.own_pages = [p for p in doc.pages if sim is None or p.page_number <= sim]
 
     def run(self) -> ModulResult:
         result = ModulResult(nama_modul="Modul 2: Format & Tipografi", bobot=0.15)
         result.items.extend([
             self._check_font(),
             self._check_ukuran_font(),
+            self._check_spasi(),
             self._check_ukuran_kertas(),
             self._check_margin(),
             self._check_penomoran_halaman(),
         ])
         return result
+
+    def _check_spasi(self) -> CheckItem:
+        """
+        Spasi baris 1,15. Untuk Times New Roman, jarak baseline spasi tunggal ≈ 1,15 × ukuran
+        huruf, jadi spasi 1,15 pada 12 pt ≈ 15,9 pt antarbaris.
+        """
+        ratios = []
+        for n in self.doc.core_pages:
+            page = self.doc.pages[n - 1]
+            lines = [l for l in page.lines if abs(l.get("size", 0) - 12) < 0.6
+                     and page.height_pt * 0.08 < l["y0"] < page.height_pt * 0.92]
+            for a, b in zip(lines, lines[1:]):
+                gap = b["y1"] - a["y1"]
+                if a.get("block") == b.get("block") and 8 < gap < 40:
+                    ratios.append(gap / (12 * 1.15))
+        if len(ratios) < 10:
+            return CheckItem("2.2", "Spasi baris 1,15", Status.PERINGATAN,
+                             "Jarak baris tidak cukup terbaca untuk diukur. Cek manual (Paragraph → Multiple 1,15).")
+        ratios.sort()
+        median = ratios[len(ratios) // 2]
+        if 1.08 <= median <= 1.22:
+            return CheckItem("2.2", "Spasi baris 1,15", Status.LULUS, f"Spasi terukur ≈ {median:.2f}.")
+        return CheckItem("2.2", "Spasi baris 1,15", Status.TIDAK_LULUS,
+                         f"Spasi terukur ≈ {median:.2f}, panduan mewajibkan 1,15 "
+                         "(Paragraph → Line spacing: Multiple 1,15; Before/After 0 pt).")
 
     def _check_font(self) -> CheckItem:
         """
@@ -83,7 +138,7 @@ class FormatChecker(BaseChecker):
         Threshold LULUS: ≥ 95%.
         """
         all_spans = []
-        for page in self.doc.pages:
+        for page in self.own_pages:
             for span in page.font_spans:
                 # Abaikan span kosong, terlalu pendek, atau nomor halaman
                 text = span.get("text", "").strip()
@@ -134,7 +189,7 @@ class FormatChecker(BaseChecker):
         Mengabaikan: bold (heading), span simbol, nomor halaman.
         """
         body_spans = []
-        for page in self.doc.pages:
+        for page in self.own_pages:
             for span in page.font_spans:
                 text = span.get("text", "").strip()
                 if not text:
@@ -168,18 +223,27 @@ class FormatChecker(BaseChecker):
                          f"Ukuran lain yang ditemukan: {dict(list(other.items())[:3])}.")
 
     def _check_ukuran_kertas(self) -> CheckItem:
-        """Cek apakah semua halaman berukuran A4 (595.28 × 841.89 pt)."""
+        """
+        Cek apakah halaman buatan tim berukuran A4 (595.28 × 841.89 pt).
+        PERINGATAN (bukan gugur): di sampel ada proposal didanai berukuran Letter,
+        tetapi panduan tetap mewajibkan A4.
+        """
         A4_W, A4_H, TOL = 595.28, 841.89, 5
         non_a4 = [
-            p.page_number for p in self.doc.pages
+            p.page_number for p in self.own_pages
             if abs(p.width_pt - A4_W) > TOL or abs(p.height_pt - A4_H) > TOL
         ]
         if not non_a4:
             return CheckItem("2.3.a", "Ukuran kertas A4",
-                             Status.LULUS, "Semua halaman berukuran A4.")
+                             Status.LULUS, "Semua halaman (di luar laporan Turnitin) berukuran A4.")
+        contoh = self.doc.pages[non_a4[0] - 1]
+        jenis = "Letter" if abs(contoh.width_pt - 612) < 5 and abs(contoh.height_pt - 792) < 5 else \
+            f"{contoh.width_pt / 28.35:.1f}×{contoh.height_pt / 28.35:.1f} cm"
+        hal = non_a4 if len(non_a4) <= 8 else f"{non_a4[:8]} ... ({len(non_a4)} halaman)"
         return CheckItem("2.3.a", "Ukuran kertas A4",
-                         Status.TIDAK_LULUS,
-                         f"Halaman tidak berukuran A4: {non_a4}.")
+                         Status.PERINGATAN,
+                         f"Halaman berukuran {jenis}, bukan A4: {hal}. Ubah Layout → Size → A4 lalu cek "
+                         "ulang jumlah halaman inti (ukuran kertas memengaruhi batas 10 halaman).")
 
     def _check_margin(self) -> CheckItem:
         """
@@ -328,13 +392,33 @@ class FormatChecker(BaseChecker):
                              Status.PERINGATAN,
                              "Segmentasi dokumen gagal — tidak bisa memvalidasi penomoran halaman.")
 
+        # Posisi: romawi di kanan bawah (Daftar Isi dst.), arab di kanan atas (inti & lampiran);
+        # halaman BAB 1 bernomor 1.
+        posisi = []
+        for page in front_pages:
+            info = _page_number_position(page)
+            if info and info[1] != "kanan-bawah":
+                posisi.append(f"Hal. PDF {page.page_number} ('{info[0]}') di {info[1]} — seharusnya kanan-bawah")
+        for page in core_pages:
+            info = _page_number_position(page)
+            if info and info[1] != "kanan-atas":
+                posisi.append(f"Hal. PDF {page.page_number} ('{info[0]}') di {info[1]} — seharusnya kanan-atas")
+        if core_pages:
+            first = _page_number_position(core_pages[0])
+            if first and re.fullmatch(r'\d+', first[0]) and first[0] != "1":
+                issues.append(f"Halaman BAB 1 bernomor {first[0]}, seharusnya 1.")
+
+        desc = "Penomoran halaman (romawi kanan-bawah, arab kanan-atas)"
         if not issues:
             roman_info = f"romawi di {len(front_pages)} hal. front matter" if front_pages and has_roman_front else ""
             arabic_info = f"arab di {len(core_pages)} hal. inti" if core_pages and has_arabic_core else ""
             detail = " | ".join(filter(None, [roman_info, arabic_info])) or "Terdeteksi sesuai."
-            return CheckItem("2.4", "Penomoran halaman (romawi kecil + arab)",
-                             Status.LULUS, detail)
+            if posisi:
+                return CheckItem("2.4", desc, Status.PERINGATAN,
+                                 detail + ". Posisi nomor halaman belum sesuai panduan.", catatan=posisi[:6])
+            return CheckItem("2.4", desc, Status.LULUS, detail + "; posisi sesuai.")
 
-        return CheckItem("2.4", "Penomoran halaman (romawi kecil + arab)",
+        return CheckItem("2.4", desc,
                          Status.TIDAK_LULUS,
-                         " ".join(issues))
+                         " ".join(issues) + " (Tahap 1 menilai 'jumlah dan nomor halaman'.)",
+                         catatan=posisi[:6])

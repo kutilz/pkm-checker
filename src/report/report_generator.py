@@ -27,11 +27,13 @@ def compute_overall(modul_results: list[ModulResult], is_gugur: bool) -> dict:
     )
     skor = round(weighted_sum / total_bobot, 1) if total_bobot > 0 else 0
 
+    ada_wajib = any(m.ada_tidak_lulus for m in modul_results)
     if skor >= 100:
         kategori = "PERFECT"
-    elif skor >= 85:
+    elif skor >= 85 and not ada_wajib:
         kategori = "LAYAK"
     elif skor >= 60:
+        # Masih ada item TIDAK_LULUS → belum layak walau skor tinggi
         kategori = "PERLU PERBAIKAN"
     else:
         kategori = "TIDAK LOLOS"
@@ -91,6 +93,7 @@ def generate_text_report(
         lines.append(f"{emoji} [{item.kode}] {item.deskripsi}")
         if item.detail:
             lines.append(f"    → {item.detail}")
+        lines.extend(f"      • {c}" for c in item.catatan)
     lines.append("")
 
     if is_gugur:
@@ -111,6 +114,7 @@ def generate_text_report(
             lines.append(f"{emoji} [{item.kode}] {item.deskripsi}{hal}")
             if item.detail:
                 lines.append(f"    → {item.detail}")
+            lines.extend(f"      • {c}" for c in item.catatan)
         lines.append("")
 
     # Rekomendasi prioritas
@@ -127,9 +131,15 @@ def generate_text_report(
         for i, rec in enumerate(prioritas, 1):
             lines.append(f"{i}. {rec}")
     else:
-        lines.append("✅ Tidak ada rekomendasi perbaikan. Proposal siap disubmit!")
+        lines.append("✅ Tidak ada rekomendasi perbaikan administrasi.")
 
-    lines.append("=" * 60)
+    lines += [
+        "",
+        "CATATAN: checker ini hanya menilai ADMINISTRASI & FORMAT (Tahap 1).",
+        "Lolos administrasi tidak menjamin didanai — Tahap 2 menilai substansi",
+        "(kreativitas gagasan, urgensi masalah, ketepatan IPTEK/metode, potensi).",
+        "=" * 60,
+    ]
     return "\n".join(lines)
 
 
@@ -159,6 +169,7 @@ def generate_structured_report(
                     "deskripsi": i.deskripsi,
                     "status": i.status.value,
                     "detail": i.detail,
+                    "catatan": list(i.catatan),
                 }
                 for i in hard_result.items
             ]
@@ -175,6 +186,7 @@ def generate_structured_report(
                         "status": i.status.value,
                         "detail": i.detail,
                         "halaman": i.halaman,
+                        "catatan": list(i.catatan),
                     }
                     for i in m.items
                 ],

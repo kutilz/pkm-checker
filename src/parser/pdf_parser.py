@@ -20,6 +20,31 @@ class PageInfo:
     tables: list = field(default_factory=list)
     images: list = field(default_factory=list)
     font_spans: list = field(default_factory=list)
+    # Baris visual (span-span pada baseline yang sama digabung), urut atas→bawah.
+    # Tiap baris: {text, x0, y0, x1, y1, size, block, italic, bold, chars}
+    lines: list = field(default_factory=list)
+    # Teks pymupdf urut per blok: isi sel tabel tidak tercampur antar-kolom
+    # (pdfplumber menggabungkan baris tabel lintas kolom). Dipakai untuk sitasi.
+    text_blocks: str = ""
+
+    @property
+    def max_image_ratio(self) -> float:
+        """Luas gambar terbesar di halaman ini dibagi luas halaman (0–1)."""
+        page_area = self.width_pt * self.height_pt
+        if not page_area:
+            return 0.0
+        best = 0.0
+        for img in self.images:
+            try:
+                x0 = max(0.0, float(img["x0"]))
+                x1 = min(self.width_pt, float(img["x1"]))
+                y0 = max(0.0, float(img["top"]))
+                y1 = min(self.height_pt, float(img["bottom"]))
+            except (KeyError, TypeError, ValueError):
+                continue
+            if x1 > x0 and y1 > y0:
+                best = max(best, (x1 - x0) * (y1 - y0) / page_area)
+        return best
 
 
 @dataclass
@@ -35,9 +60,38 @@ class ProposalDocument:
     daftar_isi_pages: list[int] = field(default_factory=list)
     core_pages: list[int] = field(default_factory=list)       # Bab 1 – Daftar Pustaka
     lampiran_pages: list[int] = field(default_factory=list)
+    # Halaman awal tiap segmen (1-based), None jika tidak terdeteksi
+    bab1_page: Optional[int] = None
+    dafpus_page: Optional[int] = None
+    lampiran_page: Optional[int] = None
     # Teks per segmen
     dafpus_text: str = ""
     lampiran_text: str = ""
+    # Baris visual Daftar Pustaka (punya posisi x → bisa membaca hanging indent)
+    dafpus_lines: list = field(default_factory=list)
+
+    @property
+    def core_text(self) -> str:
+        """Teks Bab 1 sampai sebelum heading DAFTAR PUSTAKA (urutan pdfplumber)."""
+        return self._core("text")
+
+    @property
+    def core_text_blocks(self) -> str:
+        """Seperti core_text, tetapi urut per blok pymupdf (aman untuk tabel)."""
+        return self._core("text_blocks")
+
+    def _core(self, attr: str) -> str:
+        parts = []
+        for n in self.core_pages:
+            text = getattr(self.pages[n - 1], attr)
+            if n == self.dafpus_page:
+                m = re.search(r'^\s*DAFTAR\s+PUSTAKA\s*$', text, re.MULTILINE)
+                if m:
+                    text = text[:m.start()]
+                parts.append(text)
+                break
+            parts.append(text)
+        return "\n".join(parts)
 
 
 def parse_pdf(file_path: str) -> ProposalDocument:
@@ -105,6 +159,8 @@ def _extract_pages(file_path: str) -> list[PageInfo]:
             height_pt = plumber_page.height
 
             font_spans = _extract_font_spans(fitz_doc[i])
+            lines = _extract_lines(fitz_doc[i])
+            text_blocks = fitz_doc[i].get_text("text")
 
             pages.append(PageInfo(
                 page_number=i + 1,
@@ -114,6 +170,8 @@ def _extract_pages(file_path: str) -> list[PageInfo]:
                 tables=tables,
                 images=images,
                 font_spans=font_spans,
+                lines=lines,
+                text_blocks=text_blocks,
             ))
 
     fitz_doc.close()
@@ -145,17 +203,74 @@ def _extract_font_spans(fitz_page) -> list[dict]:
     return spans
 
 
+def _extract_lines(fitz_page) -> list[dict]:
+    """
+    Kumpulkan baris visual dari satu halaman.
+    pymupdf sering memecah satu baris rata kiri-kanan menjadi beberapa "line";
+    di sini potongan dengan baseline yang sama digabung kembali.
+    """
+    raw = []
+    blocks = fitz_page.get_text("dict")["blocks"]
+    for bi, block in enumerate(blocks):
+        if block.get("type") != 0:
+            continue
+        for line in block.get("lines", []):
+            spans = [s for s in line.get("spans", []) if s.get("text", "").strip()]
+            if not spans:
+                continue
+            x0, y0, x1, y1 = line["bbox"]
+            sizes = [s.get("size", 0) for s in spans]
+            italic = bold = 0
+            for s in spans:
+                font = s.get("font", "").lower()
+                n = len(s["text"].strip())
+                if s.get("flags", 0) & 2 or "italic" in font or "oblique" in font:
+                    italic += n
+                if s.get("flags", 0) & 16 or "bold" in font:
+                    bold += n
+            raw.append({
+                "text": "".join(s["text"] for s in line["spans"]).strip(),
+                "x0": x0, "y0": y0, "x1": x1, "y1": y1,
+                "size": round(max(set(sizes), key=sizes.count), 1),
+                "block": bi,
+                "italic": italic,
+                "bold": bold,
+                "chars": sum(len(s["text"].strip()) for s in spans),
+            })
+
+    raw.sort(key=lambda l: (round(l["y1"]), l["x0"]))
+    merged: list[dict] = []
+    for l in raw:
+        prev = merged[-1] if merged else None
+        if (prev and abs(prev["y1"] - l["y1"]) < 2.5
+                and l["x0"] >= prev["x1"] - 2):
+            sep = " " if l["x0"] - prev["x1"] > 1.0 else ""
+            prev["text"] = f'{prev["text"]}{sep}{l["text"]}'
+            prev["x1"] = max(prev["x1"], l["x1"])
+            prev["y0"] = min(prev["y0"], l["y0"])
+            for k in ("italic", "bold", "chars"):
+                prev[k] += l[k]
+        else:
+            merged.append(dict(l))
+    return merged
+
+
 def _extract_judul(full_text: str) -> Optional[str]:
-    """Coba ekstrak baris judul: biasanya teks KAPITAL semua di awal dokumen."""
-    lines = [l.strip() for l in full_text.split("\n") if l.strip()]
-    for line in lines[:30]:
-        # Judul: huruf kapital, panjang 5-30 kata, bukan heading bab
-        words = line.split()
-        if (5 <= len(words) <= 30
-                and line == line.upper()
-                and not re.match(r'^BAB\s+[IVX\d]', line)):
-            return line
-    return None
+    """
+    Ambil judul dari isian 'Judul Proposal PKM : ...' (Surat Pernyataan) jika
+    halaman itu berupa teks. Proposal PKM tidak punya halaman sampul, jadi
+    tidak ada tempat lain yang bisa diandalkan.
+    """
+    m = re.search(
+        r'Judul\s+(?:Proposal\s+)?(?:PKM\s*)?:\s*(.+?)(?=\n\s*\n|\n\s*Dengan\s+ini|\Z)',
+        full_text, re.IGNORECASE | re.DOTALL,
+    )
+    if not m:
+        return None
+    judul = re.sub(r'\s+', ' ', m.group(1)).strip(" .:")
+    if not (3 <= len(judul.split()) <= 40) or re.search(r'\.{4,}|…', judul):
+        return None  # template kosong / titik-titik
+    return judul
 
 
 def _count_toc_dot_lines(page_text: str) -> int:
@@ -238,8 +353,11 @@ def _is_lampiran_heading(page_text: str, dafpus_confirmed: bool) -> bool:
         return False
     for line in page_text.split('\n'):
         stripped = line.strip().upper()
-        # Hanya "LAMPIRAN" standalone (bukan "DAFTAR LAMPIRAN" atau "LAMPIRAN 1")
-        if stripped == 'LAMPIRAN':
+        # "LAMPIRAN" standalone (boleh diawali nomor halaman: "11 LAMPIRAN"),
+        # atau langsung "Lampiran 1. Biodata ..." bila heading LAMPIRAN tidak ada.
+        if re.fullmatch(r'(?:\d{1,3}\s+)?LAMPIRAN', stripped):
+            return True
+        if re.match(r'^(?:\d{1,3}\s+)?LAMPIRAN\s+1\b', stripped):
             return True
     return False
 
@@ -277,12 +395,21 @@ def _segment_document(doc: ProposalDocument):
                 and _is_lampiran_heading(page.text, dafpus_confirmed=True)):
             lampiran_page = page.page_number
 
+    doc.bab1_page, doc.dafpus_page, doc.lampiran_page = bab1_page, dafpus_page, lampiran_page
+
+    # Bagian inti = BAB 1 s.d. halaman terakhir Daftar Pustaka. Daftar Pustaka
+    # sering berlanjut ke halaman berikutnya, jadi batas akhirnya adalah halaman
+    # sebelum LAMPIRAN (bukan halaman heading DAFTAR PUSTAKA).
+    core_end = None
+    if bab1_page and dafpus_page:
+        core_end = (lampiran_page - 1) if lampiran_page else dafpus_page
+
     for page in doc.pages:
         n = page.page_number
-        if bab1_page and dafpus_page:
+        if core_end:
             if n < bab1_page:
                 doc.daftar_isi_pages.append(n)
-            elif bab1_page <= n <= dafpus_page:
+            elif n <= core_end:
                 doc.core_pages.append(n)
             else:
                 doc.lampiran_pages.append(n)
@@ -296,8 +423,32 @@ def _segment_document(doc: ProposalDocument):
             doc.pages[i].text
             for i in range(dafpus_page - 1, end_idx)
         )
+        doc.dafpus_lines = _collect_dafpus_lines(doc.pages[dafpus_page - 1:end_idx])
 
     if lampiran_page:
         doc.lampiran_text = "\n".join(
             doc.pages[i].text for i in range(lampiran_page - 1, len(doc.pages))
         )
+
+
+def _collect_dafpus_lines(pages: list[PageInfo]) -> list[dict]:
+    """
+    Baris-baris Daftar Pustaka: mulai sesudah heading 'DAFTAR PUSTAKA', tanpa
+    nomor halaman di zona header/footer. Tiap baris diberi kunci 'page'.
+    """
+    out: list[dict] = []
+    started = False
+    for page in pages:
+        top, bottom = page.height_pt * 0.08, page.height_pt * 0.92
+        for line in page.lines:
+            text = line["text"].strip()
+            if not started:
+                if re.fullmatch(r'DAFTAR\s+PUSTAKA', text, re.IGNORECASE):
+                    started = True
+                continue
+            if re.fullmatch(r'[\divxlcIVXLC]{1,4}', text) and (line["y1"] < top or line["y0"] > bottom):
+                continue
+            if re.fullmatch(r'LAMPIRAN', text, re.IGNORECASE):
+                return out
+            out.append({**line, "page": page.page_number})
+    return out

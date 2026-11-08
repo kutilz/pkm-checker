@@ -46,3 +46,6 @@ desktop.ini
 .pytest_cache/
 .coverage
 htmlcov/
+
+# ── Sumber sampel lokal (path & nama asli proposal) ─────────────────────────
+*.local.json

@@ -3,11 +3,14 @@ Streamlit UI — PKM 2026 Proposal Checker.
 Jalankan: streamlit run app.py
 """
 
+import html
 import os
 import tempfile
+import time
 import streamlit as st
 
 from src.engine import run_checks, FileSizeError
+from src.samples import load_samples, with_current_timestamp
 from config import JENIS_PKM_VALID
 
 st.set_page_config(
@@ -44,6 +47,10 @@ def render_item(item: dict):
     )
     if detail:
         st.caption(f"↳ {detail}")
+    if item.get("catatan"):
+        poin = "".join(f"<li>{html.escape(c)}</li>" for c in item["catatan"])
+        st.markdown(f"<ul style='margin:0 0 6px 2.2em;font-size:0.9em'>{poin}</ul>",
+                    unsafe_allow_html=True)
 
 
 def main():
@@ -58,17 +65,24 @@ def main():
         st.info(
             "**Sistem ini memeriksa:**\n"
             "- Hard Disqualifiers (langsung gugur)\n"
-            "- Identitas & Kelengkapan\n"
+            "- Identitas & Judul\n"
             "- Format & Tipografi\n"
             "- Struktur Dokumen\n"
+            "- Daftar Pustaka & Sitasi (ketat sampai tanda baca)\n"
             "- Anggaran & Keuangan\n"
-            "- Lampiran"
+            "- Lampiran & Tanda Tangan\n"
+            "- Tema & Konsistensi Data"
+        )
+        st.caption(
+            "Hanya administrasi (Tahap 1). Lolos administrasi belum tentu didanai: "
+            "Tahap 2 menilai kreativitas gagasan, urgensi masalah, dan ketepatan IPTEK."
         )
         st.warning(
             "**Batasan:**\n"
             "- Maks. ukuran file: 5 MB\n"
             "- PDF harus bisa dibaca teks (bukan scan gambar)\n"
-            "- Gemini API digunakan untuk cek sitasi & tema"
+            "- Isi halaman scan (tanggal TTD, meterai) tidak dibaca\n"
+            "- Gemini API (opsional) untuk cek sitasi tambahan"
         )
         st.markdown("---")
         st.caption("Referensi: Panduan PKM 2026")
@@ -80,7 +94,8 @@ def main():
     )
 
     if not uploaded:
-        st.info("👆 Upload file PDF proposal untuk memulai pengecekan.")
+        st.info("👆 Upload file PDF proposal untuk memulai pengecekan — atau coba sampel cepat di bawah.")
+        _render_sample_section()
         return
 
     st.markdown(f"**File:** `{uploaded.name}` — `{uploaded.size / 1024:.1f} KB`")
@@ -90,19 +105,18 @@ def main():
     st.markdown("### ✏️ Informasi Proposal")
     st.caption(
         "Isi informasi berikut untuk memastikan analisis akurat. "
-        "Judul menggunakan **Title Case** — kata konten dikapitalkan, kata sambung/depan (*dan, atau, di, ke, dari, untuk, ...*) huruf kecil."
+        "Panduan 2026: judul **HURUF KAPITAL**, maks. 20 kata, Bahasa Indonesia, tanpa akronim tidak baku."
     )
 
     col_a, col_b = st.columns([3, 1])
     with col_a:
         judul_input = st.text_area(
-            "Judul Proposal (Title Case)",
-            placeholder="Contoh: Pengembangan Sistem Monitoring Kualitas Air Berbasis IoT untuk Budidaya Ikan",
+            "Judul Proposal (persis seperti di simbelmawa / Surat Pernyataan)",
+            placeholder="Contoh: SISTEM PEMANTAU KUALITAS AIR BERBASIS INTERNET OF THINGS UNTUK BUDIDAYA IKAN",
             height=80,
             help=(
-                "Salin judul sesuai format Title Case: "
-                "kata pertama dan kata konten (noun, verb, adj) dikapitalkan, "
-                "kata sambung/depan (dan, atau, di, ke, dari, untuk, dengan, ...) huruf kecil."
+                "Salin judul apa adanya (jangan diubah kapitalisasinya) supaya checker bisa menilai "
+                "apakah sudah ditulis huruf kapital sesuai Panduan PKM 2026."
             ),
         )
     with col_b:
@@ -142,6 +156,73 @@ def main():
             except Exception as e:
                 st.error(f"❌ Terjadi kesalahan saat memproses PDF: {e}")
                 st.exception(e)
+
+
+@st.cache_data(show_spinner=False)
+def _load_samples() -> list[dict]:
+    return load_samples()
+
+
+def _render_sample_section():
+    """Sampel cepat: hasil checker asli pada proposal nyata (data pribadi disamarkan)."""
+    samples = _load_samples()
+    if not samples:
+        return
+    st.markdown("---")
+    st.markdown("### 🧪 Coba Sampel Cepat")
+    st.caption(
+        f"{len(samples)} proposal PKM nyata — "
+        f"{sum(s['status_asli'] == 'Didanai' for s in samples)} didanai, "
+        f"{sum(s['status_asli'] != 'Didanai' for s in samples)} tidak didanai. "
+        "Nama, NIM, kontak, nama produk, judul, dan perguruan tinggi disamarkan."
+    )
+    col_a, col_b = st.columns([3, 1])
+    with col_a:
+        idx = st.selectbox("Pilih sampel", range(len(samples)),
+                           format_func=lambda i: samples[i]["label"], key="pilih_sampel")
+        if samples[idx].get("catatan_sampel"):
+            st.caption(samples[idx]["catatan_sampel"])
+    with col_b:
+        st.write("")
+        if st.button("▶️ Jalankan Sampel", type="primary", use_container_width=True):
+            st.session_state["sampel_aktif"] = samples[idx]["id"]
+            st.session_state["sampel_animasi"] = True
+
+    aktif = next((s for s in samples if s["id"] == st.session_state.get("sampel_aktif")), None)
+    if aktif:
+        _run_sample(aktif, animate=st.session_state.pop("sampel_animasi", False))
+
+
+def _run_sample(sample: dict, animate: bool):
+    st.markdown("---")
+    st.markdown(f"**File:** `{sample['file_name']}` — `{sample['file_size_kb']:.1f} KB`")
+    col_a, col_b = st.columns([3, 1])
+    with col_a:
+        st.text_area("Judul Proposal (persis seperti di simbelmawa / Surat Pernyataan)",
+                     value=sample["judul"], height=80, disabled=True, key=f"judul_sampel_{sample['id']}")
+    with col_b:
+        st.text_input("Jenis PKM", value=f"PKM-{sample['jenis']}", disabled=True,
+                      key=f"jenis_sampel_{sample['id']}")
+
+    langkah = sample.get("langkah", [])
+    if animate and langkah:
+        with st.status("Menganalisis proposal... harap tunggu.", expanded=True) as status:
+            bar = st.progress(0.0)
+            for i, step in enumerate(langkah, 1):
+                time.sleep(0.45 if i <= 5 else 0.2)
+                st.write(f"• {step}")
+                bar.progress(i / len(langkah))
+            status.update(label="Analisis selesai", state="complete", expanded=False)
+    elif langkah:
+        with st.expander("Langkah analisis"):
+            st.markdown("\n".join(f"- {html.escape(s)}" for s in langkah))
+
+    st.info(
+        f"**{sample['label']}** — hasil asli checker pada proposal PKM nyata. "
+        f"Status sebenarnya: **{sample['status_asli']} (PKM {sample['siklus']})**. "
+        "Bandingkan dengan temuan di bawah."
+    )
+    _render_results(with_current_timestamp(sample["result"]))
 
 
 def _render_results(result: dict):
@@ -191,7 +272,8 @@ def _render_results(result: dict):
 
     # Modul-modul
     for modul in structured["modul_results"]:
-        icon = "✅" if modul["skor"] >= 85 else ("⚠️" if modul["skor"] >= 60 else "❌")
+        ada_wajib = any(i["status"] == "TIDAK_LULUS" for i in modul["items"])
+        icon = "❌" if ada_wajib else ("✅" if modul["skor"] >= 85 else "⚠️")
         with st.expander(f"{icon} {modul['nama']} — Skor: {modul['skor']:.0f}%"):
             for item in modul["items"]:
                 render_item(item)
@@ -217,7 +299,8 @@ def _render_results(result: dict):
             st.markdown(f"{i}. **[{item['kode']}] {item['deskripsi']}** — {item['detail']}")
 
     if not wajib and not periksa:
-        st.success("✅ Tidak ada rekomendasi. Proposal siap disubmit!")
+        st.success("✅ Tidak ada temuan administrasi. Tetap cek manual hal-hal yang tidak bisa dibaca "
+                   "otomatis (isi scan, tanggal tanda tangan, meterai) dan perkuat substansi gagasan.")
 
     _render_text_report(result["text_report"])
 

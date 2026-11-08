@@ -10,8 +10,10 @@ from src.checkers.hard_disqualifier import HardDisqualifierChecker
 from src.checkers.identity_checker import IdentityChecker
 from src.checkers.format_checker import FormatChecker
 from src.checkers.structure_checker import StructureChecker
+from src.checkers.reference_checker import ReferenceChecker
 from src.checkers.budget_checker import BudgetChecker
 from src.checkers.attachment_checker import AttachmentChecker
+from src.checkers.consistency_checker import ConsistencyChecker
 from src.report.report_generator import (
     generate_text_report,
     generate_structured_report,
@@ -62,9 +64,11 @@ def run_checks(
     modul_results = [
         IdentityChecker(doc).run(),
         FormatChecker(doc).run(),
-        StructureChecker(doc, use_gemini=bool(GEMINI_API_KEY)).run(),
+        StructureChecker(doc).run(),
+        ReferenceChecker(doc, use_gemini=bool(GEMINI_API_KEY)).run(),
         BudgetChecker(doc).run(),
         AttachmentChecker(doc).run(),
+        ConsistencyChecker(doc).run(),
     ]
 
     text_report = generate_text_report(doc, modul_results, hard_result)

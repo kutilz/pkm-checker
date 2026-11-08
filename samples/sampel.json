@@ -1,0 +1,2684 @@
+[
+ {
+  "id": "A",
+  "label": "Sampel A · PKM-KI · Didanai 2026",
+  "status_asli": "Didanai",
+  "siklus": 2026,
+  "jenis": "KI",
+  "file_name": "sampel_A_PKM-KI_didanai-2026.pdf",
+  "file_size_kb": 2984.3,
+  "judul": "PRODUK-A: INOVASI KACAMATA PINTAR BERBASIS KECERDASAN BUATAN MODE GANDA UNTUK ORIENTASI LINGKUNGAN DAN KEAMANAN TRANSAKSI PENYANDANG TUNANETRA",
+  "catatan_sampel": "Didanai dan lolos sampai PIMNAS.",
+  "langkah": [
+   "Membuka PDF: 36 halaman",
+   "Ekstraksi teks, font & tata letak: 2.379 span teks, 26 gambar",
+   "Segmentasi: Daftar Isi hal. 1–4 · bagian inti hal. 5–14 (10 hal.) · lampiran hal. 15–36",
+   "Daftar Pustaka: 19 entri (hanging indent terbaca) · 23 sitasi di naskah",
+   "RAB: 4 kategori rekap · 40 baris justifikasi · grand total Rp9.500.000",
+   "Modul 1: Identitas & Kelengkapan Formal: 8 item — ✅ 7 · ⚠️ 1 · ❌ 0",
+   "Modul 2: Format & Tipografi: 6 item — ✅ 6 · ⚠️ 0 · ❌ 0",
+   "Modul 3: Struktur Dokumen: 4 item — ✅ 4 · ⚠️ 0 · ❌ 0",
+   "Modul 4: Daftar Pustaka & Sitasi: 8 item — ✅ 7 · ⚠️ 0 · ❌ 1",
+   "Modul 5: Anggaran & Keuangan: 9 item — ✅ 8 · ⚠️ 1 · ❌ 0",
+   "Modul 6: Lampiran: 9 item — ✅ 9 · ⚠️ 0 · ❌ 0",
+   "Modul 7: Tema & Konsistensi Data: 4 item — ✅ 4 · ⚠️ 0 · ❌ 0"
+  ],
+  "result": {
+   "structured_report": {
+    "file_name": "sampel_A_PKM-KI_didanai-2026.pdf",
+    "jenis_pkm": "KI",
+    "judul": "PRODUK-A: INOVASI KACAMATA PINTAR BERBASIS KECERDASAN BUATAN MODE GANDA UNTUK ORIENTASI LINGKUNGAN DAN KEAMANAN TRANSAKSI PENYANDANG TUNANETRA",
+    "file_size_mb": 2.914386749267578,
+    "is_gugur": false,
+    "overall": {
+     "skor": 95.7,
+     "kategori": "PERLU PERBAIKAN",
+     "modul_scores": {
+      "Modul 1: Identitas & Kelengkapan Formal": 93.8,
+      "Modul 2: Format & Tipografi": 100.0,
+      "Modul 3: Struktur Dokumen": 100.0,
+      "Modul 4: Daftar Pustaka & Sitasi": 87.5,
+      "Modul 5: Anggaran & Keuangan": 94.4,
+      "Modul 6: Lampiran": 100.0,
+      "Modul 7: Tema & Konsistensi Data": 100.0
+     }
+    },
+    "hard_disqualifiers": {
+     "items": [
+      {
+       "kode": "HD-01",
+       "deskripsi": "Halaman sampul (DILARANG ada di proposal)",
+       "status": "LULUS",
+       "detail": "Tidak terdeteksi halaman sampul.",
+       "catatan": []
+      },
+      {
+       "kode": "HD-02",
+       "deskripsi": "Halaman pengesahan (DILARANG ada di proposal)",
+       "status": "LULUS",
+       "detail": "Tidak terdeteksi halaman pengesahan.",
+       "catatan": []
+      },
+      {
+       "kode": "HD-03",
+       "deskripsi": "Ringkasan/Abstrak (DILARANG ada di proposal)",
+       "status": "LULUS",
+       "detail": "Tidak terdeteksi ringkasan/abstrak.",
+       "catatan": []
+      },
+      {
+       "kode": "HD-05",
+       "deskripsi": "Indeks similaritas ≤ 25%",
+       "status": "PERINGATAN",
+       "detail": "Nilai similaritas tidak ditemukan secara otomatis. Pastikan lampiran hasil Turnitin/iThenticate tersedia dan terbaca.",
+       "catatan": []
+      }
+     ]
+    },
+    "modul_results": [
+     {
+      "nama": "Modul 1: Identitas & Kelengkapan Formal",
+      "skor": 93.8,
+      "bobot": 0.15,
+      "items": [
+       {
+        "kode": "1.1.a",
+        "deskripsi": "Judul ditulis HURUF KAPITAL",
+        "status": "LULUS",
+        "detail": "Judul: \"PRODUK-A: INOVASI KACAMATA PINTAR BERBASIS KECERDASAN BUATAN MODE GANDA UNTUK ORIENTASI LINGKUNGAN DAN KEAMANAN TRANSAKSI PENYANDANG TUNANETRA\"",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.1.b",
+        "deskripsi": "Judul ≤ 20 kata",
+        "status": "LULUS",
+        "detail": "Judul memiliki 17 kata.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.1.c",
+        "deskripsi": "Judul tanpa akronim/singkatan tidak baku",
+        "status": "LULUS",
+        "detail": "Tidak terdeteksi akronim tidak baku.",
+        "halaman": null,
+        "catatan": [
+         "Nama produk 'PRODUK-A' sebelum titik dua tidak dicek."
+        ]
+       },
+       {
+        "kode": "1.1.f",
+        "deskripsi": "Judul dalam Bahasa Indonesia",
+        "status": "LULUS",
+        "detail": "Tidak terdeteksi kata bahasa Inggris.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.1.d",
+        "deskripsi": "Jenis PKM valid",
+        "status": "LULUS",
+        "detail": "PKM-KI.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.1.e",
+        "deskripsi": "Isi sesuai bidang PKM yang dipilih",
+        "status": "LULUS",
+        "detail": "Konten konsisten dengan PKM-KI. Kata kunci: SKALA PENUH, TARGET PENGGUNA, TINJAUAN PUSTAKA.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.2.a",
+        "deskripsi": "Jumlah anggota tim 3–5 mahasiswa",
+        "status": "LULUS",
+        "detail": "Terdeteksi 3 NIM (dari label NIM): •••••••, •••••••, •••••••.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.3.a",
+        "deskripsi": "NIP/NUPTK dosen pendamping (NUPTK 16 digit)",
+        "status": "PERINGATAN",
+        "detail": "Biodata dosen memakai label lama 'NIP/NIDN': ••••••••••••••••••/••••••••••. Template 2026 memakai 'NIP/NUPTK' — perbarui label dan isi NUPTK.",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     },
+     {
+      "nama": "Modul 2: Format & Tipografi",
+      "skor": 100.0,
+      "bobot": 0.15,
+      "items": [
+       {
+        "kode": "2.1.a",
+        "deskripsi": "Font Times New Roman",
+        "status": "LULUS",
+        "detail": "100.0% teks menggunakan Times New Roman. (Sisa ≤5% biasanya karakter simbol/rumus yang memang tidak bisa TNR.)",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "2.1.b",
+        "deskripsi": "Ukuran font 12pt",
+        "status": "LULUS",
+        "detail": "99.7% teks body berukuran 12pt.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "2.2",
+        "deskripsi": "Spasi baris 1,15",
+        "status": "LULUS",
+        "detail": "Spasi terukur ≈ 1.15.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "2.3.a",
+        "deskripsi": "Ukuran kertas A4",
+        "status": "LULUS",
+        "detail": "Semua halaman (di luar laporan Turnitin) berukuran A4.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "2.3.b",
+        "deskripsi": "Margin (kiri 4cm, kanan/atas/bawah 3cm)",
+        "status": "LULUS",
+        "detail": "Margin sesuai ketentuan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "2.4",
+        "deskripsi": "Penomoran halaman (romawi kanan-bawah, arab kanan-atas)",
+        "status": "LULUS",
+        "detail": "romawi di 4 hal. front matter | arab di 10 hal. inti; posisi sesuai.",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     },
+     {
+      "nama": "Modul 3: Struktur Dokumen",
+      "skor": 100.0,
+      "bobot": 0.15,
+      "items": [
+       {
+        "kode": "3.1.a",
+        "deskripsi": "Daftar Isi & Daftar Lampiran ada",
+        "status": "LULUS",
+        "detail": "Daftar Isi dan Daftar Lampiran ditemukan (Daftar Gambar/Tabel wajib hanya jika ada gambar/tabel).",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "3.1.b",
+        "deskripsi": "Bab-bab wajib lengkap & sesuai bidang",
+        "status": "LULUS",
+        "detail": "Semua bab wajib (PKM-KI) ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "3.1.c",
+        "deskripsi": "Heading bab kapital & bertitik ('BAB 1. PENDAHULUAN')",
+        "status": "LULUS",
+        "detail": "4 heading bab sesuai. Contoh: 'BAB 1. PENDAHULUAN'",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "3.2",
+        "deskripsi": "Bagian inti ≤ 10 halaman",
+        "status": "LULUS",
+        "detail": "Bagian inti (BAB 1 s.d. akhir Daftar Pustaka): 10 halaman (hal. PDF 5–14).",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     },
+     {
+      "nama": "Modul 4: Daftar Pustaka & Sitasi",
+      "skor": 87.5,
+      "bobot": 0.2,
+      "items": [
+       {
+        "kode": "4.1",
+        "deskripsi": "Daftar Pustaka ada dan terbaca",
+        "status": "LULUS",
+        "detail": "19 entri terbaca.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "4.2",
+        "deskripsi": "Hanging indent (baris ke-2 dst. tiap entri menjorok)",
+        "status": "LULUS",
+        "detail": "Hanging indent terdeteksi.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "4.3",
+        "deskripsi": "Format entri Harvard (tahun dalam kurung, tanpa et al./dkk, diakhiri titik, tanggal akses URL)",
+        "status": "LULUS",
+        "detail": "Semua 19 entri memenuhi aturan pokok format Harvard.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "4.4",
+        "deskripsi": "Detail tanda baca & gaya entri (kutip judul, nomor halaman, inisial, italic, spasi)",
+        "status": "LULUS",
+        "detail": "Tidak ditemukan masalah tanda baca/gaya.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "4.5",
+        "deskripsi": "Daftar Pustaka urut alfabetis (nama belakang penulis pertama)",
+        "status": "LULUS",
+        "detail": "19 entri terurut alfabetis.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "4.6",
+        "deskripsi": "Konsistensi gaya antarentri (penghubung penulis, sufiks a/b tahun sama)",
+        "status": "LULUS",
+        "detail": "Gaya antarentri konsisten.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "4.7",
+        "deskripsi": "Setiap sitasi ada di Daftar Pustaka dan sebaliknya",
+        "status": "TIDAK_LULUS",
+        "detail": "1 sitasi tanpa pasangan, 2 entri tidak disitasi. Panduan: setiap pustaka yang dirujuk harus muncul di Daftar Pustaka, dan sebaliknya. (Deteksi otomatis — pastikan ejaan nama & tahun identik.)",
+        "halaman": null,
+        "catatan": [
+         "Disitasi tapi tidak ada di Daftar Pustaka (atau nama/tahun beda): (ISO, 2024)",
+         "Ada di Daftar Pustaka tapi tidak disitasi di naskah: Direktorat Jenderal SDPPI (2019)",
+         "Ada di Daftar Pustaka tapi tidak disitasi di naskah: International Organization for Stan (2024)"
+        ]
+       },
+       {
+        "kode": "4.8",
+        "deskripsi": "Format sitasi dalam naskah (Nama, Tahun)",
+        "status": "LULUS",
+        "detail": "23 sitasi berformat konsisten.",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     },
+     {
+      "nama": "Modul 5: Anggaran & Keuangan",
+      "skor": 94.4,
+      "bobot": 0.15,
+      "items": [
+       {
+        "kode": "6.1",
+        "deskripsi": "Dana Belmawa Rp6–8 juta (dari Rekap Sumber Dana)",
+        "status": "LULUS",
+        "detail": "Dana Belmawa Rp8.000.000 (Rekap Sumber Dana).",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.2",
+        "deskripsi": "Dana pendamping PT wajib ada (≤ Rp2 juta); instansi lain ≤ Rp1 juta",
+        "status": "LULUS",
+        "detail": "Perguruan Tinggi Rp1.500.000; instansi lain -.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.3",
+        "deskripsi": "Komposisi RAB: bahan ≤60%, sewa/jasa ≤15%, transport ≤30%, lain-lain ≤15%",
+        "status": "PERINGATAN",
+        "detail": "Panduan menghitung batas dari 'jumlah dana yang diusulkan Belmawa'. Turunkan porsi Belmawa kategori ini atau pindahkan ke dana PT.",
+        "halaman": null,
+        "catatan": [
+         "Bahan habis pakai 65.0% dari dana Belmawa (batas 60%); terhadap total dana 60.0%"
+        ]
+       },
+       {
+        "kode": "6.4",
+        "deskripsi": "Tidak ada item terlarang di RAB",
+        "status": "LULUS",
+        "detail": "Tidak terdeteksi item terlarang.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.4.c",
+        "deskripsi": "Harga satuan alat/bahan ≤ Rp1.000.000 per item",
+        "status": "LULUS",
+        "detail": "40 baris dicek; tidak ada harga satuan > Rp1.000.000.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.4.e",
+        "deskripsi": "Batas item khusus: kuota ≤Rp100rb/bulan, lisensi ≤6 bulan, kertas ≤2 rim",
+        "status": "LULUS",
+        "detail": "Tidak ada pelanggaran batas item khusus.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.5",
+        "deskripsi": "Alokasi promosi media sosial ada & Ads ≤ Rp500.000",
+        "status": "LULUS",
+        "detail": "Ads/promosi media sosial Rp300.000.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.6",
+        "deskripsi": "Aritmetika justifikasi (volume × harga, subtotal, grand total, terbilang)",
+        "status": "LULUS",
+        "detail": "40 baris, 4 subtotal, grand total Rp9.500.000 — hitungan konsisten.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.7",
+        "deskripsi": "Tabel 4.1 Rekap konsisten dengan Lampiran Justifikasi",
+        "status": "LULUS",
+        "detail": "Total Rp9.500.000 cocok dengan justifikasi.",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     },
+     {
+      "nama": "Modul 6: Lampiran",
+      "skor": 100.0,
+      "bobot": 0.1,
+      "items": [
+       {
+        "kode": "L-1",
+        "deskripsi": "Lampiran: Biodata Ketua & Anggota",
+        "status": "LULUS",
+        "detail": "'Biodata Ketua & Anggota' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-1b",
+        "deskripsi": "Lampiran: Biodata Dosen Pendamping",
+        "status": "LULUS",
+        "detail": "'Biodata Dosen Pendamping' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-2",
+        "deskripsi": "Lampiran: Justifikasi Anggaran Kegiatan",
+        "status": "LULUS",
+        "detail": "'Justifikasi Anggaran Kegiatan' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-3",
+        "deskripsi": "Lampiran: Susunan Tim Pengusul & Pembagian Tugas",
+        "status": "LULUS",
+        "detail": "'Susunan Tim Pengusul & Pembagian Tugas' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-4",
+        "deskripsi": "Lampiran: Surat Pernyataan Ketua Tim Pengusul",
+        "status": "LULUS",
+        "detail": "'Surat Pernyataan Ketua Tim Pengusul' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-6",
+        "deskripsi": "Lampiran: Hasil Uji Similaritas (≤25%, bagian inti)",
+        "status": "LULUS",
+        "detail": "'Hasil Uji Similaritas (≤25%, bagian inti)' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-KI",
+        "deskripsi": "Lampiran khusus PKM-KI: Gambaran Konsep Karya Inovatif",
+        "status": "LULUS",
+        "detail": "'Gambaran Konsep Karya Inovatif' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-1.c",
+        "deskripsi": "Biodata bertanda tangan basah (halaman penuh hasil scan/foto)",
+        "status": "LULUS",
+        "detail": "6 halaman biodata hasil scan/foto (hal. PDF [16, 18, 19, 20, 22, 25]). Pastikan tanggal tanda tangan sesuai tahun pengusulan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-4.c",
+        "deskripsi": "Surat Pernyataan: scan halaman penuh, TT basah & meterai Rp10.000",
+        "status": "LULUS",
+        "detail": "Surat Pernyataan berupa scan (hal. PDF 30). Verifikasi visual: meterai Rp10.000 tertempel & tertanda tangan, tanggal sesuai, judul sama dengan isian simbelmawa.",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     },
+     {
+      "nama": "Modul 7: Tema & Konsistensi Data",
+      "skor": 100.0,
+      "bobot": 0.1,
+      "items": [
+       {
+        "kode": "7.1",
+        "deskripsi": "Kaitan eksplisit dengan salah satu 10 tema PKM 2026",
+        "status": "LULUS",
+        "detail": "Tema 10: Pelestarian Seni Budaya dan Peningkatan Ekonomi Kreatif — \"Selaras dengan upaya pengurangan ketimpangan aksesibilitas bagi penyandang disabilitas sebagaimana tertuang dalam target Sustainable Development Goals (SDGs) po\"",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "7.2",
+        "deskripsi": "Referensi tahun PKM konsisten (2026)",
+        "status": "LULUS",
+        "detail": "Tidak ada rujukan ke siklus PKM tahun lain.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "7.3",
+        "deskripsi": "Susunan Tim lengkap: setiap anggota bernama & ber-NIM",
+        "status": "LULUS",
+        "detail": "5 anggota lengkap dengan NIM: Nama Samaran 1/•••••••, Nama Samaran 4/•••••••, Nama Samaran 6/•••••••, Nama Samaran 2/•••••••, Nama Samaran 3/•••••••",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "7.4",
+        "deskripsi": "Ejaan nama anggota konsisten di seluruh dokumen (sesuai PDDikti)",
+        "status": "LULUS",
+        "detail": "5 nama dicek, ejaan konsisten.",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     }
+    ]
+   },
+   "text_report": "============================================================\n  LAPORAN PENGECEKAN PROPOSAL PKM 2026\n============================================================\nNama File    : sampel_A_PKM-KI_didanai-2026.pdf\nJenis PKM    : PKM-KI\nJudul        : PRODUK-A: INOVASI KACAMATA PINTAR BERBASIS KECERDASAN BUATAN MODE GANDA UNTUK ORIENTASI LINGKUNGAN DAN KEAMANAN TRANSAKSI PENYANDANG TUNANETRA\nUkuran File  : 2.91 MB\nTanggal Cek  : 09 November 2026, 02:53\n\nSTATUS KESELURUHAN: ⚠️  PERLU PERBAIKAN (95.7%)\n============================================================\n\n[FASE 1] HARD DISQUALIFIERS\n----------------------------------------\n✅ [HD-01] Halaman sampul (DILARANG ada di proposal)\n    → Tidak terdeteksi halaman sampul.\n✅ [HD-02] Halaman pengesahan (DILARANG ada di proposal)\n    → Tidak terdeteksi halaman pengesahan.\n✅ [HD-03] Ringkasan/Abstrak (DILARANG ada di proposal)\n    → Tidak terdeteksi ringkasan/abstrak.\n⚠️ [HD-05] Indeks similaritas ≤ 25%\n    → Nilai similaritas tidak ditemukan secara otomatis. Pastikan lampiran hasil Turnitin/iThenticate tersedia dan terbaca.\n\n[MODUL 1: IDENTITAS & KELENGKAPAN FORMAL]  Skor: 94%\n----------------------------------------\n✅ [1.1.a] Judul ditulis HURUF KAPITAL\n    → Judul: \"PRODUK-A: INOVASI KACAMATA PINTAR BERBASIS KECERDASAN BUATAN MODE GANDA UNTUK ORIENTASI LINGKUNGAN DAN KEAMANAN TRANSAKSI PENYANDANG TUNANETRA\"\n✅ [1.1.b] Judul ≤ 20 kata\n    → Judul memiliki 17 kata.\n✅ [1.1.c] Judul tanpa akronim/singkatan tidak baku\n    → Tidak terdeteksi akronim tidak baku.\n      • Nama produk 'PRODUK-A' sebelum titik dua tidak dicek.\n✅ [1.1.f] Judul dalam Bahasa Indonesia\n    → Tidak terdeteksi kata bahasa Inggris.\n✅ [1.1.d] Jenis PKM valid\n    → PKM-KI.\n✅ [1.1.e] Isi sesuai bidang PKM yang dipilih\n    → Konten konsisten dengan PKM-KI. Kata kunci: SKALA PENUH, TARGET PENGGUNA, TINJAUAN PUSTAKA.\n✅ [1.2.a] Jumlah anggota tim 3–5 mahasiswa\n    → Terdeteksi 3 NIM (dari label NIM): •••••••, •••••••, •••••••.\n⚠️ [1.3.a] NIP/NUPTK dosen pendamping (NUPTK 16 digit)\n    → Biodata dosen memakai label lama 'NIP/NIDN': ••••••••••••••••••/••••••••••. Template 2026 memakai 'NIP/NUPTK' — perbarui label dan isi NUPTK.\n\n[MODUL 2: FORMAT & TIPOGRAFI]  Skor: 100%\n----------------------------------------\n✅ [2.1.a] Font Times New Roman\n    → 100.0% teks menggunakan Times New Roman. (Sisa ≤5% biasanya karakter simbol/rumus yang memang tidak bisa TNR.)\n✅ [2.1.b] Ukuran font 12pt\n    → 99.7% teks body berukuran 12pt.\n✅ [2.2] Spasi baris 1,15\n    → Spasi terukur ≈ 1.15.\n✅ [2.3.a] Ukuran kertas A4\n    → Semua halaman (di luar laporan Turnitin) berukuran A4.\n✅ [2.3.b] Margin (kiri 4cm, kanan/atas/bawah 3cm)\n    → Margin sesuai ketentuan.\n✅ [2.4] Penomoran halaman (romawi kanan-bawah, arab kanan-atas)\n    → romawi di 4 hal. front matter | arab di 10 hal. inti; posisi sesuai.\n\n[MODUL 3: STRUKTUR DOKUMEN]  Skor: 100%\n----------------------------------------\n✅ [3.1.a] Daftar Isi & Daftar Lampiran ada\n    → Daftar Isi dan Daftar Lampiran ditemukan (Daftar Gambar/Tabel wajib hanya jika ada gambar/tabel).\n✅ [3.1.b] Bab-bab wajib lengkap & sesuai bidang\n    → Semua bab wajib (PKM-KI) ditemukan.\n✅ [3.1.c] Heading bab kapital & bertitik ('BAB 1. PENDAHULUAN')\n    → 4 heading bab sesuai. Contoh: 'BAB 1. PENDAHULUAN'\n✅ [3.2] Bagian inti ≤ 10 halaman\n    → Bagian inti (BAB 1 s.d. akhir Daftar Pustaka): 10 halaman (hal. PDF 5–14).\n\n[MODUL 4: DAFTAR PUSTAKA & SITASI]  Skor: 88%\n----------------------------------------\n✅ [4.1] Daftar Pustaka ada dan terbaca\n    → 19 entri terbaca.\n✅ [4.2] Hanging indent (baris ke-2 dst. tiap entri menjorok)\n    → Hanging indent terdeteksi.\n✅ [4.3] Format entri Harvard (tahun dalam kurung, tanpa et al./dkk, diakhiri titik, tanggal akses URL)\n    → Semua 19 entri memenuhi aturan pokok format Harvard.\n✅ [4.4] Detail tanda baca & gaya entri (kutip judul, nomor halaman, inisial, italic, spasi)\n    → Tidak ditemukan masalah tanda baca/gaya.\n✅ [4.5] Daftar Pustaka urut alfabetis (nama belakang penulis pertama)\n    → 19 entri terurut alfabetis.\n✅ [4.6] Konsistensi gaya antarentri (penghubung penulis, sufiks a/b tahun sama)\n    → Gaya antarentri konsisten.\n❌ [4.7] Setiap sitasi ada di Daftar Pustaka dan sebaliknya\n    → 1 sitasi tanpa pasangan, 2 entri tidak disitasi. Panduan: setiap pustaka yang dirujuk harus muncul di Daftar Pustaka, dan sebaliknya. (Deteksi otomatis — pastikan ejaan nama & tahun identik.)\n      • Disitasi tapi tidak ada di Daftar Pustaka (atau nama/tahun beda): (ISO, 2024)\n      • Ada di Daftar Pustaka tapi tidak disitasi di naskah: Direktorat Jenderal SDPPI (2019)\n      • Ada di Daftar Pustaka tapi tidak disitasi di naskah: International Organization for Stan (2024)\n✅ [4.8] Format sitasi dalam naskah (Nama, Tahun)\n    → 23 sitasi berformat konsisten.\n\n[MODUL 5: ANGGARAN & KEUANGAN]  Skor: 94%\n----------------------------------------\n✅ [6.1] Dana Belmawa Rp6–8 juta (dari Rekap Sumber Dana)\n    → Dana Belmawa Rp8.000.000 (Rekap Sumber Dana).\n✅ [6.2] Dana pendamping PT wajib ada (≤ Rp2 juta); instansi lain ≤ Rp1 juta\n    → Perguruan Tinggi Rp1.500.000; instansi lain -.\n⚠️ [6.3] Komposisi RAB: bahan ≤60%, sewa/jasa ≤15%, transport ≤30%, lain-lain ≤15%\n    → Panduan menghitung batas dari 'jumlah dana yang diusulkan Belmawa'. Turunkan porsi Belmawa kategori ini atau pindahkan ke dana PT.\n      • Bahan habis pakai 65.0% dari dana Belmawa (batas 60%); terhadap total dana 60.0%\n✅ [6.4] Tidak ada item terlarang di RAB\n    → Tidak terdeteksi item terlarang.\n✅ [6.4.c] Harga satuan alat/bahan ≤ Rp1.000.000 per item\n    → 40 baris dicek; tidak ada harga satuan > Rp1.000.000.\n✅ [6.4.e] Batas item khusus: kuota ≤Rp100rb/bulan, lisensi ≤6 bulan, kertas ≤2 rim\n    → Tidak ada pelanggaran batas item khusus.\n✅ [6.5] Alokasi promosi media sosial ada & Ads ≤ Rp500.000\n    → Ads/promosi media sosial Rp300.000.\n✅ [6.6] Aritmetika justifikasi (volume × harga, subtotal, grand total, terbilang)\n    → 40 baris, 4 subtotal, grand total Rp9.500.000 — hitungan konsisten.\n✅ [6.7] Tabel 4.1 Rekap konsisten dengan Lampiran Justifikasi\n    → Total Rp9.500.000 cocok dengan justifikasi.\n\n[MODUL 6: LAMPIRAN]  Skor: 100%\n----------------------------------------\n✅ [L-1] Lampiran: Biodata Ketua & Anggota\n    → 'Biodata Ketua & Anggota' ditemukan.\n✅ [L-1b] Lampiran: Biodata Dosen Pendamping\n    → 'Biodata Dosen Pendamping' ditemukan.\n✅ [L-2] Lampiran: Justifikasi Anggaran Kegiatan\n    → 'Justifikasi Anggaran Kegiatan' ditemukan.\n✅ [L-3] Lampiran: Susunan Tim Pengusul & Pembagian Tugas\n    → 'Susunan Tim Pengusul & Pembagian Tugas' ditemukan.\n✅ [L-4] Lampiran: Surat Pernyataan Ketua Tim Pengusul\n    → 'Surat Pernyataan Ketua Tim Pengusul' ditemukan.\n✅ [L-6] Lampiran: Hasil Uji Similaritas (≤25%, bagian inti)\n    → 'Hasil Uji Similaritas (≤25%, bagian inti)' ditemukan.\n✅ [L-KI] Lampiran khusus PKM-KI: Gambaran Konsep Karya Inovatif\n    → 'Gambaran Konsep Karya Inovatif' ditemukan.\n✅ [L-1.c] Biodata bertanda tangan basah (halaman penuh hasil scan/foto)\n    → 6 halaman biodata hasil scan/foto (hal. PDF [16, 18, 19, 20, 22, 25]). Pastikan tanggal tanda tangan sesuai tahun pengusulan.\n✅ [L-4.c] Surat Pernyataan: scan halaman penuh, TT basah & meterai Rp10.000\n    → Surat Pernyataan berupa scan (hal. PDF 30). Verifikasi visual: meterai Rp10.000 tertempel & tertanda tangan, tanggal sesuai, judul sama dengan isian simbelmawa.\n\n[MODUL 7: TEMA & KONSISTENSI DATA]  Skor: 100%\n----------------------------------------\n✅ [7.1] Kaitan eksplisit dengan salah satu 10 tema PKM 2026\n    → Tema 10: Pelestarian Seni Budaya dan Peningkatan Ekonomi Kreatif — \"Selaras dengan upaya pengurangan ketimpangan aksesibilitas bagi penyandang disabilitas sebagaimana tertuang dalam target Sustainable Development Goals (SDGs) po\"\n✅ [7.2] Referensi tahun PKM konsisten (2026)\n    → Tidak ada rujukan ke siklus PKM tahun lain.\n✅ [7.3] Susunan Tim lengkap: setiap anggota bernama & ber-NIM\n    → 5 anggota lengkap dengan NIM: Nama Samaran 1/•••••••, Nama Samaran 4/•••••••, Nama Samaran 6/•••••••, Nama Samaran 2/•••••••, Nama Samaran 3/•••••••\n✅ [7.4] Ejaan nama anggota konsisten di seluruh dokumen (sesuai PDDikti)\n    → 5 nama dicek, ejaan konsisten.\n\n============================================================\nREKOMENDASI PRIORITAS:\n----------------------------------------\n1. [PERIKSA] Indeks similaritas ≤ 25%: Nilai similaritas tidak ditemukan secara otomatis. Pastikan lampiran hasil Turnitin/iThenticate tersedia dan terbaca.\n2. [PERIKSA] NIP/NUPTK dosen pendamping (NUPTK 16 digit): Biodata dosen memakai label lama 'NIP/NIDN': ••••••••••••••••••/••••••••••. Template 2026 memakai 'NIP/NUPTK' — perbarui label dan isi NUPTK.\n3. [WAJIB] Setiap sitasi ada di Daftar Pustaka dan sebaliknya: 1 sitasi tanpa pasangan, 2 entri tidak disitasi. Panduan: setiap pustaka yang dirujuk harus muncul di Daftar Pustaka, dan sebaliknya. (Deteksi otomatis — pastikan ejaan nama & tahun identik.)\n4. [PERIKSA] Komposisi RAB: bahan ≤60%, sewa/jasa ≤15%, transport ≤30%, lain-lain ≤15%: Panduan menghitung batas dari 'jumlah dana yang diusulkan Belmawa'. Turunkan porsi Belmawa kategori ini atau pindahkan ke dana PT.\n\nCATATAN: checker ini hanya menilai ADMINISTRASI & FORMAT (Tahap 1).\nLolos administrasi tidak menjamin didanai — Tahap 2 menilai substansi\n(kreativitas gagasan, urgensi masalah, ketepatan IPTEK/metode, potensi).\n============================================================"
+  }
+ },
+ {
+  "id": "B",
+  "label": "Sampel B · PKM-KC · Didanai 2026",
+  "status_asli": "Didanai",
+  "siklus": 2026,
+  "jenis": "KC",
+  "file_name": "sampel_B_PKM-KC_didanai-2026.pdf",
+  "file_size_kb": 3912.8,
+  "judul": "PRODUK-B: PLESTER CERDAS DETEKSI DINI HIPOKSIA GINJAL NEONATUS BERBASIS SHORT-DISTANCE NIRS DAN ADAPTIVE TINYML",
+  "catatan_sampel": "Didanai walau kertas Letter dan ada beberapa salah hitung di justifikasi anggaran.",
+  "langkah": [
+   "Membuka PDF: 51 halaman",
+   "Ekstraksi teks, font & tata letak: 2.742 span teks, 23 gambar",
+   "Segmentasi: Daftar Isi hal. 1–4 · bagian inti hal. 5–14 (10 hal.) · lampiran hal. 15–51",
+   "Daftar Pustaka: 11 entri (hanging indent terbaca) · 22 sitasi di naskah",
+   "RAB: 4 kategori rekap · 41 baris justifikasi · grand total Rp9.500.000",
+   "Modul 1: Identitas & Kelengkapan Formal: 8 item — ✅ 5 · ⚠️ 3 · ❌ 0",
+   "Modul 2: Format & Tipografi: 6 item — ✅ 4 · ⚠️ 2 · ❌ 0",
+   "Modul 3: Struktur Dokumen: 4 item — ✅ 4 · ⚠️ 0 · ❌ 0",
+   "Modul 4: Daftar Pustaka & Sitasi: 8 item — ✅ 8 · ⚠️ 0 · ❌ 0",
+   "Modul 5: Anggaran & Keuangan: 9 item — ✅ 6 · ⚠️ 3 · ❌ 0",
+   "Modul 6: Lampiran: 9 item — ✅ 9 · ⚠️ 0 · ❌ 0",
+   "Modul 7: Tema & Konsistensi Data: 4 item — ✅ 4 · ⚠️ 0 · ❌ 0"
+  ],
+  "result": {
+   "structured_report": {
+    "file_name": "sampel_B_PKM-KC_didanai-2026.pdf",
+    "jenis_pkm": "KC",
+    "judul": "PRODUK-B: PLESTER CERDAS DETEKSI DINI HIPOKSIA GINJAL NEONATUS BERBASIS SHORT-DISTANCE NIRS DAN ADAPTIVE TINYML",
+    "file_size_mb": 3.821099281311035,
+    "is_gugur": false,
+    "overall": {
+     "skor": 92.2,
+     "kategori": "LAYAK",
+     "modul_scores": {
+      "Modul 1: Identitas & Kelengkapan Formal": 81.2,
+      "Modul 2: Format & Tipografi": 83.3,
+      "Modul 3: Struktur Dokumen": 100.0,
+      "Modul 4: Daftar Pustaka & Sitasi": 100.0,
+      "Modul 5: Anggaran & Keuangan": 83.3,
+      "Modul 6: Lampiran": 100.0,
+      "Modul 7: Tema & Konsistensi Data": 100.0
+     }
+    },
+    "hard_disqualifiers": {
+     "items": [
+      {
+       "kode": "HD-01",
+       "deskripsi": "Halaman sampul (DILARANG ada di proposal)",
+       "status": "LULUS",
+       "detail": "Tidak terdeteksi halaman sampul.",
+       "catatan": []
+      },
+      {
+       "kode": "HD-02",
+       "deskripsi": "Halaman pengesahan (DILARANG ada di proposal)",
+       "status": "LULUS",
+       "detail": "Tidak terdeteksi halaman pengesahan.",
+       "catatan": []
+      },
+      {
+       "kode": "HD-03",
+       "deskripsi": "Ringkasan/Abstrak (DILARANG ada di proposal)",
+       "status": "LULUS",
+       "detail": "Tidak terdeteksi ringkasan/abstrak.",
+       "catatan": []
+      },
+      {
+       "kode": "HD-05",
+       "deskripsi": "Indeks similaritas ≤ 25%",
+       "status": "PERINGATAN",
+       "detail": "Nilai similaritas tidak ditemukan secara otomatis. Pastikan lampiran hasil Turnitin/iThenticate tersedia dan terbaca.",
+       "catatan": []
+      }
+     ]
+    },
+    "modul_results": [
+     {
+      "nama": "Modul 1: Identitas & Kelengkapan Formal",
+      "skor": 81.2,
+      "bobot": 0.15,
+      "items": [
+       {
+        "kode": "1.1.a",
+        "deskripsi": "Judul ditulis HURUF KAPITAL",
+        "status": "LULUS",
+        "detail": "Judul: \"PRODUK-B: PLESTER CERDAS DETEKSI DINI HIPOKSIA GINJAL NEONATUS BERBASIS SHORT-DISTANCE NIRS DAN ADAPTIVE TINYML\"",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.1.b",
+        "deskripsi": "Judul ≤ 20 kata",
+        "status": "LULUS",
+        "detail": "Judul memiliki 14 kata.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.1.c",
+        "deskripsi": "Judul tanpa akronim/singkatan tidak baku",
+        "status": "PERINGATAN",
+        "detail": "Kemungkinan akronim tidak baku: NIRS. Panduan melarang akronim/singkatan tidak baku di judul — tulis kepanjangannya.",
+        "halaman": null,
+        "catatan": [
+         "Nama produk 'PRODUK-B' sebelum titik dua tidak dicek."
+        ]
+       },
+       {
+        "kode": "1.1.f",
+        "deskripsi": "Judul dalam Bahasa Indonesia",
+        "status": "PERINGATAN",
+        "detail": "Kata bahasa Inggris di judul: SHORT, DISTANCE, ADAPTIVE. Panduan: judul 'ditulis dalam Bahasa Indonesia' — pakai padanan Indonesia bila ada.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.1.d",
+        "deskripsi": "Jenis PKM valid",
+        "status": "LULUS",
+        "detail": "PKM-KC.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.1.e",
+        "deskripsi": "Isi sesuai bidang PKM yang dipilih",
+        "status": "LULUS",
+        "detail": "Konten konsisten dengan PKM-KC. Kata kunci: PROTOTIPE, TAHAP PELAKSANAAN, TEKNOLOGI.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.2.a",
+        "deskripsi": "Jumlah anggota tim 3–5 mahasiswa",
+        "status": "LULUS",
+        "detail": "Terdeteksi 5 NIM (dari label NIM): •••••••, •••••••, •••••••, •••••••, •••••••.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.3.a",
+        "deskripsi": "NIP/NUPTK dosen pendamping (NUPTK 16 digit)",
+        "status": "PERINGATAN",
+        "detail": "NIP/NUPTK dosen tidak terbaca sebagai teks (biodata mungkin scan). Pastikan kolom 'NIP/NUPTK' terisi NUPTK 16 digit.",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     },
+     {
+      "nama": "Modul 2: Format & Tipografi",
+      "skor": 83.3,
+      "bobot": 0.15,
+      "items": [
+       {
+        "kode": "2.1.a",
+        "deskripsi": "Font Times New Roman",
+        "status": "PERINGATAN",
+        "detail": "Hanya 91.5% teks TNR. Font lain ditemukan: OpenSans-Regular (176x), OpenSans-Italic (1x), Unnamed-T3 (1x). Seleksi semua teks (Ctrl+A) lalu ubah ke Times New Roman 12.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "2.1.b",
+        "deskripsi": "Ukuran font 12pt",
+        "status": "LULUS",
+        "detail": "90.8% teks body berukuran 12pt.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "2.2",
+        "deskripsi": "Spasi baris 1,15",
+        "status": "LULUS",
+        "detail": "Spasi terukur ≈ 1.15.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "2.3.a",
+        "deskripsi": "Ukuran kertas A4",
+        "status": "PERINGATAN",
+        "detail": "Halaman berukuran Letter, bukan A4: [1, 2, 3, 4, 5, 6, 7, 8] ... (51 halaman). Ubah Layout → Size → A4 lalu cek ulang jumlah halaman inti (ukuran kertas memengaruhi batas 10 halaman).",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "2.3.b",
+        "deskripsi": "Margin (kiri 4cm, kanan/atas/bawah 3cm)",
+        "status": "LULUS",
+        "detail": "Margin sesuai ketentuan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "2.4",
+        "deskripsi": "Penomoran halaman (romawi kanan-bawah, arab kanan-atas)",
+        "status": "LULUS",
+        "detail": "romawi di 4 hal. front matter | arab di 10 hal. inti; posisi sesuai.",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     },
+     {
+      "nama": "Modul 3: Struktur Dokumen",
+      "skor": 100.0,
+      "bobot": 0.15,
+      "items": [
+       {
+        "kode": "3.1.a",
+        "deskripsi": "Daftar Isi & Daftar Lampiran ada",
+        "status": "LULUS",
+        "detail": "Daftar Isi dan Daftar Lampiran ditemukan (Daftar Gambar/Tabel wajib hanya jika ada gambar/tabel).",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "3.1.b",
+        "deskripsi": "Bab-bab wajib lengkap & sesuai bidang",
+        "status": "LULUS",
+        "detail": "Semua bab wajib (PKM-KC) ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "3.1.c",
+        "deskripsi": "Heading bab kapital & bertitik ('BAB 1. PENDAHULUAN')",
+        "status": "LULUS",
+        "detail": "4 heading bab sesuai. Contoh: 'BAB 1. PENDAHULUAN'",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "3.2",
+        "deskripsi": "Bagian inti ≤ 10 halaman",
+        "status": "LULUS",
+        "detail": "Bagian inti (BAB 1 s.d. akhir Daftar Pustaka): 10 halaman (hal. PDF 5–14).",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     },
+     {
+      "nama": "Modul 4: Daftar Pustaka & Sitasi",
+      "skor": 100.0,
+      "bobot": 0.2,
+      "items": [
+       {
+        "kode": "4.1",
+        "deskripsi": "Daftar Pustaka ada dan terbaca",
+        "status": "LULUS",
+        "detail": "11 entri terbaca.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "4.2",
+        "deskripsi": "Hanging indent (baris ke-2 dst. tiap entri menjorok)",
+        "status": "LULUS",
+        "detail": "Hanging indent terdeteksi.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "4.3",
+        "deskripsi": "Format entri Harvard (tahun dalam kurung, tanpa et al./dkk, diakhiri titik, tanggal akses URL)",
+        "status": "LULUS",
+        "detail": "Semua 11 entri memenuhi aturan pokok format Harvard.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "4.4",
+        "deskripsi": "Detail tanda baca & gaya entri (kutip judul, nomor halaman, inisial, italic, spasi)",
+        "status": "LULUS",
+        "detail": "Tidak ditemukan masalah tanda baca/gaya.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "4.5",
+        "deskripsi": "Daftar Pustaka urut alfabetis (nama belakang penulis pertama)",
+        "status": "LULUS",
+        "detail": "11 entri terurut alfabetis.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "4.6",
+        "deskripsi": "Konsistensi gaya antarentri (penghubung penulis, sufiks a/b tahun sama)",
+        "status": "LULUS",
+        "detail": "Gaya antarentri konsisten.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "4.7",
+        "deskripsi": "Setiap sitasi ada di Daftar Pustaka dan sebaliknya",
+        "status": "LULUS",
+        "detail": "22 sitasi cocok dengan 11 entri pustaka.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "4.8",
+        "deskripsi": "Format sitasi dalam naskah (Nama, Tahun)",
+        "status": "LULUS",
+        "detail": "22 sitasi berformat konsisten.",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     },
+     {
+      "nama": "Modul 5: Anggaran & Keuangan",
+      "skor": 83.3,
+      "bobot": 0.15,
+      "items": [
+       {
+        "kode": "6.1",
+        "deskripsi": "Dana Belmawa Rp6–8 juta (dari Rekap Sumber Dana)",
+        "status": "LULUS",
+        "detail": "Dana Belmawa Rp7.599.400 (Rekap Sumber Dana).",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.2",
+        "deskripsi": "Dana pendamping PT wajib ada (≤ Rp2 juta); instansi lain ≤ Rp1 juta",
+        "status": "LULUS",
+        "detail": "Perguruan Tinggi Rp1.900.600; instansi lain -.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.3",
+        "deskripsi": "Komposisi RAB: bahan ≤60%, sewa/jasa ≤15%, transport ≤30%, lain-lain ≤15%",
+        "status": "PERINGATAN",
+        "detail": "Panduan menghitung batas dari 'jumlah dana yang diusulkan Belmawa'. Turunkan porsi Belmawa kategori ini atau pindahkan ke dana PT.",
+        "halaman": null,
+        "catatan": [
+         "Bahan habis pakai 61.3% dari dana Belmawa (batas 60%); terhadap total dana 60.0%"
+        ]
+       },
+       {
+        "kode": "6.4",
+        "deskripsi": "Tidak ada item terlarang di RAB",
+        "status": "LULUS",
+        "detail": "Tidak terdeteksi item terlarang.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.4.c",
+        "deskripsi": "Harga satuan alat/bahan ≤ Rp1.000.000 per item",
+        "status": "LULUS",
+        "detail": "41 baris dicek; tidak ada harga satuan > Rp1.000.000.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.4.e",
+        "deskripsi": "Batas item khusus: kuota ≤Rp100rb/bulan, lisensi ≤6 bulan, kertas ≤2 rim",
+        "status": "LULUS",
+        "detail": "Tidak ada pelanggaran batas item khusus.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.5",
+        "deskripsi": "Alokasi promosi media sosial ada & Ads ≤ Rp500.000",
+        "status": "LULUS",
+        "detail": "Ads/promosi media sosial Rp400.000.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.6",
+        "deskripsi": "Aritmetika justifikasi (volume × harga, subtotal, grand total, terbilang)",
+        "status": "PERINGATAN",
+        "detail": "Panduan: kesalahan hasil perkalian dan penjumlahan dapat mempengaruhi penilaian. Perbaiki semua baris berikut.",
+        "halaman": null,
+        "catatan": [
+         "Silicone Resin: 500 × Rp132 = Rp66.000, tertulis Rp70.000",
+         "Titanium Dioxide (TiO2): 100 × Rp150.000 = Rp15.000.000, tertulis Rp300.000",
+         "Alkohol: 5 × Rp28.000 = Rp140.000, tertulis Rp150.000",
+         "Figma: 4 × Rp50.000 = Rp200.000, tertulis Rp400.000",
+         "Hosting Ai: 8 × Rp75.000 = Rp600.000, tertulis Rp450.000",
+         "Adsense Publikasi Media: 5 × Rp100.000 = Rp500.000, tertulis Rp400.000",
+         "Terbilang 'Sepuluh Juta RPT-Xah' ≠ Rp9.500.000 (seharusnya: sembilan juta lima ratus ribu rPT-Xah)"
+        ]
+       },
+       {
+        "kode": "6.7",
+        "deskripsi": "Tabel 4.1 Rekap konsisten dengan Lampiran Justifikasi",
+        "status": "PERINGATAN",
+        "detail": "Angka rekap dan justifikasi tidak sinkron — samakan sebelum unggah.",
+        "halaman": null,
+        "catatan": [
+         "'Jumlah' Rekap Sumber Dana Rp10.000.000 ≠ Belmawa+PT+lain Rp9.500.000"
+        ]
+       }
+      ]
+     },
+     {
+      "nama": "Modul 6: Lampiran",
+      "skor": 100.0,
+      "bobot": 0.1,
+      "items": [
+       {
+        "kode": "L-1",
+        "deskripsi": "Lampiran: Biodata Ketua & Anggota",
+        "status": "LULUS",
+        "detail": "'Biodata Ketua & Anggota' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-1b",
+        "deskripsi": "Lampiran: Biodata Dosen Pendamping",
+        "status": "LULUS",
+        "detail": "'Biodata Dosen Pendamping' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-2",
+        "deskripsi": "Lampiran: Justifikasi Anggaran Kegiatan",
+        "status": "LULUS",
+        "detail": "'Justifikasi Anggaran Kegiatan' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-3",
+        "deskripsi": "Lampiran: Susunan Tim Pengusul & Pembagian Tugas",
+        "status": "LULUS",
+        "detail": "'Susunan Tim Pengusul & Pembagian Tugas' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-4",
+        "deskripsi": "Lampiran: Surat Pernyataan Ketua Tim Pengusul",
+        "status": "LULUS",
+        "detail": "'Surat Pernyataan Ketua Tim Pengusul' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-6",
+        "deskripsi": "Lampiran: Hasil Uji Similaritas (≤25%, bagian inti)",
+        "status": "LULUS",
+        "detail": "'Hasil Uji Similaritas (≤25%, bagian inti)' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-KC",
+        "deskripsi": "Lampiran khusus PKM-KC: Gambaran Teknologi yang akan Dikembangkan",
+        "status": "LULUS",
+        "detail": "'Gambaran Teknologi yang akan Dikembangkan' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-1.c",
+        "deskripsi": "Biodata bertanda tangan basah (halaman penuh hasil scan/foto)",
+        "status": "LULUS",
+        "detail": "6 halaman biodata hasil scan/foto (hal. PDF [17, 19, 21, 23, 25, 29]). Pastikan tanggal tanda tangan sesuai tahun pengusulan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-4.c",
+        "deskripsi": "Surat Pernyataan: scan halaman penuh, TT basah & meterai Rp10.000",
+        "status": "LULUS",
+        "detail": "Surat Pernyataan berupa scan (hal. PDF 34). Verifikasi visual: meterai Rp10.000 tertempel & tertanda tangan, tanggal sesuai, judul sama dengan isian simbelmawa.",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     },
+     {
+      "nama": "Modul 7: Tema & Konsistensi Data",
+      "skor": 100.0,
+      "bobot": 0.1,
+      "items": [
+       {
+        "kode": "7.1",
+        "deskripsi": "Kaitan eksplisit dengan salah satu 10 tema PKM 2026",
+        "status": "LULUS",
+        "detail": "Kaitan lewat Asta Cita terdeteksi. Isi paling dekat dengan tema 2 (Kesehatan dan Gizi Masyarakat; kata: kesehatan, medis, klinis, neonat, bayi). Sebaiknya sebut juga nomor & nama tema secara eksplisit di Bab 1.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "7.2",
+        "deskripsi": "Referensi tahun PKM konsisten (2026)",
+        "status": "LULUS",
+        "detail": "Tidak ada rujukan ke siklus PKM tahun lain.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "7.3",
+        "deskripsi": "Susunan Tim lengkap: setiap anggota bernama & ber-NIM",
+        "status": "LULUS",
+        "detail": "5 anggota lengkap dengan NIM: Nama Samaran 2/•••••••, Nama Samaran 6/•••••••, Nama Samaran 1/•••••••, Nama Samaran 4/•••••••, Nama Samaran 3/•••••••",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "7.4",
+        "deskripsi": "Ejaan nama anggota konsisten di seluruh dokumen (sesuai PDDikti)",
+        "status": "LULUS",
+        "detail": "5 nama dicek, ejaan konsisten.",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     }
+    ]
+   },
+   "text_report": "============================================================\n  LAPORAN PENGECEKAN PROPOSAL PKM 2026\n============================================================\nNama File    : sampel_B_PKM-KC_didanai-2026.pdf\nJenis PKM    : PKM-KC\nJudul        : PRODUK-B: PLESTER CERDAS DETEKSI DINI HIPOKSIA GINJAL NEONATUS BERBASIS SHORT-DISTANCE NIRS DAN ADAPTIVE TINYML\nUkuran File  : 3.82 MB\nTanggal Cek  : 09 November 2026, 02:53\n\nSTATUS KESELURUHAN: ✅ LAYAK (92.2%)\n============================================================\n\n[FASE 1] HARD DISQUALIFIERS\n----------------------------------------\n✅ [HD-01] Halaman sampul (DILARANG ada di proposal)\n    → Tidak terdeteksi halaman sampul.\n✅ [HD-02] Halaman pengesahan (DILARANG ada di proposal)\n    → Tidak terdeteksi halaman pengesahan.\n✅ [HD-03] Ringkasan/Abstrak (DILARANG ada di proposal)\n    → Tidak terdeteksi ringkasan/abstrak.\n⚠️ [HD-05] Indeks similaritas ≤ 25%\n    → Nilai similaritas tidak ditemukan secara otomatis. Pastikan lampiran hasil Turnitin/iThenticate tersedia dan terbaca.\n\n[MODUL 1: IDENTITAS & KELENGKAPAN FORMAL]  Skor: 81%\n----------------------------------------\n✅ [1.1.a] Judul ditulis HURUF KAPITAL\n    → Judul: \"PRODUK-B: PLESTER CERDAS DETEKSI DINI HIPOKSIA GINJAL NEONATUS BERBASIS SHORT-DISTANCE NIRS DAN ADAPTIVE TINYML\"\n✅ [1.1.b] Judul ≤ 20 kata\n    → Judul memiliki 14 kata.\n⚠️ [1.1.c] Judul tanpa akronim/singkatan tidak baku\n    → Kemungkinan akronim tidak baku: NIRS. Panduan melarang akronim/singkatan tidak baku di judul — tulis kepanjangannya.\n      • Nama produk 'PRODUK-B' sebelum titik dua tidak dicek.\n⚠️ [1.1.f] Judul dalam Bahasa Indonesia\n    → Kata bahasa Inggris di judul: SHORT, DISTANCE, ADAPTIVE. Panduan: judul 'ditulis dalam Bahasa Indonesia' — pakai padanan Indonesia bila ada.\n✅ [1.1.d] Jenis PKM valid\n    → PKM-KC.\n✅ [1.1.e] Isi sesuai bidang PKM yang dipilih\n    → Konten konsisten dengan PKM-KC. Kata kunci: PROTOTIPE, TAHAP PELAKSANAAN, TEKNOLOGI.\n✅ [1.2.a] Jumlah anggota tim 3–5 mahasiswa\n    → Terdeteksi 5 NIM (dari label NIM): •••••••, •••••••, •••••••, •••••••, •••••••.\n⚠️ [1.3.a] NIP/NUPTK dosen pendamping (NUPTK 16 digit)\n    → NIP/NUPTK dosen tidak terbaca sebagai teks (biodata mungkin scan). Pastikan kolom 'NIP/NUPTK' terisi NUPTK 16 digit.\n\n[MODUL 2: FORMAT & TIPOGRAFI]  Skor: 83%\n----------------------------------------\n⚠️ [2.1.a] Font Times New Roman\n    → Hanya 91.5% teks TNR. Font lain ditemukan: OpenSans-Regular (176x), OpenSans-Italic (1x), Unnamed-T3 (1x). Seleksi semua teks (Ctrl+A) lalu ubah ke Times New Roman 12.\n✅ [2.1.b] Ukuran font 12pt\n    → 90.8% teks body berukuran 12pt.\n✅ [2.2] Spasi baris 1,15\n    → Spasi terukur ≈ 1.15.\n⚠️ [2.3.a] Ukuran kertas A4\n    → Halaman berukuran Letter, bukan A4: [1, 2, 3, 4, 5, 6, 7, 8] ... (51 halaman). Ubah Layout → Size → A4 lalu cek ulang jumlah halaman inti (ukuran kertas memengaruhi batas 10 halaman).\n✅ [2.3.b] Margin (kiri 4cm, kanan/atas/bawah 3cm)\n    → Margin sesuai ketentuan.\n✅ [2.4] Penomoran halaman (romawi kanan-bawah, arab kanan-atas)\n    → romawi di 4 hal. front matter | arab di 10 hal. inti; posisi sesuai.\n\n[MODUL 3: STRUKTUR DOKUMEN]  Skor: 100%\n----------------------------------------\n✅ [3.1.a] Daftar Isi & Daftar Lampiran ada\n    → Daftar Isi dan Daftar Lampiran ditemukan (Daftar Gambar/Tabel wajib hanya jika ada gambar/tabel).\n✅ [3.1.b] Bab-bab wajib lengkap & sesuai bidang\n    → Semua bab wajib (PKM-KC) ditemukan.\n✅ [3.1.c] Heading bab kapital & bertitik ('BAB 1. PENDAHULUAN')\n    → 4 heading bab sesuai. Contoh: 'BAB 1. PENDAHULUAN'\n✅ [3.2] Bagian inti ≤ 10 halaman\n    → Bagian inti (BAB 1 s.d. akhir Daftar Pustaka): 10 halaman (hal. PDF 5–14).\n\n[MODUL 4: DAFTAR PUSTAKA & SITASI]  Skor: 100%\n----------------------------------------\n✅ [4.1] Daftar Pustaka ada dan terbaca\n    → 11 entri terbaca.\n✅ [4.2] Hanging indent (baris ke-2 dst. tiap entri menjorok)\n    → Hanging indent terdeteksi.\n✅ [4.3] Format entri Harvard (tahun dalam kurung, tanpa et al./dkk, diakhiri titik, tanggal akses URL)\n    → Semua 11 entri memenuhi aturan pokok format Harvard.\n✅ [4.4] Detail tanda baca & gaya entri (kutip judul, nomor halaman, inisial, italic, spasi)\n    → Tidak ditemukan masalah tanda baca/gaya.\n✅ [4.5] Daftar Pustaka urut alfabetis (nama belakang penulis pertama)\n    → 11 entri terurut alfabetis.\n✅ [4.6] Konsistensi gaya antarentri (penghubung penulis, sufiks a/b tahun sama)\n    → Gaya antarentri konsisten.\n✅ [4.7] Setiap sitasi ada di Daftar Pustaka dan sebaliknya\n    → 22 sitasi cocok dengan 11 entri pustaka.\n✅ [4.8] Format sitasi dalam naskah (Nama, Tahun)\n    → 22 sitasi berformat konsisten.\n\n[MODUL 5: ANGGARAN & KEUANGAN]  Skor: 83%\n----------------------------------------\n✅ [6.1] Dana Belmawa Rp6–8 juta (dari Rekap Sumber Dana)\n    → Dana Belmawa Rp7.599.400 (Rekap Sumber Dana).\n✅ [6.2] Dana pendamping PT wajib ada (≤ Rp2 juta); instansi lain ≤ Rp1 juta\n    → Perguruan Tinggi Rp1.900.600; instansi lain -.\n⚠️ [6.3] Komposisi RAB: bahan ≤60%, sewa/jasa ≤15%, transport ≤30%, lain-lain ≤15%\n    → Panduan menghitung batas dari 'jumlah dana yang diusulkan Belmawa'. Turunkan porsi Belmawa kategori ini atau pindahkan ke dana PT.\n      • Bahan habis pakai 61.3% dari dana Belmawa (batas 60%); terhadap total dana 60.0%\n✅ [6.4] Tidak ada item terlarang di RAB\n    → Tidak terdeteksi item terlarang.\n✅ [6.4.c] Harga satuan alat/bahan ≤ Rp1.000.000 per item\n    → 41 baris dicek; tidak ada harga satuan > Rp1.000.000.\n✅ [6.4.e] Batas item khusus: kuota ≤Rp100rb/bulan, lisensi ≤6 bulan, kertas ≤2 rim\n    → Tidak ada pelanggaran batas item khusus.\n✅ [6.5] Alokasi promosi media sosial ada & Ads ≤ Rp500.000\n    → Ads/promosi media sosial Rp400.000.\n⚠️ [6.6] Aritmetika justifikasi (volume × harga, subtotal, grand total, terbilang)\n    → Panduan: kesalahan hasil perkalian dan penjumlahan dapat mempengaruhi penilaian. Perbaiki semua baris berikut.\n      • Silicone Resin: 500 × Rp132 = Rp66.000, tertulis Rp70.000\n      • Titanium Dioxide (TiO2): 100 × Rp150.000 = Rp15.000.000, tertulis Rp300.000\n      • Alkohol: 5 × Rp28.000 = Rp140.000, tertulis Rp150.000\n      • Figma: 4 × Rp50.000 = Rp200.000, tertulis Rp400.000\n      • Hosting Ai: 8 × Rp75.000 = Rp600.000, tertulis Rp450.000\n      • Adsense Publikasi Media: 5 × Rp100.000 = Rp500.000, tertulis Rp400.000\n      • Terbilang 'Sepuluh Juta RPT-Xah' ≠ Rp9.500.000 (seharusnya: sembilan juta lima ratus ribu rPT-Xah)\n⚠️ [6.7] Tabel 4.1 Rekap konsisten dengan Lampiran Justifikasi\n    → Angka rekap dan justifikasi tidak sinkron — samakan sebelum unggah.\n      • 'Jumlah' Rekap Sumber Dana Rp10.000.000 ≠ Belmawa+PT+lain Rp9.500.000\n\n[MODUL 6: LAMPIRAN]  Skor: 100%\n----------------------------------------\n✅ [L-1] Lampiran: Biodata Ketua & Anggota\n    → 'Biodata Ketua & Anggota' ditemukan.\n✅ [L-1b] Lampiran: Biodata Dosen Pendamping\n    → 'Biodata Dosen Pendamping' ditemukan.\n✅ [L-2] Lampiran: Justifikasi Anggaran Kegiatan\n    → 'Justifikasi Anggaran Kegiatan' ditemukan.\n✅ [L-3] Lampiran: Susunan Tim Pengusul & Pembagian Tugas\n    → 'Susunan Tim Pengusul & Pembagian Tugas' ditemukan.\n✅ [L-4] Lampiran: Surat Pernyataan Ketua Tim Pengusul\n    → 'Surat Pernyataan Ketua Tim Pengusul' ditemukan.\n✅ [L-6] Lampiran: Hasil Uji Similaritas (≤25%, bagian inti)\n    → 'Hasil Uji Similaritas (≤25%, bagian inti)' ditemukan.\n✅ [L-KC] Lampiran khusus PKM-KC: Gambaran Teknologi yang akan Dikembangkan\n    → 'Gambaran Teknologi yang akan Dikembangkan' ditemukan.\n✅ [L-1.c] Biodata bertanda tangan basah (halaman penuh hasil scan/foto)\n    → 6 halaman biodata hasil scan/foto (hal. PDF [17, 19, 21, 23, 25, 29]). Pastikan tanggal tanda tangan sesuai tahun pengusulan.\n✅ [L-4.c] Surat Pernyataan: scan halaman penuh, TT basah & meterai Rp10.000\n    → Surat Pernyataan berupa scan (hal. PDF 34). Verifikasi visual: meterai Rp10.000 tertempel & tertanda tangan, tanggal sesuai, judul sama dengan isian simbelmawa.\n\n[MODUL 7: TEMA & KONSISTENSI DATA]  Skor: 100%\n----------------------------------------\n✅ [7.1] Kaitan eksplisit dengan salah satu 10 tema PKM 2026\n    → Kaitan lewat Asta Cita terdeteksi. Isi paling dekat dengan tema 2 (Kesehatan dan Gizi Masyarakat; kata: kesehatan, medis, klinis, neonat, bayi). Sebaiknya sebut juga nomor & nama tema secara eksplisit di Bab 1.\n✅ [7.2] Referensi tahun PKM konsisten (2026)\n    → Tidak ada rujukan ke siklus PKM tahun lain.\n✅ [7.3] Susunan Tim lengkap: setiap anggota bernama & ber-NIM\n    → 5 anggota lengkap dengan NIM: Nama Samaran 2/•••••••, Nama Samaran 6/•••••••, Nama Samaran 1/•••••••, Nama Samaran 4/•••••••, Nama Samaran 3/•••••••\n✅ [7.4] Ejaan nama anggota konsisten di seluruh dokumen (sesuai PDDikti)\n    → 5 nama dicek, ejaan konsisten.\n\n============================================================\nREKOMENDASI PRIORITAS:\n----------------------------------------\n1. [PERIKSA] Indeks similaritas ≤ 25%: Nilai similaritas tidak ditemukan secara otomatis. Pastikan lampiran hasil Turnitin/iThenticate tersedia dan terbaca.\n2. [PERIKSA] Judul tanpa akronim/singkatan tidak baku: Kemungkinan akronim tidak baku: NIRS. Panduan melarang akronim/singkatan tidak baku di judul — tulis kepanjangannya.\n3. [PERIKSA] Judul dalam Bahasa Indonesia: Kata bahasa Inggris di judul: SHORT, DISTANCE, ADAPTIVE. Panduan: judul 'ditulis dalam Bahasa Indonesia' — pakai padanan Indonesia bila ada.\n4. [PERIKSA] NIP/NUPTK dosen pendamping (NUPTK 16 digit): NIP/NUPTK dosen tidak terbaca sebagai teks (biodata mungkin scan). Pastikan kolom 'NIP/NUPTK' terisi NUPTK 16 digit.\n5. [PERIKSA] Font Times New Roman: Hanya 91.5% teks TNR. Font lain ditemukan: OpenSans-Regular (176x), OpenSans-Italic (1x), Unnamed-T3 (1x). Seleksi semua teks (Ctrl+A) lalu ubah ke Times New Roman 12.\n6. [PERIKSA] Ukuran kertas A4: Halaman berukuran Letter, bukan A4: [1, 2, 3, 4, 5, 6, 7, 8] ... (51 halaman). Ubah Layout → Size → A4 lalu cek ulang jumlah halaman inti (ukuran kertas memengaruhi batas 10 halaman).\n7. [PERIKSA] Komposisi RAB: bahan ≤60%, sewa/jasa ≤15%, transport ≤30%, lain-lain ≤15%: Panduan menghitung batas dari 'jumlah dana yang diusulkan Belmawa'. Turunkan porsi Belmawa kategori ini atau pindahkan ke dana PT.\n8. [PERIKSA] Aritmetika justifikasi (volume × harga, subtotal, grand total, terbilang): Panduan: kesalahan hasil perkalian dan penjumlahan dapat mempengaruhi penilaian. Perbaiki semua baris berikut.\n9. [PERIKSA] Tabel 4.1 Rekap konsisten dengan Lampiran Justifikasi: Angka rekap dan justifikasi tidak sinkron — samakan sebelum unggah.\n\nCATATAN: checker ini hanya menilai ADMINISTRASI & FORMAT (Tahap 1).\nLolos administrasi tidak menjamin didanai — Tahap 2 menilai substansi\n(kreativitas gagasan, urgensi masalah, ketepatan IPTEK/metode, potensi).\n============================================================"
+  }
+ },
+ {
+  "id": "C",
+  "label": "Sampel C · PKM-KC · Tidak didanai 2026",
+  "status_asli": "Tidak didanai",
+  "siklus": 2026,
+  "jenis": "KC",
+  "file_name": "sampel_C_PKM-KC_tidak-didanai-2026.pdf",
+  "file_size_kb": 4788.5,
+  "judul": "PRODUK-C: IMPLEMENTASI LENGAN ROBOT BERBASIS DIODA LASER DAN VISI KOMPUTER UNTUK PENGENDALIAN HAMA PERTANIAN RAMAH LINGKUNGAN",
+  "catatan_sampel": "Tidak didanai. Format umum rapi; temuan ada di sitasi, komposisi RAB, dan data anggota.",
+  "langkah": [
+   "Membuka PDF: 45 halaman",
+   "Ekstraksi teks, font & tata letak: 2.358 span teks, 58 gambar",
+   "Segmentasi: Daftar Isi hal. 1–4 · bagian inti hal. 5–14 (10 hal.) · lampiran hal. 15–45",
+   "Daftar Pustaka: 10 entri (hanging indent terbaca) · 11 sitasi di naskah",
+   "RAB: 4 kategori rekap · 40 baris justifikasi · grand total Rp9.500.000",
+   "Modul 1: Identitas & Kelengkapan Formal: 8 item — ✅ 7 · ⚠️ 1 · ❌ 0",
+   "Modul 2: Format & Tipografi: 6 item — ✅ 6 · ⚠️ 0 · ❌ 0",
+   "Modul 3: Struktur Dokumen: 4 item — ✅ 4 · ⚠️ 0 · ❌ 0",
+   "Modul 4: Daftar Pustaka & Sitasi: 8 item — ✅ 6 · ⚠️ 1 · ❌ 1",
+   "Modul 5: Anggaran & Keuangan: 9 item — ✅ 8 · ⚠️ 0 · ❌ 1",
+   "Modul 6: Lampiran: 9 item — ✅ 9 · ⚠️ 0 · ❌ 0",
+   "Modul 7: Tema & Konsistensi Data: 4 item — ✅ 2 · ⚠️ 1 · ❌ 1"
+  ],
+  "result": {
+   "structured_report": {
+    "file_name": "sampel_C_PKM-KC_tidak-didanai-2026.pdf",
+    "jenis_pkm": "KC",
+    "judul": "PRODUK-C: IMPLEMENTASI LENGAN ROBOT BERBASIS DIODA LASER DAN VISI KOMPUTER UNTUK PENGENDALIAN HAMA PERTANIAN RAMAH LINGKUNGAN",
+    "file_size_mb": 4.676281929016113,
+    "is_gugur": false,
+    "overall": {
+     "skor": 89.9,
+     "kategori": "PERLU PERBAIKAN",
+     "modul_scores": {
+      "Modul 1: Identitas & Kelengkapan Formal": 93.8,
+      "Modul 2: Format & Tipografi": 100.0,
+      "Modul 3: Struktur Dokumen": 100.0,
+      "Modul 4: Daftar Pustaka & Sitasi": 81.2,
+      "Modul 5: Anggaran & Keuangan": 88.9,
+      "Modul 6: Lampiran": 100.0,
+      "Modul 7: Tema & Konsistensi Data": 62.5
+     }
+    },
+    "hard_disqualifiers": {
+     "items": [
+      {
+       "kode": "HD-01",
+       "deskripsi": "Halaman sampul (DILARANG ada di proposal)",
+       "status": "LULUS",
+       "detail": "Tidak terdeteksi halaman sampul.",
+       "catatan": []
+      },
+      {
+       "kode": "HD-02",
+       "deskripsi": "Halaman pengesahan (DILARANG ada di proposal)",
+       "status": "LULUS",
+       "detail": "Tidak terdeteksi halaman pengesahan.",
+       "catatan": []
+      },
+      {
+       "kode": "HD-03",
+       "deskripsi": "Ringkasan/Abstrak (DILARANG ada di proposal)",
+       "status": "LULUS",
+       "detail": "Tidak terdeteksi ringkasan/abstrak.",
+       "catatan": []
+      },
+      {
+       "kode": "HD-05",
+       "deskripsi": "Indeks similaritas ≤ 25%",
+       "status": "PERINGATAN",
+       "detail": "Nilai similaritas tidak ditemukan secara otomatis. Pastikan lampiran hasil Turnitin/iThenticate tersedia dan terbaca.",
+       "catatan": []
+      }
+     ]
+    },
+    "modul_results": [
+     {
+      "nama": "Modul 1: Identitas & Kelengkapan Formal",
+      "skor": 93.8,
+      "bobot": 0.15,
+      "items": [
+       {
+        "kode": "1.1.a",
+        "deskripsi": "Judul ditulis HURUF KAPITAL",
+        "status": "LULUS",
+        "detail": "Judul: \"PRODUK-C: IMPLEMENTASI LENGAN ROBOT BERBASIS DIODA LASER DAN VISI KOMPUTER UNTUK PENGENDALIAN HAMA PERTANIAN RAMAH LINGKUNGAN\"",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.1.b",
+        "deskripsi": "Judul ≤ 20 kata",
+        "status": "LULUS",
+        "detail": "Judul memiliki 16 kata.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.1.c",
+        "deskripsi": "Judul tanpa akronim/singkatan tidak baku",
+        "status": "LULUS",
+        "detail": "Tidak terdeteksi akronim tidak baku.",
+        "halaman": null,
+        "catatan": [
+         "Nama produk 'PRODUK-C' sebelum titik dua tidak dicek."
+        ]
+       },
+       {
+        "kode": "1.1.f",
+        "deskripsi": "Judul dalam Bahasa Indonesia",
+        "status": "LULUS",
+        "detail": "Tidak terdeteksi kata bahasa Inggris.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.1.d",
+        "deskripsi": "Jenis PKM valid",
+        "status": "LULUS",
+        "detail": "PKM-KC.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.1.e",
+        "deskripsi": "Isi sesuai bidang PKM yang dipilih",
+        "status": "LULUS",
+        "detail": "Konten konsisten dengan PKM-KC. Kata kunci: PROTOTIPE, TAHAP PELAKSANAAN, TEKNOLOGI.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.2.a",
+        "deskripsi": "Jumlah anggota tim 3–5 mahasiswa",
+        "status": "LULUS",
+        "detail": "Terdeteksi 4 NIM (estimasi dari pola angka): ••••••••••, •••••••, •••••••, •••••••.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.3.a",
+        "deskripsi": "NIP/NUPTK dosen pendamping (NUPTK 16 digit)",
+        "status": "PERINGATAN",
+        "detail": "Kolom NIP/NUPTK berisi '••••••••••••••••••/••••••••••' — angka 10 digit itu format NIDN, bukan NUPTK (16 digit). Panduan 2026: dosen tanpa NUPTK tidak boleh menjadi pendamping; cantumkan NUPTK yang benar dan samakan dengan halaman tanda tangan.",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     },
+     {
+      "nama": "Modul 2: Format & Tipografi",
+      "skor": 100.0,
+      "bobot": 0.15,
+      "items": [
+       {
+        "kode": "2.1.a",
+        "deskripsi": "Font Times New Roman",
+        "status": "LULUS",
+        "detail": "100.0% teks menggunakan Times New Roman. (Sisa ≤5% biasanya karakter simbol/rumus yang memang tidak bisa TNR.)",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "2.1.b",
+        "deskripsi": "Ukuran font 12pt",
+        "status": "LULUS",
+        "detail": "100.0% teks body berukuran 12pt.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "2.2",
+        "deskripsi": "Spasi baris 1,15",
+        "status": "LULUS",
+        "detail": "Spasi terukur ≈ 1.15.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "2.3.a",
+        "deskripsi": "Ukuran kertas A4",
+        "status": "LULUS",
+        "detail": "Semua halaman (di luar laporan Turnitin) berukuran A4.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "2.3.b",
+        "deskripsi": "Margin (kiri 4cm, kanan/atas/bawah 3cm)",
+        "status": "LULUS",
+        "detail": "Margin sesuai ketentuan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "2.4",
+        "deskripsi": "Penomoran halaman (romawi kanan-bawah, arab kanan-atas)",
+        "status": "LULUS",
+        "detail": "romawi di 4 hal. front matter | arab di 10 hal. inti; posisi sesuai.",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     },
+     {
+      "nama": "Modul 3: Struktur Dokumen",
+      "skor": 100.0,
+      "bobot": 0.15,
+      "items": [
+       {
+        "kode": "3.1.a",
+        "deskripsi": "Daftar Isi & Daftar Lampiran ada",
+        "status": "LULUS",
+        "detail": "Daftar Isi dan Daftar Lampiran ditemukan (Daftar Gambar/Tabel wajib hanya jika ada gambar/tabel).",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "3.1.b",
+        "deskripsi": "Bab-bab wajib lengkap & sesuai bidang",
+        "status": "LULUS",
+        "detail": "Semua bab wajib (PKM-KC) ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "3.1.c",
+        "deskripsi": "Heading bab kapital & bertitik ('BAB 1. PENDAHULUAN')",
+        "status": "LULUS",
+        "detail": "4 heading bab sesuai. Contoh: 'BAB 1. PENDAHULUAN'",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "3.2",
+        "deskripsi": "Bagian inti ≤ 10 halaman",
+        "status": "LULUS",
+        "detail": "Bagian inti (BAB 1 s.d. akhir Daftar Pustaka): 10 halaman (hal. PDF 5–14).",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     },
+     {
+      "nama": "Modul 4: Daftar Pustaka & Sitasi",
+      "skor": 81.2,
+      "bobot": 0.2,
+      "items": [
+       {
+        "kode": "4.1",
+        "deskripsi": "Daftar Pustaka ada dan terbaca",
+        "status": "LULUS",
+        "detail": "10 entri terbaca.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "4.2",
+        "deskripsi": "Hanging indent (baris ke-2 dst. tiap entri menjorok)",
+        "status": "LULUS",
+        "detail": "Hanging indent terdeteksi.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "4.3",
+        "deskripsi": "Format entri Harvard (tahun dalam kurung, tanpa et al./dkk, diakhiri titik, tanggal akses URL)",
+        "status": "LULUS",
+        "detail": "Semua 10 entri memenuhi aturan pokok format Harvard.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "4.4",
+        "deskripsi": "Detail tanda baca & gaya entri (kutip judul, nomor halaman, inisial, italic, spasi)",
+        "status": "PERINGATAN",
+        "detail": "1 entri perlu dirapikan. Samakan dengan contoh di lampiran panduan (mis. Tovey, H. (2002) 'Judul', Nama Jurnal, 11(1), pp. 23-42.).",
+        "halaman": null,
+        "catatan": [
+         "Entri 8 — Sudhir (2023): nomor halaman/artikel tidak ada (mis. ', pp. 23-42.')"
+        ]
+       },
+       {
+        "kode": "4.5",
+        "deskripsi": "Daftar Pustaka urut alfabetis (nama belakang penulis pertama)",
+        "status": "LULUS",
+        "detail": "10 entri terurut alfabetis.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "4.6",
+        "deskripsi": "Konsistensi gaya antarentri (penghubung penulis, sufiks a/b tahun sama)",
+        "status": "LULUS",
+        "detail": "Gaya antarentri konsisten.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "4.7",
+        "deskripsi": "Setiap sitasi ada di Daftar Pustaka dan sebaliknya",
+        "status": "LULUS",
+        "detail": "11 sitasi cocok dengan 10 entri pustaka.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "4.8",
+        "deskripsi": "Format sitasi dalam naskah (Nama, Tahun)",
+        "status": "TIDAK_LULUS",
+        "detail": "Format sitasi tidak konsisten.",
+        "halaman": null,
+        "catatan": [
+         "Sitasi berkurung tanpa koma sebelum tahun: (Ardiwinata et al. 2020), (Joko et al. 2020) → tulis '(Nama et al., 2020)'.",
+         "Sitasi berkurung dipakai sebagai subjek kalimat: (Ariningsih et al., 2023), (Ardiwinata et al. 2020), (Joko et al. 2020) → pakai sitasi naratif, mis. 'Joko et al. (2020) menunjukkan ...'."
+        ]
+       }
+      ]
+     },
+     {
+      "nama": "Modul 5: Anggaran & Keuangan",
+      "skor": 88.9,
+      "bobot": 0.15,
+      "items": [
+       {
+        "kode": "6.1",
+        "deskripsi": "Dana Belmawa Rp6–8 juta (dari Rekap Sumber Dana)",
+        "status": "LULUS",
+        "detail": "Dana Belmawa Rp8.000.000 (Rekap Sumber Dana).",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.2",
+        "deskripsi": "Dana pendamping PT wajib ada (≤ Rp2 juta); instansi lain ≤ Rp1 juta",
+        "status": "LULUS",
+        "detail": "Perguruan Tinggi Rp1.500.000; instansi lain -.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.3",
+        "deskripsi": "Komposisi RAB: bahan ≤60%, sewa/jasa ≤15%, transport ≤30%, lain-lain ≤15%",
+        "status": "TIDAK_LULUS",
+        "detail": "Batas persentase dilanggar baik dihitung dari dana Belmawa maupun total dana.",
+        "halaman": null,
+        "catatan": [
+         "Sewa dan jasa 15.6% dari dana Belmawa dan 15.3% dari total — melewati batas 15%",
+         "Bahan habis pakai 63.1% dari dana Belmawa (batas 60%); terhadap total dana 58.2%"
+        ]
+       },
+       {
+        "kode": "6.4",
+        "deskripsi": "Tidak ada item terlarang di RAB",
+        "status": "LULUS",
+        "detail": "Tidak terdeteksi item terlarang.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.4.c",
+        "deskripsi": "Harga satuan alat/bahan ≤ Rp1.000.000 per item",
+        "status": "LULUS",
+        "detail": "40 baris dicek; tidak ada harga satuan > Rp1.000.000.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.4.e",
+        "deskripsi": "Batas item khusus: kuota ≤Rp100rb/bulan, lisensi ≤6 bulan, kertas ≤2 rim",
+        "status": "LULUS",
+        "detail": "Tidak ada pelanggaran batas item khusus.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.5",
+        "deskripsi": "Alokasi promosi media sosial ada & Ads ≤ Rp500.000",
+        "status": "LULUS",
+        "detail": "Ads/promosi media sosial Rp375.000.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.6",
+        "deskripsi": "Aritmetika justifikasi (volume × harga, subtotal, grand total, terbilang)",
+        "status": "LULUS",
+        "detail": "40 baris, 4 subtotal, grand total Rp9.500.000 — hitungan konsisten.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.7",
+        "deskripsi": "Tabel 4.1 Rekap konsisten dengan Lampiran Justifikasi",
+        "status": "LULUS",
+        "detail": "Total Rp9.500.000 cocok dengan justifikasi.",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     },
+     {
+      "nama": "Modul 6: Lampiran",
+      "skor": 100.0,
+      "bobot": 0.1,
+      "items": [
+       {
+        "kode": "L-1",
+        "deskripsi": "Lampiran: Biodata Ketua & Anggota",
+        "status": "LULUS",
+        "detail": "'Biodata Ketua & Anggota' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-1b",
+        "deskripsi": "Lampiran: Biodata Dosen Pendamping",
+        "status": "LULUS",
+        "detail": "'Biodata Dosen Pendamping' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-2",
+        "deskripsi": "Lampiran: Justifikasi Anggaran Kegiatan",
+        "status": "LULUS",
+        "detail": "'Justifikasi Anggaran Kegiatan' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-3",
+        "deskripsi": "Lampiran: Susunan Tim Pengusul & Pembagian Tugas",
+        "status": "LULUS",
+        "detail": "'Susunan Tim Pengusul & Pembagian Tugas' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-4",
+        "deskripsi": "Lampiran: Surat Pernyataan Ketua Tim Pengusul",
+        "status": "LULUS",
+        "detail": "'Surat Pernyataan Ketua Tim Pengusul' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-6",
+        "deskripsi": "Lampiran: Hasil Uji Similaritas (≤25%, bagian inti)",
+        "status": "LULUS",
+        "detail": "'Hasil Uji Similaritas (≤25%, bagian inti)' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-KC",
+        "deskripsi": "Lampiran khusus PKM-KC: Gambaran Teknologi yang akan Dikembangkan",
+        "status": "LULUS",
+        "detail": "'Gambaran Teknologi yang akan Dikembangkan' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-1.c",
+        "deskripsi": "Biodata bertanda tangan basah (halaman penuh hasil scan/foto)",
+        "status": "LULUS",
+        "detail": "7 halaman biodata hasil scan/foto (hal. PDF [15, 16, 17, 18, 19, 20, 23]). Pastikan tanggal tanda tangan sesuai tahun pengusulan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-4.c",
+        "deskripsi": "Surat Pernyataan: scan halaman penuh, TT basah & meterai Rp10.000",
+        "status": "LULUS",
+        "detail": "Surat Pernyataan berupa scan (hal. PDF 28). Verifikasi visual: meterai Rp10.000 tertempel & tertanda tangan, tanggal sesuai, judul sama dengan isian simbelmawa.",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     },
+     {
+      "nama": "Modul 7: Tema & Konsistensi Data",
+      "skor": 62.5,
+      "bobot": 0.1,
+      "items": [
+       {
+        "kode": "7.1",
+        "deskripsi": "Kaitan eksplisit dengan salah satu 10 tema PKM 2026",
+        "status": "PERINGATAN",
+        "detail": "Bab 1 tidak menyebut tema PKM yang dipilih. Panduan: topik wajib sesuai salah satu 10 tema dan Tahap 1 menilai kesesuaian judul dengan tema. Isi paling dekat dengan tema 1 (Kemandirian Pangan, Energi, dan Air; kata: pangan, pertanian, petani, hortikultura, panen). Tambahkan kalimat mis. 'Program ini sejalan dengan tema PKM 2026 poin 1: Kemandirian Pangan, Energi, dan Air'.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "7.2",
+        "deskripsi": "Referensi tahun PKM konsisten (2026)",
+        "status": "LULUS",
+        "detail": "Tidak ada rujukan ke siklus PKM tahun lain.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "7.3",
+        "deskripsi": "Susunan Tim lengkap: setiap anggota bernama & ber-NIM",
+        "status": "TIDAK_LULUS",
+        "detail": "Data anggota di Susunan Tim belum lengkap (Tahap 1 menilai kecermatan identitas).",
+        "halaman": null,
+        "catatan": [
+         "Nama Samaran 4 — NIM tidak tercantum"
+        ]
+       },
+       {
+        "kode": "7.4",
+        "deskripsi": "Ejaan nama anggota konsisten di seluruh dokumen (sesuai PDDikti)",
+        "status": "LULUS",
+        "detail": "5 nama dicek, ejaan konsisten.",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     }
+    ]
+   },
+   "text_report": "============================================================\n  LAPORAN PENGECEKAN PROPOSAL PKM 2026\n============================================================\nNama File    : sampel_C_PKM-KC_tidak-didanai-2026.pdf\nJenis PKM    : PKM-KC\nJudul        : PRODUK-C: IMPLEMENTASI LENGAN ROBOT BERBASIS DIODA LASER DAN VISI KOMPUTER UNTUK PENGENDALIAN HAMA PERTANIAN RAMAH LINGKUNGAN\nUkuran File  : 4.68 MB\nTanggal Cek  : 09 November 2026, 02:53\n\nSTATUS KESELURUHAN: ⚠️  PERLU PERBAIKAN (89.9%)\n============================================================\n\n[FASE 1] HARD DISQUALIFIERS\n----------------------------------------\n✅ [HD-01] Halaman sampul (DILARANG ada di proposal)\n    → Tidak terdeteksi halaman sampul.\n✅ [HD-02] Halaman pengesahan (DILARANG ada di proposal)\n    → Tidak terdeteksi halaman pengesahan.\n✅ [HD-03] Ringkasan/Abstrak (DILARANG ada di proposal)\n    → Tidak terdeteksi ringkasan/abstrak.\n⚠️ [HD-05] Indeks similaritas ≤ 25%\n    → Nilai similaritas tidak ditemukan secara otomatis. Pastikan lampiran hasil Turnitin/iThenticate tersedia dan terbaca.\n\n[MODUL 1: IDENTITAS & KELENGKAPAN FORMAL]  Skor: 94%\n----------------------------------------\n✅ [1.1.a] Judul ditulis HURUF KAPITAL\n    → Judul: \"PRODUK-C: IMPLEMENTASI LENGAN ROBOT BERBASIS DIODA LASER DAN VISI KOMPUTER UNTUK PENGENDALIAN HAMA PERTANIAN RAMAH LINGKUNGAN\"\n✅ [1.1.b] Judul ≤ 20 kata\n    → Judul memiliki 16 kata.\n✅ [1.1.c] Judul tanpa akronim/singkatan tidak baku\n    → Tidak terdeteksi akronim tidak baku.\n      • Nama produk 'PRODUK-C' sebelum titik dua tidak dicek.\n✅ [1.1.f] Judul dalam Bahasa Indonesia\n    → Tidak terdeteksi kata bahasa Inggris.\n✅ [1.1.d] Jenis PKM valid\n    → PKM-KC.\n✅ [1.1.e] Isi sesuai bidang PKM yang dipilih\n    → Konten konsisten dengan PKM-KC. Kata kunci: PROTOTIPE, TAHAP PELAKSANAAN, TEKNOLOGI.\n✅ [1.2.a] Jumlah anggota tim 3–5 mahasiswa\n    → Terdeteksi 4 NIM (estimasi dari pola angka): ••••••••••, •••••••, •••••••, •••••••.\n⚠️ [1.3.a] NIP/NUPTK dosen pendamping (NUPTK 16 digit)\n    → Kolom NIP/NUPTK berisi '••••••••••••••••••/••••••••••' — angka 10 digit itu format NIDN, bukan NUPTK (16 digit). Panduan 2026: dosen tanpa NUPTK tidak boleh menjadi pendamping; cantumkan NUPTK yang benar dan samakan dengan halaman tanda tangan.\n\n[MODUL 2: FORMAT & TIPOGRAFI]  Skor: 100%\n----------------------------------------\n✅ [2.1.a] Font Times New Roman\n    → 100.0% teks menggunakan Times New Roman. (Sisa ≤5% biasanya karakter simbol/rumus yang memang tidak bisa TNR.)\n✅ [2.1.b] Ukuran font 12pt\n    → 100.0% teks body berukuran 12pt.\n✅ [2.2] Spasi baris 1,15\n    → Spasi terukur ≈ 1.15.\n✅ [2.3.a] Ukuran kertas A4\n    → Semua halaman (di luar laporan Turnitin) berukuran A4.\n✅ [2.3.b] Margin (kiri 4cm, kanan/atas/bawah 3cm)\n    → Margin sesuai ketentuan.\n✅ [2.4] Penomoran halaman (romawi kanan-bawah, arab kanan-atas)\n    → romawi di 4 hal. front matter | arab di 10 hal. inti; posisi sesuai.\n\n[MODUL 3: STRUKTUR DOKUMEN]  Skor: 100%\n----------------------------------------\n✅ [3.1.a] Daftar Isi & Daftar Lampiran ada\n    → Daftar Isi dan Daftar Lampiran ditemukan (Daftar Gambar/Tabel wajib hanya jika ada gambar/tabel).\n✅ [3.1.b] Bab-bab wajib lengkap & sesuai bidang\n    → Semua bab wajib (PKM-KC) ditemukan.\n✅ [3.1.c] Heading bab kapital & bertitik ('BAB 1. PENDAHULUAN')\n    → 4 heading bab sesuai. Contoh: 'BAB 1. PENDAHULUAN'\n✅ [3.2] Bagian inti ≤ 10 halaman\n    → Bagian inti (BAB 1 s.d. akhir Daftar Pustaka): 10 halaman (hal. PDF 5–14).\n\n[MODUL 4: DAFTAR PUSTAKA & SITASI]  Skor: 81%\n----------------------------------------\n✅ [4.1] Daftar Pustaka ada dan terbaca\n    → 10 entri terbaca.\n✅ [4.2] Hanging indent (baris ke-2 dst. tiap entri menjorok)\n    → Hanging indent terdeteksi.\n✅ [4.3] Format entri Harvard (tahun dalam kurung, tanpa et al./dkk, diakhiri titik, tanggal akses URL)\n    → Semua 10 entri memenuhi aturan pokok format Harvard.\n⚠️ [4.4] Detail tanda baca & gaya entri (kutip judul, nomor halaman, inisial, italic, spasi)\n    → 1 entri perlu dirapikan. Samakan dengan contoh di lampiran panduan (mis. Tovey, H. (2002) 'Judul', Nama Jurnal, 11(1), pp. 23-42.).\n      • Entri 8 — Sudhir (2023): nomor halaman/artikel tidak ada (mis. ', pp. 23-42.')\n✅ [4.5] Daftar Pustaka urut alfabetis (nama belakang penulis pertama)\n    → 10 entri terurut alfabetis.\n✅ [4.6] Konsistensi gaya antarentri (penghubung penulis, sufiks a/b tahun sama)\n    → Gaya antarentri konsisten.\n✅ [4.7] Setiap sitasi ada di Daftar Pustaka dan sebaliknya\n    → 11 sitasi cocok dengan 10 entri pustaka.\n❌ [4.8] Format sitasi dalam naskah (Nama, Tahun)\n    → Format sitasi tidak konsisten.\n      • Sitasi berkurung tanpa koma sebelum tahun: (Ardiwinata et al. 2020), (Joko et al. 2020) → tulis '(Nama et al., 2020)'.\n      • Sitasi berkurung dipakai sebagai subjek kalimat: (Ariningsih et al., 2023), (Ardiwinata et al. 2020), (Joko et al. 2020) → pakai sitasi naratif, mis. 'Joko et al. (2020) menunjukkan ...'.\n\n[MODUL 5: ANGGARAN & KEUANGAN]  Skor: 89%\n----------------------------------------\n✅ [6.1] Dana Belmawa Rp6–8 juta (dari Rekap Sumber Dana)\n    → Dana Belmawa Rp8.000.000 (Rekap Sumber Dana).\n✅ [6.2] Dana pendamping PT wajib ada (≤ Rp2 juta); instansi lain ≤ Rp1 juta\n    → Perguruan Tinggi Rp1.500.000; instansi lain -.\n❌ [6.3] Komposisi RAB: bahan ≤60%, sewa/jasa ≤15%, transport ≤30%, lain-lain ≤15%\n    → Batas persentase dilanggar baik dihitung dari dana Belmawa maupun total dana.\n      • Sewa dan jasa 15.6% dari dana Belmawa dan 15.3% dari total — melewati batas 15%\n      • Bahan habis pakai 63.1% dari dana Belmawa (batas 60%); terhadap total dana 58.2%\n✅ [6.4] Tidak ada item terlarang di RAB\n    → Tidak terdeteksi item terlarang.\n✅ [6.4.c] Harga satuan alat/bahan ≤ Rp1.000.000 per item\n    → 40 baris dicek; tidak ada harga satuan > Rp1.000.000.\n✅ [6.4.e] Batas item khusus: kuota ≤Rp100rb/bulan, lisensi ≤6 bulan, kertas ≤2 rim\n    → Tidak ada pelanggaran batas item khusus.\n✅ [6.5] Alokasi promosi media sosial ada & Ads ≤ Rp500.000\n    → Ads/promosi media sosial Rp375.000.\n✅ [6.6] Aritmetika justifikasi (volume × harga, subtotal, grand total, terbilang)\n    → 40 baris, 4 subtotal, grand total Rp9.500.000 — hitungan konsisten.\n✅ [6.7] Tabel 4.1 Rekap konsisten dengan Lampiran Justifikasi\n    → Total Rp9.500.000 cocok dengan justifikasi.\n\n[MODUL 6: LAMPIRAN]  Skor: 100%\n----------------------------------------\n✅ [L-1] Lampiran: Biodata Ketua & Anggota\n    → 'Biodata Ketua & Anggota' ditemukan.\n✅ [L-1b] Lampiran: Biodata Dosen Pendamping\n    → 'Biodata Dosen Pendamping' ditemukan.\n✅ [L-2] Lampiran: Justifikasi Anggaran Kegiatan\n    → 'Justifikasi Anggaran Kegiatan' ditemukan.\n✅ [L-3] Lampiran: Susunan Tim Pengusul & Pembagian Tugas\n    → 'Susunan Tim Pengusul & Pembagian Tugas' ditemukan.\n✅ [L-4] Lampiran: Surat Pernyataan Ketua Tim Pengusul\n    → 'Surat Pernyataan Ketua Tim Pengusul' ditemukan.\n✅ [L-6] Lampiran: Hasil Uji Similaritas (≤25%, bagian inti)\n    → 'Hasil Uji Similaritas (≤25%, bagian inti)' ditemukan.\n✅ [L-KC] Lampiran khusus PKM-KC: Gambaran Teknologi yang akan Dikembangkan\n    → 'Gambaran Teknologi yang akan Dikembangkan' ditemukan.\n✅ [L-1.c] Biodata bertanda tangan basah (halaman penuh hasil scan/foto)\n    → 7 halaman biodata hasil scan/foto (hal. PDF [15, 16, 17, 18, 19, 20, 23]). Pastikan tanggal tanda tangan sesuai tahun pengusulan.\n✅ [L-4.c] Surat Pernyataan: scan halaman penuh, TT basah & meterai Rp10.000\n    → Surat Pernyataan berupa scan (hal. PDF 28). Verifikasi visual: meterai Rp10.000 tertempel & tertanda tangan, tanggal sesuai, judul sama dengan isian simbelmawa.\n\n[MODUL 7: TEMA & KONSISTENSI DATA]  Skor: 62%\n----------------------------------------\n⚠️ [7.1] Kaitan eksplisit dengan salah satu 10 tema PKM 2026\n    → Bab 1 tidak menyebut tema PKM yang dipilih. Panduan: topik wajib sesuai salah satu 10 tema dan Tahap 1 menilai kesesuaian judul dengan tema. Isi paling dekat dengan tema 1 (Kemandirian Pangan, Energi, dan Air; kata: pangan, pertanian, petani, hortikultura, panen). Tambahkan kalimat mis. 'Program ini sejalan dengan tema PKM 2026 poin 1: Kemandirian Pangan, Energi, dan Air'.\n✅ [7.2] Referensi tahun PKM konsisten (2026)\n    → Tidak ada rujukan ke siklus PKM tahun lain.\n❌ [7.3] Susunan Tim lengkap: setiap anggota bernama & ber-NIM\n    → Data anggota di Susunan Tim belum lengkap (Tahap 1 menilai kecermatan identitas).\n      • Nama Samaran 4 — NIM tidak tercantum\n✅ [7.4] Ejaan nama anggota konsisten di seluruh dokumen (sesuai PDDikti)\n    → 5 nama dicek, ejaan konsisten.\n\n============================================================\nREKOMENDASI PRIORITAS:\n----------------------------------------\n1. [PERIKSA] Indeks similaritas ≤ 25%: Nilai similaritas tidak ditemukan secara otomatis. Pastikan lampiran hasil Turnitin/iThenticate tersedia dan terbaca.\n2. [PERIKSA] NIP/NUPTK dosen pendamping (NUPTK 16 digit): Kolom NIP/NUPTK berisi '••••••••••••••••••/••••••••••' — angka 10 digit itu format NIDN, bukan NUPTK (16 digit). Panduan 2026: dosen tanpa NUPTK tidak boleh menjadi pendamping; cantumkan NUPTK yang benar dan samakan dengan halaman tanda tangan.\n3. [PERIKSA] Detail tanda baca & gaya entri (kutip judul, nomor halaman, inisial, italic, spasi): 1 entri perlu dirapikan. Samakan dengan contoh di lampiran panduan (mis. Tovey, H. (2002) 'Judul', Nama Jurnal, 11(1), pp. 23-42.).\n4. [WAJIB] Format sitasi dalam naskah (Nama, Tahun): Format sitasi tidak konsisten.\n5. [WAJIB] Komposisi RAB: bahan ≤60%, sewa/jasa ≤15%, transport ≤30%, lain-lain ≤15%: Batas persentase dilanggar baik dihitung dari dana Belmawa maupun total dana.\n6. [PERIKSA] Kaitan eksplisit dengan salah satu 10 tema PKM 2026: Bab 1 tidak menyebut tema PKM yang dipilih. Panduan: topik wajib sesuai salah satu 10 tema dan Tahap 1 menilai kesesuaian judul dengan tema. Isi paling dekat dengan tema 1 (Kemandirian Pangan, Energi, dan Air; kata: pangan, pertanian, petani, hortikultura, panen). Tambahkan kalimat mis. 'Program ini sejalan dengan tema PKM 2026 poin 1: Kemandirian Pangan, Energi, dan Air'.\n7. [WAJIB] Susunan Tim lengkap: setiap anggota bernama & ber-NIM: Data anggota di Susunan Tim belum lengkap (Tahap 1 menilai kecermatan identitas).\n\nCATATAN: checker ini hanya menilai ADMINISTRASI & FORMAT (Tahap 1).\nLolos administrasi tidak menjamin didanai — Tahap 2 menilai substansi\n(kreativitas gagasan, urgensi masalah, ketepatan IPTEK/metode, potensi).\n============================================================"
+  }
+ },
+ {
+  "id": "D",
+  "label": "Sampel D · PKM-KI · Didanai 2025",
+  "status_asli": "Didanai",
+  "siklus": 2025,
+  "jenis": "KI",
+  "file_name": "sampel_D_PKM-KI_didanai-2025.pdf",
+  "file_size_kb": 2479.4,
+  "judul": "Produk-D: Comprehensive Food Safety Portable Tool Berbasis Chemical Sensor Terintegrasi AI untuk Keamanan Pangan pada Supplier Daging",
+  "catatan_sampel": "Didanai pada siklus 2025 (panduan 2025). Dicek dengan aturan 2026, jadi format judul & dafpus lamanya tertandai.",
+  "langkah": [
+   "Membuka PDF: 35 halaman",
+   "Ekstraksi teks, font & tata letak: 2.154 span teks, 14 gambar",
+   "Segmentasi: Daftar Isi hal. 1–4 · bagian inti hal. 5–14 (10 hal.) · lampiran hal. 15–35",
+   "Daftar Pustaka: 24 entri (hanging indent terbaca) · 25 sitasi di naskah",
+   "RAB: 4 kategori rekap · 39 baris justifikasi · grand total Rp9.493.000",
+   "Modul 1: Identitas & Kelengkapan Formal: 8 item — ✅ 5 · ⚠️ 2 · ❌ 1",
+   "Modul 2: Format & Tipografi: 6 item — ✅ 6 · ⚠️ 0 · ❌ 0",
+   "Modul 3: Struktur Dokumen: 4 item — ✅ 4 · ⚠️ 0 · ❌ 0",
+   "Modul 4: Daftar Pustaka & Sitasi: 8 item — ✅ 5 · ⚠️ 1 · ❌ 2",
+   "Modul 5: Anggaran & Keuangan: 9 item — ✅ 8 · ⚠️ 1 · ❌ 0",
+   "Modul 6: Lampiran: 9 item — ✅ 9 · ⚠️ 0 · ❌ 0",
+   "Modul 7: Tema & Konsistensi Data: 4 item — ✅ 4 · ⚠️ 0 · ❌ 0"
+  ],
+  "result": {
+   "structured_report": {
+    "file_name": "sampel_D_PKM-KI_didanai-2025.pdf",
+    "jenis_pkm": "KI",
+    "judul": "Produk-D: Comprehensive Food Safety Portable Tool Berbasis Chemical Sensor Terintegrasi AI untuk Keamanan Pangan pada Supplier Daging",
+    "file_size_mb": 2.421306610107422,
+    "is_gugur": false,
+    "overall": {
+     "skor": 89.2,
+     "kategori": "PERLU PERBAIKAN",
+     "modul_scores": {
+      "Modul 1: Identitas & Kelengkapan Formal": 75.0,
+      "Modul 2: Format & Tipografi": 100.0,
+      "Modul 3: Struktur Dokumen": 100.0,
+      "Modul 4: Daftar Pustaka & Sitasi": 68.8,
+      "Modul 5: Anggaran & Keuangan": 94.4,
+      "Modul 6: Lampiran": 100.0,
+      "Modul 7: Tema & Konsistensi Data": 100.0
+     }
+    },
+    "hard_disqualifiers": {
+     "items": [
+      {
+       "kode": "HD-01",
+       "deskripsi": "Halaman sampul (DILARANG ada di proposal)",
+       "status": "LULUS",
+       "detail": "Tidak terdeteksi halaman sampul.",
+       "catatan": []
+      },
+      {
+       "kode": "HD-02",
+       "deskripsi": "Halaman pengesahan (DILARANG ada di proposal)",
+       "status": "LULUS",
+       "detail": "Tidak terdeteksi halaman pengesahan.",
+       "catatan": []
+      },
+      {
+       "kode": "HD-03",
+       "deskripsi": "Ringkasan/Abstrak (DILARANG ada di proposal)",
+       "status": "LULUS",
+       "detail": "Tidak terdeteksi ringkasan/abstrak.",
+       "catatan": []
+      },
+      {
+       "kode": "HD-05",
+       "deskripsi": "Indeks similaritas ≤ 25%",
+       "status": "PERINGATAN",
+       "detail": "Nilai similaritas tidak ditemukan secara otomatis. Pastikan lampiran hasil Turnitin/iThenticate tersedia dan terbaca.",
+       "catatan": []
+      }
+     ]
+    },
+    "modul_results": [
+     {
+      "nama": "Modul 1: Identitas & Kelengkapan Formal",
+      "skor": 75.0,
+      "bobot": 0.15,
+      "items": [
+       {
+        "kode": "1.1.a",
+        "deskripsi": "Judul ditulis HURUF KAPITAL",
+        "status": "TIDAK_LULUS",
+        "detail": "Panduan 2026: judul 'ditulis menggunakan huruf kapital'. Samakan di isian simbelmawa dan Surat Pernyataan: \"PRODUK-D: COMPREHENSIVE FOOD SAFETY PORTABLE TOOL BERBASIS CHEMICAL SENSOR TERINTEGRASI AI UNTUK KEAMANAN PANGAN PADA SUPPLIER DAGING\"",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.1.b",
+        "deskripsi": "Judul ≤ 20 kata",
+        "status": "LULUS",
+        "detail": "Judul memiliki 17 kata.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.1.c",
+        "deskripsi": "Judul tanpa akronim/singkatan tidak baku",
+        "status": "LULUS",
+        "detail": "Tidak terdeteksi akronim tidak baku.",
+        "halaman": null,
+        "catatan": [
+         "Nama produk 'Produk-D' sebelum titik dua tidak dicek."
+        ]
+       },
+       {
+        "kode": "1.1.f",
+        "deskripsi": "Judul dalam Bahasa Indonesia",
+        "status": "PERINGATAN",
+        "detail": "Kata bahasa Inggris di judul: Comprehensive, Food, Safety, Portable, Tool, Chemical. Panduan: judul 'ditulis dalam Bahasa Indonesia' — pakai padanan Indonesia bila ada.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.1.d",
+        "deskripsi": "Jenis PKM valid",
+        "status": "LULUS",
+        "detail": "PKM-KI.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.1.e",
+        "deskripsi": "Isi sesuai bidang PKM yang dipilih",
+        "status": "LULUS",
+        "detail": "Konten konsisten dengan PKM-KI. Kata kunci: SKALA PENUH, TARGET PENGGUNA, TINJAUAN PUSTAKA.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.2.a",
+        "deskripsi": "Jumlah anggota tim 3–5 mahasiswa",
+        "status": "LULUS",
+        "detail": "Terdeteksi 3 NIM (dari label NIM): •••••••, •••••••, •••••••.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.3.a",
+        "deskripsi": "NIP/NUPTK dosen pendamping (NUPTK 16 digit)",
+        "status": "PERINGATAN",
+        "detail": "Biodata dosen memakai label lama 'NIP/NIDN': ••••••••••••••••••/••••••••••. Template 2026 memakai 'NIP/NUPTK' — perbarui label dan isi NUPTK.",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     },
+     {
+      "nama": "Modul 2: Format & Tipografi",
+      "skor": 100.0,
+      "bobot": 0.15,
+      "items": [
+       {
+        "kode": "2.1.a",
+        "deskripsi": "Font Times New Roman",
+        "status": "LULUS",
+        "detail": "100.0% teks menggunakan Times New Roman. (Sisa ≤5% biasanya karakter simbol/rumus yang memang tidak bisa TNR.)",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "2.1.b",
+        "deskripsi": "Ukuran font 12pt",
+        "status": "LULUS",
+        "detail": "100.0% teks body berukuran 12pt.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "2.2",
+        "deskripsi": "Spasi baris 1,15",
+        "status": "LULUS",
+        "detail": "Spasi terukur ≈ 1.15.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "2.3.a",
+        "deskripsi": "Ukuran kertas A4",
+        "status": "LULUS",
+        "detail": "Semua halaman (di luar laporan Turnitin) berukuran A4.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "2.3.b",
+        "deskripsi": "Margin (kiri 4cm, kanan/atas/bawah 3cm)",
+        "status": "LULUS",
+        "detail": "Margin sesuai ketentuan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "2.4",
+        "deskripsi": "Penomoran halaman (romawi kanan-bawah, arab kanan-atas)",
+        "status": "LULUS",
+        "detail": "romawi di 4 hal. front matter | arab di 10 hal. inti; posisi sesuai.",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     },
+     {
+      "nama": "Modul 3: Struktur Dokumen",
+      "skor": 100.0,
+      "bobot": 0.15,
+      "items": [
+       {
+        "kode": "3.1.a",
+        "deskripsi": "Daftar Isi & Daftar Lampiran ada",
+        "status": "LULUS",
+        "detail": "Daftar Isi dan Daftar Lampiran ditemukan (Daftar Gambar/Tabel wajib hanya jika ada gambar/tabel).",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "3.1.b",
+        "deskripsi": "Bab-bab wajib lengkap & sesuai bidang",
+        "status": "LULUS",
+        "detail": "Semua bab wajib (PKM-KI) ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "3.1.c",
+        "deskripsi": "Heading bab kapital & bertitik ('BAB 1. PENDAHULUAN')",
+        "status": "LULUS",
+        "detail": "4 heading bab sesuai. Contoh: 'BAB 1. PENDAHULUAN'",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "3.2",
+        "deskripsi": "Bagian inti ≤ 10 halaman",
+        "status": "LULUS",
+        "detail": "Bagian inti (BAB 1 s.d. akhir Daftar Pustaka): 10 halaman (hal. PDF 5–14).",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     },
+     {
+      "nama": "Modul 4: Daftar Pustaka & Sitasi",
+      "skor": 68.8,
+      "bobot": 0.2,
+      "items": [
+       {
+        "kode": "4.1",
+        "deskripsi": "Daftar Pustaka ada dan terbaca",
+        "status": "LULUS",
+        "detail": "24 entri terbaca.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "4.2",
+        "deskripsi": "Hanging indent (baris ke-2 dst. tiap entri menjorok)",
+        "status": "LULUS",
+        "detail": "Hanging indent terdeteksi.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "4.3",
+        "deskripsi": "Format entri Harvard (tahun dalam kurung, tanpa et al./dkk, diakhiri titik, tanggal akses URL)",
+        "status": "TIDAK_LULUS",
+        "detail": "24 dari 24 entri melanggar aturan pokok. Kesalahan Daftar Pustaka — walau hanya titik — sering menjadi penyebab proposal tidak lolos.",
+        "halaman": null,
+        "catatan": [
+         "Entri 1 — Abbas (2020): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'",
+         "Entri 2 — Ahmad (2021): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'",
+         "Entri 3 — Alfiadi (2024): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'",
+         "Entri 4 — Arini (2017): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'",
+         "Entri 5 — Atomojo (2017): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'",
+         "Entri 6 — Badan Pengawas Obat dan Makanan Rep (2019): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'",
+         "Entri 7 — Badan Standardisasi Nasional Indone (2008): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'",
+         "Entri 8 — Bolla (2021): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'",
+         "Entri 9 — Budi (2022): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'",
+         "Entri 10 — Cook (2022): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'; format tanggal akses salah — wajib '(Diakses 10 Februari 2026)'",
+         "Entri 11 — Firmansyah (2019): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'",
+         "Entri 12 — Haag (1996): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'",
+         "... dan 12 entri lain"
+        ]
+       },
+       {
+        "kode": "4.4",
+        "deskripsi": "Detail tanda baca & gaya entri (kutip judul, nomor halaman, inisial, italic, spasi)",
+        "status": "PERINGATAN",
+        "detail": "3 entri perlu dirapikan. Samakan dengan contoh di lampiran panduan (mis. Tovey, H. (2002) 'Judul', Nama Jurnal, 11(1), pp. 23-42.).",
+        "halaman": null,
+        "catatan": [
+         "Entri 10 — Cook (2022): awali URL dengan 'Tersedia di:'",
+         "Entri 23 — World Health Organization (2024): awali URL dengan 'Tersedia di:'",
+         "Entri 24 — Yarni (2023): awali URL dengan 'Tersedia di:'"
+        ]
+       },
+       {
+        "kode": "4.5",
+        "deskripsi": "Daftar Pustaka urut alfabetis (nama belakang penulis pertama)",
+        "status": "LULUS",
+        "detail": "24 entri terurut alfabetis.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "4.6",
+        "deskripsi": "Konsistensi gaya antarentri (penghubung penulis, sufiks a/b tahun sama)",
+        "status": "LULUS",
+        "detail": "Gaya antarentri konsisten.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "4.7",
+        "deskripsi": "Setiap sitasi ada di Daftar Pustaka dan sebaliknya",
+        "status": "TIDAK_LULUS",
+        "detail": "4 sitasi tanpa pasangan, 4 entri tidak disitasi. Panduan: setiap pustaka yang dirujuk harus muncul di Daftar Pustaka, dan sebaliknya. (Deteksi otomatis — pastikan ejaan nama & tahun identik.)",
+        "halaman": null,
+        "catatan": [
+         "Disitasi tapi tidak ada di Daftar Pustaka (atau nama/tahun beda): (Mahendratta dkk., 2020)",
+         "Disitasi tapi tidak ada di Daftar Pustaka (atau nama/tahun beda): (Bolla dkk., 2023)",
+         "Disitasi tapi tidak ada di Daftar Pustaka (atau nama/tahun beda): Kuntoro dkk. (2023)",
+         "Disitasi tapi tidak ada di Daftar Pustaka (atau nama/tahun beda): Atmojo dkk. (2017)",
+         "Ada di Daftar Pustaka tapi tidak disitasi di naskah: Atomojo (2017)",
+         "Ada di Daftar Pustaka tapi tidak disitasi di naskah: Bolla (2021)",
+         "Ada di Daftar Pustaka tapi tidak disitasi di naskah: Kuntoro (2013)",
+         "Ada di Daftar Pustaka tapi tidak disitasi di naskah: Mahendradatta (2020)"
+        ]
+       },
+       {
+        "kode": "4.8",
+        "deskripsi": "Format sitasi dalam naskah (Nama, Tahun)",
+        "status": "LULUS",
+        "detail": "25 sitasi berformat konsisten.",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     },
+     {
+      "nama": "Modul 5: Anggaran & Keuangan",
+      "skor": 94.4,
+      "bobot": 0.15,
+      "items": [
+       {
+        "kode": "6.1",
+        "deskripsi": "Dana Belmawa Rp6–8 juta (dari Rekap Sumber Dana)",
+        "status": "LULUS",
+        "detail": "Dana Belmawa Rp7.493.000 (Rekap Sumber Dana).",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.2",
+        "deskripsi": "Dana pendamping PT wajib ada (≤ Rp2 juta); instansi lain ≤ Rp1 juta",
+        "status": "LULUS",
+        "detail": "Perguruan Tinggi Rp2.000.000; instansi lain -.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.3",
+        "deskripsi": "Komposisi RAB: bahan ≤60%, sewa/jasa ≤15%, transport ≤30%, lain-lain ≤15%",
+        "status": "PERINGATAN",
+        "detail": "Panduan menghitung batas dari 'jumlah dana yang diusulkan Belmawa'. Turunkan porsi Belmawa kategori ini atau pindahkan ke dana PT.",
+        "halaman": null,
+        "catatan": [
+         "Bahan habis pakai 66.8% dari dana Belmawa (batas 60%); terhadap total dana 58.0%"
+        ]
+       },
+       {
+        "kode": "6.4",
+        "deskripsi": "Tidak ada item terlarang di RAB",
+        "status": "LULUS",
+        "detail": "Tidak terdeteksi item terlarang.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.4.c",
+        "deskripsi": "Harga satuan alat/bahan ≤ Rp1.000.000 per item",
+        "status": "LULUS",
+        "detail": "39 baris dicek; tidak ada harga satuan > Rp1.000.000.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.4.e",
+        "deskripsi": "Batas item khusus: kuota ≤Rp100rb/bulan, lisensi ≤6 bulan, kertas ≤2 rim",
+        "status": "LULUS",
+        "detail": "Tidak ada pelanggaran batas item khusus.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.5",
+        "deskripsi": "Alokasi promosi media sosial ada & Ads ≤ Rp500.000",
+        "status": "LULUS",
+        "detail": "Ads/promosi media sosial Rp400.000.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.6",
+        "deskripsi": "Aritmetika justifikasi (volume × harga, subtotal, grand total, terbilang)",
+        "status": "LULUS",
+        "detail": "39 baris, 4 subtotal, grand total Rp9.493.000 — hitungan konsisten.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.7",
+        "deskripsi": "Tabel 4.1 Rekap konsisten dengan Lampiran Justifikasi",
+        "status": "LULUS",
+        "detail": "Total Rp9.493.000 cocok dengan justifikasi.",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     },
+     {
+      "nama": "Modul 6: Lampiran",
+      "skor": 100.0,
+      "bobot": 0.1,
+      "items": [
+       {
+        "kode": "L-1",
+        "deskripsi": "Lampiran: Biodata Ketua & Anggota",
+        "status": "LULUS",
+        "detail": "'Biodata Ketua & Anggota' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-1b",
+        "deskripsi": "Lampiran: Biodata Dosen Pendamping",
+        "status": "LULUS",
+        "detail": "'Biodata Dosen Pendamping' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-2",
+        "deskripsi": "Lampiran: Justifikasi Anggaran Kegiatan",
+        "status": "LULUS",
+        "detail": "'Justifikasi Anggaran Kegiatan' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-3",
+        "deskripsi": "Lampiran: Susunan Tim Pengusul & Pembagian Tugas",
+        "status": "LULUS",
+        "detail": "'Susunan Tim Pengusul & Pembagian Tugas' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-4",
+        "deskripsi": "Lampiran: Surat Pernyataan Ketua Tim Pengusul",
+        "status": "LULUS",
+        "detail": "'Surat Pernyataan Ketua Tim Pengusul' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-6",
+        "deskripsi": "Lampiran: Hasil Uji Similaritas (≤25%, bagian inti)",
+        "status": "LULUS",
+        "detail": "'Hasil Uji Similaritas (≤25%, bagian inti)' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-KI",
+        "deskripsi": "Lampiran khusus PKM-KI: Gambaran Konsep Karya Inovatif",
+        "status": "LULUS",
+        "detail": "'Gambaran Konsep Karya Inovatif' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-1.c",
+        "deskripsi": "Biodata bertanda tangan basah (halaman penuh hasil scan/foto)",
+        "status": "LULUS",
+        "detail": "6 halaman biodata hasil scan/foto (hal. PDF [16, 18, 20, 21, 22, 24]). Pastikan tanggal tanda tangan sesuai tahun pengusulan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-4.c",
+        "deskripsi": "Surat Pernyataan: scan halaman penuh, TT basah & meterai Rp10.000",
+        "status": "LULUS",
+        "detail": "Surat Pernyataan berupa scan (hal. PDF 30). Verifikasi visual: meterai Rp10.000 tertempel & tertanda tangan, tanggal sesuai, judul sama dengan isian simbelmawa.",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     },
+     {
+      "nama": "Modul 7: Tema & Konsistensi Data",
+      "skor": 100.0,
+      "bobot": 0.1,
+      "items": [
+       {
+        "kode": "7.1",
+        "deskripsi": "Kaitan eksplisit dengan salah satu 10 tema PKM 2026",
+        "status": "LULUS",
+        "detail": "Tema 3: Pencegahan dan Pemberantasan Korupsi — \"Pengembangan Produk-D tidak hanya sejalan dengan Sustainable Development Goals (SDGs) tujuan nomor 3 pada target 3.9, yaitu mengurangi penyakit dan kematian aki\"",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "7.2",
+        "deskripsi": "Referensi tahun PKM konsisten (2026)",
+        "status": "LULUS",
+        "detail": "Tidak ada rujukan ke siklus PKM tahun lain.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "7.3",
+        "deskripsi": "Susunan Tim lengkap: setiap anggota bernama & ber-NIM",
+        "status": "LULUS",
+        "detail": "5 anggota lengkap dengan NIM: Nama Samaran 6/•••••••, Nama Samaran 3/•••••••, Nama Samaran 2./•••••••, Nama Samaran 4/•••••••, Nama Samaran 1/•••••••",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "7.4",
+        "deskripsi": "Ejaan nama anggota konsisten di seluruh dokumen (sesuai PDDikti)",
+        "status": "LULUS",
+        "detail": "4 nama dicek, ejaan konsisten.",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     }
+    ]
+   },
+   "text_report": "============================================================\n  LAPORAN PENGECEKAN PROPOSAL PKM 2026\n============================================================\nNama File    : sampel_D_PKM-KI_didanai-2025.pdf\nJenis PKM    : PKM-KI\nJudul        : Produk-D: Comprehensive Food Safety Portable Tool Berbasis Chemical Sensor Terintegrasi AI untuk Keamanan Pangan pada Supplier Daging\nUkuran File  : 2.42 MB\nTanggal Cek  : 09 November 2026, 02:53\n\nSTATUS KESELURUHAN: ⚠️  PERLU PERBAIKAN (89.2%)\n============================================================\n\n[FASE 1] HARD DISQUALIFIERS\n----------------------------------------\n✅ [HD-01] Halaman sampul (DILARANG ada di proposal)\n    → Tidak terdeteksi halaman sampul.\n✅ [HD-02] Halaman pengesahan (DILARANG ada di proposal)\n    → Tidak terdeteksi halaman pengesahan.\n✅ [HD-03] Ringkasan/Abstrak (DILARANG ada di proposal)\n    → Tidak terdeteksi ringkasan/abstrak.\n⚠️ [HD-05] Indeks similaritas ≤ 25%\n    → Nilai similaritas tidak ditemukan secara otomatis. Pastikan lampiran hasil Turnitin/iThenticate tersedia dan terbaca.\n\n[MODUL 1: IDENTITAS & KELENGKAPAN FORMAL]  Skor: 75%\n----------------------------------------\n❌ [1.1.a] Judul ditulis HURUF KAPITAL\n    → Panduan 2026: judul 'ditulis menggunakan huruf kapital'. Samakan di isian simbelmawa dan Surat Pernyataan: \"PRODUK-D: COMPREHENSIVE FOOD SAFETY PORTABLE TOOL BERBASIS CHEMICAL SENSOR TERINTEGRASI AI UNTUK KEAMANAN PANGAN PADA SUPPLIER DAGING\"\n✅ [1.1.b] Judul ≤ 20 kata\n    → Judul memiliki 17 kata.\n✅ [1.1.c] Judul tanpa akronim/singkatan tidak baku\n    → Tidak terdeteksi akronim tidak baku.\n      • Nama produk 'Produk-D' sebelum titik dua tidak dicek.\n⚠️ [1.1.f] Judul dalam Bahasa Indonesia\n    → Kata bahasa Inggris di judul: Comprehensive, Food, Safety, Portable, Tool, Chemical. Panduan: judul 'ditulis dalam Bahasa Indonesia' — pakai padanan Indonesia bila ada.\n✅ [1.1.d] Jenis PKM valid\n    → PKM-KI.\n✅ [1.1.e] Isi sesuai bidang PKM yang dipilih\n    → Konten konsisten dengan PKM-KI. Kata kunci: SKALA PENUH, TARGET PENGGUNA, TINJAUAN PUSTAKA.\n✅ [1.2.a] Jumlah anggota tim 3–5 mahasiswa\n    → Terdeteksi 3 NIM (dari label NIM): •••••••, •••••••, •••••••.\n⚠️ [1.3.a] NIP/NUPTK dosen pendamping (NUPTK 16 digit)\n    → Biodata dosen memakai label lama 'NIP/NIDN': ••••••••••••••••••/••••••••••. Template 2026 memakai 'NIP/NUPTK' — perbarui label dan isi NUPTK.\n\n[MODUL 2: FORMAT & TIPOGRAFI]  Skor: 100%\n----------------------------------------\n✅ [2.1.a] Font Times New Roman\n    → 100.0% teks menggunakan Times New Roman. (Sisa ≤5% biasanya karakter simbol/rumus yang memang tidak bisa TNR.)\n✅ [2.1.b] Ukuran font 12pt\n    → 100.0% teks body berukuran 12pt.\n✅ [2.2] Spasi baris 1,15\n    → Spasi terukur ≈ 1.15.\n✅ [2.3.a] Ukuran kertas A4\n    → Semua halaman (di luar laporan Turnitin) berukuran A4.\n✅ [2.3.b] Margin (kiri 4cm, kanan/atas/bawah 3cm)\n    → Margin sesuai ketentuan.\n✅ [2.4] Penomoran halaman (romawi kanan-bawah, arab kanan-atas)\n    → romawi di 4 hal. front matter | arab di 10 hal. inti; posisi sesuai.\n\n[MODUL 3: STRUKTUR DOKUMEN]  Skor: 100%\n----------------------------------------\n✅ [3.1.a] Daftar Isi & Daftar Lampiran ada\n    → Daftar Isi dan Daftar Lampiran ditemukan (Daftar Gambar/Tabel wajib hanya jika ada gambar/tabel).\n✅ [3.1.b] Bab-bab wajib lengkap & sesuai bidang\n    → Semua bab wajib (PKM-KI) ditemukan.\n✅ [3.1.c] Heading bab kapital & bertitik ('BAB 1. PENDAHULUAN')\n    → 4 heading bab sesuai. Contoh: 'BAB 1. PENDAHULUAN'\n✅ [3.2] Bagian inti ≤ 10 halaman\n    → Bagian inti (BAB 1 s.d. akhir Daftar Pustaka): 10 halaman (hal. PDF 5–14).\n\n[MODUL 4: DAFTAR PUSTAKA & SITASI]  Skor: 69%\n----------------------------------------\n✅ [4.1] Daftar Pustaka ada dan terbaca\n    → 24 entri terbaca.\n✅ [4.2] Hanging indent (baris ke-2 dst. tiap entri menjorok)\n    → Hanging indent terdeteksi.\n❌ [4.3] Format entri Harvard (tahun dalam kurung, tanpa et al./dkk, diakhiri titik, tanggal akses URL)\n    → 24 dari 24 entri melanggar aturan pokok. Kesalahan Daftar Pustaka — walau hanya titik — sering menjadi penyebab proposal tidak lolos.\n      • Entri 1 — Abbas (2020): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'\n      • Entri 2 — Ahmad (2021): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'\n      • Entri 3 — Alfiadi (2024): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'\n      • Entri 4 — Arini (2017): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'\n      • Entri 5 — Atomojo (2017): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'\n      • Entri 6 — Badan Pengawas Obat dan Makanan Rep (2019): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'\n      • Entri 7 — Badan Standardisasi Nasional Indone (2008): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'\n      • Entri 8 — Bolla (2021): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'\n      • Entri 9 — Budi (2022): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'\n      • Entri 10 — Cook (2022): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'; format tanggal akses salah — wajib '(Diakses 10 Februari 2026)'\n      • Entri 11 — Firmansyah (2019): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'\n      • Entri 12 — Haag (1996): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'\n      • ... dan 12 entri lain\n⚠️ [4.4] Detail tanda baca & gaya entri (kutip judul, nomor halaman, inisial, italic, spasi)\n    → 3 entri perlu dirapikan. Samakan dengan contoh di lampiran panduan (mis. Tovey, H. (2002) 'Judul', Nama Jurnal, 11(1), pp. 23-42.).\n      • Entri 10 — Cook (2022): awali URL dengan 'Tersedia di:'\n      • Entri 23 — World Health Organization (2024): awali URL dengan 'Tersedia di:'\n      • Entri 24 — Yarni (2023): awali URL dengan 'Tersedia di:'\n✅ [4.5] Daftar Pustaka urut alfabetis (nama belakang penulis pertama)\n    → 24 entri terurut alfabetis.\n✅ [4.6] Konsistensi gaya antarentri (penghubung penulis, sufiks a/b tahun sama)\n    → Gaya antarentri konsisten.\n❌ [4.7] Setiap sitasi ada di Daftar Pustaka dan sebaliknya\n    → 4 sitasi tanpa pasangan, 4 entri tidak disitasi. Panduan: setiap pustaka yang dirujuk harus muncul di Daftar Pustaka, dan sebaliknya. (Deteksi otomatis — pastikan ejaan nama & tahun identik.)\n      • Disitasi tapi tidak ada di Daftar Pustaka (atau nama/tahun beda): (Mahendratta dkk., 2020)\n      • Disitasi tapi tidak ada di Daftar Pustaka (atau nama/tahun beda): (Bolla dkk., 2023)\n      • Disitasi tapi tidak ada di Daftar Pustaka (atau nama/tahun beda): Kuntoro dkk. (2023)\n      • Disitasi tapi tidak ada di Daftar Pustaka (atau nama/tahun beda): Atmojo dkk. (2017)\n      • Ada di Daftar Pustaka tapi tidak disitasi di naskah: Atomojo (2017)\n      • Ada di Daftar Pustaka tapi tidak disitasi di naskah: Bolla (2021)\n      • Ada di Daftar Pustaka tapi tidak disitasi di naskah: Kuntoro (2013)\n      • Ada di Daftar Pustaka tapi tidak disitasi di naskah: Mahendradatta (2020)\n✅ [4.8] Format sitasi dalam naskah (Nama, Tahun)\n    → 25 sitasi berformat konsisten.\n\n[MODUL 5: ANGGARAN & KEUANGAN]  Skor: 94%\n----------------------------------------\n✅ [6.1] Dana Belmawa Rp6–8 juta (dari Rekap Sumber Dana)\n    → Dana Belmawa Rp7.493.000 (Rekap Sumber Dana).\n✅ [6.2] Dana pendamping PT wajib ada (≤ Rp2 juta); instansi lain ≤ Rp1 juta\n    → Perguruan Tinggi Rp2.000.000; instansi lain -.\n⚠️ [6.3] Komposisi RAB: bahan ≤60%, sewa/jasa ≤15%, transport ≤30%, lain-lain ≤15%\n    → Panduan menghitung batas dari 'jumlah dana yang diusulkan Belmawa'. Turunkan porsi Belmawa kategori ini atau pindahkan ke dana PT.\n      • Bahan habis pakai 66.8% dari dana Belmawa (batas 60%); terhadap total dana 58.0%\n✅ [6.4] Tidak ada item terlarang di RAB\n    → Tidak terdeteksi item terlarang.\n✅ [6.4.c] Harga satuan alat/bahan ≤ Rp1.000.000 per item\n    → 39 baris dicek; tidak ada harga satuan > Rp1.000.000.\n✅ [6.4.e] Batas item khusus: kuota ≤Rp100rb/bulan, lisensi ≤6 bulan, kertas ≤2 rim\n    → Tidak ada pelanggaran batas item khusus.\n✅ [6.5] Alokasi promosi media sosial ada & Ads ≤ Rp500.000\n    → Ads/promosi media sosial Rp400.000.\n✅ [6.6] Aritmetika justifikasi (volume × harga, subtotal, grand total, terbilang)\n    → 39 baris, 4 subtotal, grand total Rp9.493.000 — hitungan konsisten.\n✅ [6.7] Tabel 4.1 Rekap konsisten dengan Lampiran Justifikasi\n    → Total Rp9.493.000 cocok dengan justifikasi.\n\n[MODUL 6: LAMPIRAN]  Skor: 100%\n----------------------------------------\n✅ [L-1] Lampiran: Biodata Ketua & Anggota\n    → 'Biodata Ketua & Anggota' ditemukan.\n✅ [L-1b] Lampiran: Biodata Dosen Pendamping\n    → 'Biodata Dosen Pendamping' ditemukan.\n✅ [L-2] Lampiran: Justifikasi Anggaran Kegiatan\n    → 'Justifikasi Anggaran Kegiatan' ditemukan.\n✅ [L-3] Lampiran: Susunan Tim Pengusul & Pembagian Tugas\n    → 'Susunan Tim Pengusul & Pembagian Tugas' ditemukan.\n✅ [L-4] Lampiran: Surat Pernyataan Ketua Tim Pengusul\n    → 'Surat Pernyataan Ketua Tim Pengusul' ditemukan.\n✅ [L-6] Lampiran: Hasil Uji Similaritas (≤25%, bagian inti)\n    → 'Hasil Uji Similaritas (≤25%, bagian inti)' ditemukan.\n✅ [L-KI] Lampiran khusus PKM-KI: Gambaran Konsep Karya Inovatif\n    → 'Gambaran Konsep Karya Inovatif' ditemukan.\n✅ [L-1.c] Biodata bertanda tangan basah (halaman penuh hasil scan/foto)\n    → 6 halaman biodata hasil scan/foto (hal. PDF [16, 18, 20, 21, 22, 24]). Pastikan tanggal tanda tangan sesuai tahun pengusulan.\n✅ [L-4.c] Surat Pernyataan: scan halaman penuh, TT basah & meterai Rp10.000\n    → Surat Pernyataan berupa scan (hal. PDF 30). Verifikasi visual: meterai Rp10.000 tertempel & tertanda tangan, tanggal sesuai, judul sama dengan isian simbelmawa.\n\n[MODUL 7: TEMA & KONSISTENSI DATA]  Skor: 100%\n----------------------------------------\n✅ [7.1] Kaitan eksplisit dengan salah satu 10 tema PKM 2026\n    → Tema 3: Pencegahan dan Pemberantasan Korupsi — \"Pengembangan Produk-D tidak hanya sejalan dengan Sustainable Development Goals (SDGs) tujuan nomor 3 pada target 3.9, yaitu mengurangi penyakit dan kematian aki\"\n✅ [7.2] Referensi tahun PKM konsisten (2026)\n    → Tidak ada rujukan ke siklus PKM tahun lain.\n✅ [7.3] Susunan Tim lengkap: setiap anggota bernama & ber-NIM\n    → 5 anggota lengkap dengan NIM: Nama Samaran 6/•••••••, Nama Samaran 3/•••••••, Nama Samaran 2./•••••••, Nama Samaran 4/•••••••, Nama Samaran 1/•••••••\n✅ [7.4] Ejaan nama anggota konsisten di seluruh dokumen (sesuai PDDikti)\n    → 4 nama dicek, ejaan konsisten.\n\n============================================================\nREKOMENDASI PRIORITAS:\n----------------------------------------\n1. [PERIKSA] Indeks similaritas ≤ 25%: Nilai similaritas tidak ditemukan secara otomatis. Pastikan lampiran hasil Turnitin/iThenticate tersedia dan terbaca.\n2. [WAJIB] Judul ditulis HURUF KAPITAL: Panduan 2026: judul 'ditulis menggunakan huruf kapital'. Samakan di isian simbelmawa dan Surat Pernyataan: \"PRODUK-D: COMPREHENSIVE FOOD SAFETY PORTABLE TOOL BERBASIS CHEMICAL SENSOR TERINTEGRASI AI UNTUK KEAMANAN PANGAN PADA SUPPLIER DAGING\"\n3. [PERIKSA] Judul dalam Bahasa Indonesia: Kata bahasa Inggris di judul: Comprehensive, Food, Safety, Portable, Tool, Chemical. Panduan: judul 'ditulis dalam Bahasa Indonesia' — pakai padanan Indonesia bila ada.\n4. [PERIKSA] NIP/NUPTK dosen pendamping (NUPTK 16 digit): Biodata dosen memakai label lama 'NIP/NIDN': ••••••••••••••••••/••••••••••. Template 2026 memakai 'NIP/NUPTK' — perbarui label dan isi NUPTK.\n5. [WAJIB] Format entri Harvard (tahun dalam kurung, tanpa et al./dkk, diakhiri titik, tanggal akses URL): 24 dari 24 entri melanggar aturan pokok. Kesalahan Daftar Pustaka — walau hanya titik — sering menjadi penyebab proposal tidak lolos.\n6. [PERIKSA] Detail tanda baca & gaya entri (kutip judul, nomor halaman, inisial, italic, spasi): 3 entri perlu dirapikan. Samakan dengan contoh di lampiran panduan (mis. Tovey, H. (2002) 'Judul', Nama Jurnal, 11(1), pp. 23-42.).\n7. [WAJIB] Setiap sitasi ada di Daftar Pustaka dan sebaliknya: 4 sitasi tanpa pasangan, 4 entri tidak disitasi. Panduan: setiap pustaka yang dirujuk harus muncul di Daftar Pustaka, dan sebaliknya. (Deteksi otomatis — pastikan ejaan nama & tahun identik.)\n8. [PERIKSA] Komposisi RAB: bahan ≤60%, sewa/jasa ≤15%, transport ≤30%, lain-lain ≤15%: Panduan menghitung batas dari 'jumlah dana yang diusulkan Belmawa'. Turunkan porsi Belmawa kategori ini atau pindahkan ke dana PT.\n\nCATATAN: checker ini hanya menilai ADMINISTRASI & FORMAT (Tahap 1).\nLolos administrasi tidak menjamin didanai — Tahap 2 menilai substansi\n(kreativitas gagasan, urgensi masalah, ketepatan IPTEK/metode, potensi).\n============================================================"
+  }
+ },
+ {
+  "id": "E",
+  "label": "Sampel E · PKM-KC · Tidak didanai 2025",
+  "status_asli": "Tidak didanai",
+  "siklus": 2025,
+  "jenis": "KC",
+  "file_name": "sampel_E_PKM-KC_tidak-didanai-2025.pdf",
+  "file_size_kb": 2336.3,
+  "judul": "Produk-E: AI-Enhanced Guardian System Berbasis ITDRS & IoT untuk Melindungi Wanita di Jembatan Layang",
+  "catatan_sampel": "Tidak didanai (siklus 2025). Banyak temuan administrasi: dafpus, item terlarang, tema, komposisi RAB.",
+  "langkah": [
+   "Membuka PDF: 33 halaman",
+   "Ekstraksi teks, font & tata letak: 2.103 span teks, 24 gambar",
+   "Segmentasi: Daftar Isi hal. 1–4 · bagian inti hal. 5–14 (10 hal.) · lampiran hal. 15–33",
+   "Daftar Pustaka: 13 entri (hanging indent terbaca) · 11 sitasi di naskah",
+   "RAB: 4 kategori rekap · 34 baris justifikasi · grand total Rp10.000.000",
+   "Modul 1: Identitas & Kelengkapan Formal: 8 item — ✅ 5 · ⚠️ 2 · ❌ 1",
+   "Modul 2: Format & Tipografi: 6 item — ✅ 6 · ⚠️ 0 · ❌ 0",
+   "Modul 3: Struktur Dokumen: 4 item — ✅ 3 · ⚠️ 1 · ❌ 0",
+   "Modul 4: Daftar Pustaka & Sitasi: 8 item — ✅ 4 · ⚠️ 2 · ❌ 2",
+   "Modul 5: Anggaran & Keuangan: 9 item — ✅ 6 · ⚠️ 1 · ❌ 2",
+   "Modul 6: Lampiran: 9 item — ✅ 9 · ⚠️ 0 · ❌ 0",
+   "Modul 7: Tema & Konsistensi Data: 4 item — ✅ 2 · ⚠️ 1 · ❌ 1"
+  ],
+  "result": {
+   "structured_report": {
+    "file_name": "sampel_E_PKM-KC_tidak-didanai-2025.pdf",
+    "jenis_pkm": "KC",
+    "judul": "Produk-E: AI-Enhanced Guardian System Berbasis ITDRS & IoT untuk Melindungi Wanita di Jembatan Layang",
+    "file_size_mb": 2.281503677368164,
+    "is_gugur": false,
+    "overall": {
+     "skor": 79.0,
+     "kategori": "PERLU PERBAIKAN",
+     "modul_scores": {
+      "Modul 1: Identitas & Kelengkapan Formal": 75.0,
+      "Modul 2: Format & Tipografi": 100.0,
+      "Modul 3: Struktur Dokumen": 87.5,
+      "Modul 4: Daftar Pustaka & Sitasi": 62.5,
+      "Modul 5: Anggaran & Keuangan": 72.2,
+      "Modul 6: Lampiran": 100.0,
+      "Modul 7: Tema & Konsistensi Data": 62.5
+     }
+    },
+    "hard_disqualifiers": {
+     "items": [
+      {
+       "kode": "HD-01",
+       "deskripsi": "Halaman sampul (DILARANG ada di proposal)",
+       "status": "LULUS",
+       "detail": "Tidak terdeteksi halaman sampul.",
+       "catatan": []
+      },
+      {
+       "kode": "HD-02",
+       "deskripsi": "Halaman pengesahan (DILARANG ada di proposal)",
+       "status": "LULUS",
+       "detail": "Tidak terdeteksi halaman pengesahan.",
+       "catatan": []
+      },
+      {
+       "kode": "HD-03",
+       "deskripsi": "Ringkasan/Abstrak (DILARANG ada di proposal)",
+       "status": "LULUS",
+       "detail": "Tidak terdeteksi ringkasan/abstrak.",
+       "catatan": []
+      },
+      {
+       "kode": "HD-05",
+       "deskripsi": "Indeks similaritas ≤ 25%",
+       "status": "PERINGATAN",
+       "detail": "Nilai similaritas tidak ditemukan secara otomatis. Pastikan lampiran hasil Turnitin/iThenticate tersedia dan terbaca.",
+       "catatan": []
+      }
+     ]
+    },
+    "modul_results": [
+     {
+      "nama": "Modul 1: Identitas & Kelengkapan Formal",
+      "skor": 75.0,
+      "bobot": 0.15,
+      "items": [
+       {
+        "kode": "1.1.a",
+        "deskripsi": "Judul ditulis HURUF KAPITAL",
+        "status": "TIDAK_LULUS",
+        "detail": "Panduan 2026: judul 'ditulis menggunakan huruf kapital'. Samakan di isian simbelmawa dan Surat Pernyataan: \"PRODUK-E: AI-ENHANCED GUARDIAN SYSTEM BERBASIS ITDRS & IOT UNTUK MELINDUNGI WANITA DI JEMBATAN LAYANG\"",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.1.b",
+        "deskripsi": "Judul ≤ 20 kata",
+        "status": "LULUS",
+        "detail": "Judul memiliki 14 kata.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.1.c",
+        "deskripsi": "Judul tanpa akronim/singkatan tidak baku",
+        "status": "PERINGATAN",
+        "detail": "Kemungkinan akronim tidak baku: ITDRS. Panduan melarang akronim/singkatan tidak baku di judul — tulis kepanjangannya.",
+        "halaman": null,
+        "catatan": [
+         "Nama produk 'Produk-E' sebelum titik dua tidak dicek."
+        ]
+       },
+       {
+        "kode": "1.1.f",
+        "deskripsi": "Judul dalam Bahasa Indonesia",
+        "status": "PERINGATAN",
+        "detail": "Kata bahasa Inggris di judul: Enhanced, Guardian, System. Panduan: judul 'ditulis dalam Bahasa Indonesia' — pakai padanan Indonesia bila ada.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.1.d",
+        "deskripsi": "Jenis PKM valid",
+        "status": "LULUS",
+        "detail": "PKM-KC.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.1.e",
+        "deskripsi": "Isi sesuai bidang PKM yang dipilih",
+        "status": "LULUS",
+        "detail": "Konten konsisten dengan PKM-KC. Kata kunci: PROTOTIPE, TAHAP PELAKSANAAN, TEKNOLOGI.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.2.a",
+        "deskripsi": "Jumlah anggota tim 3–5 mahasiswa",
+        "status": "LULUS",
+        "detail": "Terdeteksi 3 NIM (dari label NIM): •••••••, •••••••, •••••••.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "1.3.a",
+        "deskripsi": "NIP/NUPTK dosen pendamping (NUPTK 16 digit)",
+        "status": "LULUS",
+        "detail": "NIP/NUPTK: ••••••••••••••••••/ ••••••••••••••••.",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     },
+     {
+      "nama": "Modul 2: Format & Tipografi",
+      "skor": 100.0,
+      "bobot": 0.15,
+      "items": [
+       {
+        "kode": "2.1.a",
+        "deskripsi": "Font Times New Roman",
+        "status": "LULUS",
+        "detail": "100.0% teks menggunakan Times New Roman. (Sisa ≤5% biasanya karakter simbol/rumus yang memang tidak bisa TNR.)",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "2.1.b",
+        "deskripsi": "Ukuran font 12pt",
+        "status": "LULUS",
+        "detail": "100.0% teks body berukuran 12pt.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "2.2",
+        "deskripsi": "Spasi baris 1,15",
+        "status": "LULUS",
+        "detail": "Spasi terukur ≈ 1.15.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "2.3.a",
+        "deskripsi": "Ukuran kertas A4",
+        "status": "LULUS",
+        "detail": "Semua halaman (di luar laporan Turnitin) berukuran A4.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "2.3.b",
+        "deskripsi": "Margin (kiri 4cm, kanan/atas/bawah 3cm)",
+        "status": "LULUS",
+        "detail": "Margin sesuai ketentuan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "2.4",
+        "deskripsi": "Penomoran halaman (romawi kanan-bawah, arab kanan-atas)",
+        "status": "LULUS",
+        "detail": "romawi di 4 hal. front matter | arab di 10 hal. inti; posisi sesuai.",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     },
+     {
+      "nama": "Modul 3: Struktur Dokumen",
+      "skor": 87.5,
+      "bobot": 0.15,
+      "items": [
+       {
+        "kode": "3.1.a",
+        "deskripsi": "Daftar Isi & Daftar Lampiran ada",
+        "status": "LULUS",
+        "detail": "Daftar Isi dan Daftar Lampiran ditemukan (Daftar Gambar/Tabel wajib hanya jika ada gambar/tabel).",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "3.1.b",
+        "deskripsi": "Bab-bab wajib lengkap & sesuai bidang",
+        "status": "LULUS",
+        "detail": "Semua bab wajib (PKM-KC) ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "3.1.c",
+        "deskripsi": "Heading bab kapital & bertitik ('BAB 1. PENDAHULUAN')",
+        "status": "PERINGATAN",
+        "detail": "Format heading bab belum seragam dengan panduan.",
+        "halaman": null,
+        "catatan": [
+         "Tanpa titik setelah nomor bab: 'BAB 4 BIAYA DAN JADWAL KEGIATAN' → 'BAB 4. BIAYA DAN JADWAL KEGIATAN'"
+        ]
+       },
+       {
+        "kode": "3.2",
+        "deskripsi": "Bagian inti ≤ 10 halaman",
+        "status": "LULUS",
+        "detail": "Bagian inti (BAB 1 s.d. akhir Daftar Pustaka): 10 halaman (hal. PDF 5–14).",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     },
+     {
+      "nama": "Modul 4: Daftar Pustaka & Sitasi",
+      "skor": 62.5,
+      "bobot": 0.2,
+      "items": [
+       {
+        "kode": "4.1",
+        "deskripsi": "Daftar Pustaka ada dan terbaca",
+        "status": "LULUS",
+        "detail": "13 entri terbaca.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "4.2",
+        "deskripsi": "Hanging indent (baris ke-2 dst. tiap entri menjorok)",
+        "status": "LULUS",
+        "detail": "Hanging indent terdeteksi.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "4.3",
+        "deskripsi": "Format entri Harvard (tahun dalam kurung, tanpa et al./dkk, diakhiri titik, tanggal akses URL)",
+        "status": "TIDAK_LULUS",
+        "detail": "13 dari 13 entri melanggar aturan pokok. Kesalahan Daftar Pustaka — walau hanya titik — sering menjadi penyebab proposal tidak lolos.",
+        "halaman": null,
+        "catatan": [
+         "Entri 1 — Adams (2023): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'",
+         "Entri 2 — Badan Pusat Statistik (BPS) (2021): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'; format tanggal akses salah — wajib '(Diakses 10 Februari 2026)'",
+         "Entri 3 — Fauzan (2022): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'",
+         "Entri 4 — Hamzida (2020): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'",
+         "Entri 5 — Kementerian Pekerjaan Umum dan Peru (2023): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'",
+         "Entri 6 — Komnas Perempuan (2023): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'; format tanggal akses salah — wajib '(Diakses 10 Februari 2026)'",
+         "Entri 7 — Marcos (2021): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'",
+         "Entri 8 — Patel (2022): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'",
+         "Entri 9 — Rahardjo (2022): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'; ada 'et al.'/'dkk' di daftar penulis — semua nama penulis wajib ditulis",
+         "Entri 10 — Rahmah (2023): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'",
+         "Entri 11 — Raspberry Pi Foundation (2023): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'; ada titik ganda '..'; format tanggal akses salah — wajib '(Diakses 10 Februari 2026)'",
+         "Entri 12 — Suryani (2021): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'; ada 'et al.'/'dkk' di daftar penulis — semua nama penulis wajib ditulis",
+         "... dan 1 entri lain"
+        ]
+       },
+       {
+        "kode": "4.4",
+        "deskripsi": "Detail tanda baca & gaya entri (kutip judul, nomor halaman, inisial, italic, spasi)",
+        "status": "PERINGATAN",
+        "detail": "3 entri perlu dirapikan. Samakan dengan contoh di lampiran panduan (mis. Tovey, H. (2002) 'Judul', Nama Jurnal, 11(1), pp. 23-42.).",
+        "halaman": null,
+        "catatan": [
+         "Entri 2 — Badan Pusat Statistik (BPS) (2021): awali URL dengan 'Tersedia di:'",
+         "Entri 6 — Komnas Perempuan (2023): awali URL dengan 'Tersedia di:'",
+         "Entri 11 — Raspberry Pi Foundation (2023): awali URL dengan 'Tersedia di:'"
+        ]
+       },
+       {
+        "kode": "4.5",
+        "deskripsi": "Daftar Pustaka urut alfabetis (nama belakang penulis pertama)",
+        "status": "LULUS",
+        "detail": "13 entri terurut alfabetis.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "4.6",
+        "deskripsi": "Konsistensi gaya antarentri (penghubung penulis, sufiks a/b tahun sama)",
+        "status": "LULUS",
+        "detail": "Gaya antarentri konsisten.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "4.7",
+        "deskripsi": "Setiap sitasi ada di Daftar Pustaka dan sebaliknya",
+        "status": "TIDAK_LULUS",
+        "detail": "3 sitasi tanpa pasangan, 5 entri tidak disitasi. Panduan: setiap pustaka yang dirujuk harus muncul di Daftar Pustaka, dan sebaliknya. (Deteksi otomatis — pastikan ejaan nama & tahun identik.)",
+        "halaman": null,
+        "catatan": [
+         "Disitasi tapi tidak ada di Daftar Pustaka (atau nama/tahun beda): (Rahmah, 2022)",
+         "Disitasi tapi tidak ada di Daftar Pustaka (atau nama/tahun beda): (Politeknik Negeri Ujung Pandang, 2023)",
+         "Disitasi tapi tidak ada di Daftar Pustaka (atau nama/tahun beda): (MDP, 2023)",
+         "Ada di Daftar Pustaka tapi tidak disitasi di naskah: Hamzida (2020)",
+         "Ada di Daftar Pustaka tapi tidak disitasi di naskah: Marcos (2021)",
+         "Ada di Daftar Pustaka tapi tidak disitasi di naskah: Patel (2022)",
+         "Ada di Daftar Pustaka tapi tidak disitasi di naskah: Rahardjo (2022)",
+         "Ada di Daftar Pustaka tapi tidak disitasi di naskah: Raspberry Pi Foundation (2023)"
+        ]
+       },
+       {
+        "kode": "4.8",
+        "deskripsi": "Format sitasi dalam naskah (Nama, Tahun)",
+        "status": "PERINGATAN",
+        "detail": "Format sitasi perlu dirapikan.",
+        "halaman": null,
+        "catatan": [
+         "Sitasi berkurung dipakai sebagai subjek kalimat: (Tan & Lim, 2023) → pakai sitasi naratif, mis. 'Joko et al. (2020) menunjukkan ...'."
+        ]
+       }
+      ]
+     },
+     {
+      "nama": "Modul 5: Anggaran & Keuangan",
+      "skor": 72.2,
+      "bobot": 0.15,
+      "items": [
+       {
+        "kode": "6.1",
+        "deskripsi": "Dana Belmawa Rp6–8 juta (dari Rekap Sumber Dana)",
+        "status": "LULUS",
+        "detail": "Dana Belmawa Rp8.000.000 (Rekap Sumber Dana).",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.2",
+        "deskripsi": "Dana pendamping PT wajib ada (≤ Rp2 juta); instansi lain ≤ Rp1 juta",
+        "status": "LULUS",
+        "detail": "Perguruan Tinggi Rp2.000.000; instansi lain -.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.3",
+        "deskripsi": "Komposisi RAB: bahan ≤60%, sewa/jasa ≤15%, transport ≤30%, lain-lain ≤15%",
+        "status": "TIDAK_LULUS",
+        "detail": "Batas persentase dilanggar baik dihitung dari dana Belmawa maupun total dana.",
+        "halaman": null,
+        "catatan": [
+         "Sewa dan jasa 15.6% dari dana Belmawa dan 16.0% dari total — melewati batas 15%",
+         "Bahan habis pakai 63.7% dari dana Belmawa (batas 60%); terhadap total dana 53.5%"
+        ]
+       },
+       {
+        "kode": "6.4",
+        "deskripsi": "Tidak ada item terlarang di RAB",
+        "status": "TIDAK_LULUS",
+        "detail": "Item berikut tidak diperkenankan di RAB PKM 2026:",
+        "halaman": null,
+        "catatan": [
+         "publikasi hasil di jurnal (\"Publish Artikel\")"
+        ]
+       },
+       {
+        "kode": "6.4.c",
+        "deskripsi": "Harga satuan alat/bahan ≤ Rp1.000.000 per item",
+        "status": "LULUS",
+        "detail": "34 baris dicek; tidak ada harga satuan > Rp1.000.000.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.4.e",
+        "deskripsi": "Batas item khusus: kuota ≤Rp100rb/bulan, lisensi ≤6 bulan, kertas ≤2 rim",
+        "status": "LULUS",
+        "detail": "Tidak ada pelanggaran batas item khusus.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.5",
+        "deskripsi": "Alokasi promosi media sosial ada & Ads ≤ Rp500.000",
+        "status": "LULUS",
+        "detail": "Ads/promosi media sosial Rp400.000.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "6.6",
+        "deskripsi": "Aritmetika justifikasi (volume × harga, subtotal, grand total, terbilang)",
+        "status": "PERINGATAN",
+        "detail": "Panduan: kesalahan hasil perkalian dan penjumlahan dapat mempengaruhi penilaian. Perbaiki semua baris berikut.",
+        "halaman": null,
+        "catatan": [
+         "Format angka rusak: '800.00,00'",
+         "Jumper Malet to: 2 × Rp25.000 = Rp50.000, tertulis Rp25.000",
+         "Terbilang 'Sepuluh Juta Ribu RPT-Xah' ≠ Rp10.000.000 (seharusnya: sepuluh juta rPT-Xah)"
+        ]
+       },
+       {
+        "kode": "6.7",
+        "deskripsi": "Tabel 4.1 Rekap konsisten dengan Lampiran Justifikasi",
+        "status": "LULUS",
+        "detail": "Total Rp10.000.000 cocok dengan justifikasi.",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     },
+     {
+      "nama": "Modul 6: Lampiran",
+      "skor": 100.0,
+      "bobot": 0.1,
+      "items": [
+       {
+        "kode": "L-1",
+        "deskripsi": "Lampiran: Biodata Ketua & Anggota",
+        "status": "LULUS",
+        "detail": "'Biodata Ketua & Anggota' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-1b",
+        "deskripsi": "Lampiran: Biodata Dosen Pendamping",
+        "status": "LULUS",
+        "detail": "'Biodata Dosen Pendamping' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-2",
+        "deskripsi": "Lampiran: Justifikasi Anggaran Kegiatan",
+        "status": "LULUS",
+        "detail": "'Justifikasi Anggaran Kegiatan' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-3",
+        "deskripsi": "Lampiran: Susunan Tim Pengusul & Pembagian Tugas",
+        "status": "LULUS",
+        "detail": "'Susunan Tim Pengusul & Pembagian Tugas' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-4",
+        "deskripsi": "Lampiran: Surat Pernyataan Ketua Tim Pengusul",
+        "status": "LULUS",
+        "detail": "'Surat Pernyataan Ketua Tim Pengusul' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-6",
+        "deskripsi": "Lampiran: Hasil Uji Similaritas (≤25%, bagian inti)",
+        "status": "LULUS",
+        "detail": "'Hasil Uji Similaritas (≤25%, bagian inti)' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-KC",
+        "deskripsi": "Lampiran khusus PKM-KC: Gambaran Teknologi yang akan Dikembangkan",
+        "status": "LULUS",
+        "detail": "'Gambaran Teknologi yang akan Dikembangkan' ditemukan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-1.c",
+        "deskripsi": "Biodata bertanda tangan basah (halaman penuh hasil scan/foto)",
+        "status": "LULUS",
+        "detail": "7 halaman biodata hasil scan/foto (hal. PDF [16, 17, 19, 20, 22, 23, 24]). Pastikan tanggal tanda tangan sesuai tahun pengusulan.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "L-4.c",
+        "deskripsi": "Surat Pernyataan: scan halaman penuh, TT basah & meterai Rp10.000",
+        "status": "LULUS",
+        "detail": "Surat Pernyataan berupa scan (hal. PDF 29). Verifikasi visual: meterai Rp10.000 tertempel & tertanda tangan, tanggal sesuai, judul sama dengan isian simbelmawa.",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     },
+     {
+      "nama": "Modul 7: Tema & Konsistensi Data",
+      "skor": 62.5,
+      "bobot": 0.1,
+      "items": [
+       {
+        "kode": "7.1",
+        "deskripsi": "Kaitan eksplisit dengan salah satu 10 tema PKM 2026",
+        "status": "TIDAK_LULUS",
+        "detail": "Naskah mengaitkan proposal dengan tema tahun 2025, bukan 2026: \"Masalah proyek ini sejalan dengan tema PKM 2025, yaitu Kearifan Lokal dan Rekayasa Sosial untuk Mengatasi Permasalahan Sosial, dengan fokus pada peningkatan keamanan perempuan di ruang publik.\". Ganti dengan salah satu 10 tema 2026 — Tahap 1 menilai kesesuaian judul dengan tema yang dipilih.",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "7.2",
+        "deskripsi": "Referensi tahun PKM konsisten (2026)",
+        "status": "PERINGATAN",
+        "detail": "Ada rujukan ke tahun lain: \"tema PKM 2025\". Proposal daur ulang wajib diperbarui ke format, tema, dan tanggal 2026 (termasuk tanggal tanda tangan di biodata & Surat Pernyataan).",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "7.3",
+        "deskripsi": "Susunan Tim lengkap: setiap anggota bernama & ber-NIM",
+        "status": "LULUS",
+        "detail": "5 anggota lengkap dengan NIM: Nama Samaran 3/•••••••, Nama Samaran 2/•••••••, Nama Samaran 1/•••••••, Nama Samaran 5/•••••••, Nama Samaran 4/•••••••",
+        "halaman": null,
+        "catatan": []
+       },
+       {
+        "kode": "7.4",
+        "deskripsi": "Ejaan nama anggota konsisten di seluruh dokumen (sesuai PDDikti)",
+        "status": "LULUS",
+        "detail": "5 nama dicek, ejaan konsisten.",
+        "halaman": null,
+        "catatan": []
+       }
+      ]
+     }
+    ]
+   },
+   "text_report": "============================================================\n  LAPORAN PENGECEKAN PROPOSAL PKM 2026\n============================================================\nNama File    : sampel_E_PKM-KC_tidak-didanai-2025.pdf\nJenis PKM    : PKM-KC\nJudul        : Produk-E: AI-Enhanced Guardian System Berbasis ITDRS & IoT untuk Melindungi Wanita di Jembatan Layang\nUkuran File  : 2.28 MB\nTanggal Cek  : 09 November 2026, 02:53\n\nSTATUS KESELURUHAN: ⚠️  PERLU PERBAIKAN (79.0%)\n============================================================\n\n[FASE 1] HARD DISQUALIFIERS\n----------------------------------------\n✅ [HD-01] Halaman sampul (DILARANG ada di proposal)\n    → Tidak terdeteksi halaman sampul.\n✅ [HD-02] Halaman pengesahan (DILARANG ada di proposal)\n    → Tidak terdeteksi halaman pengesahan.\n✅ [HD-03] Ringkasan/Abstrak (DILARANG ada di proposal)\n    → Tidak terdeteksi ringkasan/abstrak.\n⚠️ [HD-05] Indeks similaritas ≤ 25%\n    → Nilai similaritas tidak ditemukan secara otomatis. Pastikan lampiran hasil Turnitin/iThenticate tersedia dan terbaca.\n\n[MODUL 1: IDENTITAS & KELENGKAPAN FORMAL]  Skor: 75%\n----------------------------------------\n❌ [1.1.a] Judul ditulis HURUF KAPITAL\n    → Panduan 2026: judul 'ditulis menggunakan huruf kapital'. Samakan di isian simbelmawa dan Surat Pernyataan: \"PRODUK-E: AI-ENHANCED GUARDIAN SYSTEM BERBASIS ITDRS & IOT UNTUK MELINDUNGI WANITA DI JEMBATAN LAYANG\"\n✅ [1.1.b] Judul ≤ 20 kata\n    → Judul memiliki 14 kata.\n⚠️ [1.1.c] Judul tanpa akronim/singkatan tidak baku\n    → Kemungkinan akronim tidak baku: ITDRS. Panduan melarang akronim/singkatan tidak baku di judul — tulis kepanjangannya.\n      • Nama produk 'Produk-E' sebelum titik dua tidak dicek.\n⚠️ [1.1.f] Judul dalam Bahasa Indonesia\n    → Kata bahasa Inggris di judul: Enhanced, Guardian, System. Panduan: judul 'ditulis dalam Bahasa Indonesia' — pakai padanan Indonesia bila ada.\n✅ [1.1.d] Jenis PKM valid\n    → PKM-KC.\n✅ [1.1.e] Isi sesuai bidang PKM yang dipilih\n    → Konten konsisten dengan PKM-KC. Kata kunci: PROTOTIPE, TAHAP PELAKSANAAN, TEKNOLOGI.\n✅ [1.2.a] Jumlah anggota tim 3–5 mahasiswa\n    → Terdeteksi 3 NIM (dari label NIM): •••••••, •••••••, •••••••.\n✅ [1.3.a] NIP/NUPTK dosen pendamping (NUPTK 16 digit)\n    → NIP/NUPTK: ••••••••••••••••••/ ••••••••••••••••.\n\n[MODUL 2: FORMAT & TIPOGRAFI]  Skor: 100%\n----------------------------------------\n✅ [2.1.a] Font Times New Roman\n    → 100.0% teks menggunakan Times New Roman. (Sisa ≤5% biasanya karakter simbol/rumus yang memang tidak bisa TNR.)\n✅ [2.1.b] Ukuran font 12pt\n    → 100.0% teks body berukuran 12pt.\n✅ [2.2] Spasi baris 1,15\n    → Spasi terukur ≈ 1.15.\n✅ [2.3.a] Ukuran kertas A4\n    → Semua halaman (di luar laporan Turnitin) berukuran A4.\n✅ [2.3.b] Margin (kiri 4cm, kanan/atas/bawah 3cm)\n    → Margin sesuai ketentuan.\n✅ [2.4] Penomoran halaman (romawi kanan-bawah, arab kanan-atas)\n    → romawi di 4 hal. front matter | arab di 10 hal. inti; posisi sesuai.\n\n[MODUL 3: STRUKTUR DOKUMEN]  Skor: 88%\n----------------------------------------\n✅ [3.1.a] Daftar Isi & Daftar Lampiran ada\n    → Daftar Isi dan Daftar Lampiran ditemukan (Daftar Gambar/Tabel wajib hanya jika ada gambar/tabel).\n✅ [3.1.b] Bab-bab wajib lengkap & sesuai bidang\n    → Semua bab wajib (PKM-KC) ditemukan.\n⚠️ [3.1.c] Heading bab kapital & bertitik ('BAB 1. PENDAHULUAN')\n    → Format heading bab belum seragam dengan panduan.\n      • Tanpa titik setelah nomor bab: 'BAB 4 BIAYA DAN JADWAL KEGIATAN' → 'BAB 4. BIAYA DAN JADWAL KEGIATAN'\n✅ [3.2] Bagian inti ≤ 10 halaman\n    → Bagian inti (BAB 1 s.d. akhir Daftar Pustaka): 10 halaman (hal. PDF 5–14).\n\n[MODUL 4: DAFTAR PUSTAKA & SITASI]  Skor: 62%\n----------------------------------------\n✅ [4.1] Daftar Pustaka ada dan terbaca\n    → 13 entri terbaca.\n✅ [4.2] Hanging indent (baris ke-2 dst. tiap entri menjorok)\n    → Hanging indent terdeteksi.\n❌ [4.3] Format entri Harvard (tahun dalam kurung, tanpa et al./dkk, diakhiri titik, tanggal akses URL)\n    → 13 dari 13 entri melanggar aturan pokok. Kesalahan Daftar Pustaka — walau hanya titik — sering menjadi penyebab proposal tidak lolos.\n      • Entri 1 — Adams (2023): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'\n      • Entri 2 — Badan Pusat Statistik (BPS) (2021): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'; format tanggal akses salah — wajib '(Diakses 10 Februari 2026)'\n      • Entri 3 — Fauzan (2022): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'\n      • Entri 4 — Hamzida (2020): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'\n      • Entri 5 — Kementerian Pekerjaan Umum dan Peru (2023): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'\n      • Entri 6 — Komnas Perempuan (2023): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'; format tanggal akses salah — wajib '(Diakses 10 Februari 2026)'\n      • Entri 7 — Marcos (2021): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'\n      • Entri 8 — Patel (2022): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'\n      • Entri 9 — Rahardjo (2022): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'; ada 'et al.'/'dkk' di daftar penulis — semua nama penulis wajib ditulis\n      • Entri 10 — Rahmah (2023): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'\n      • Entri 11 — Raspberry Pi Foundation (2023): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'; ada titik ganda '..'; format tanggal akses salah — wajib '(Diakses 10 Februari 2026)'\n      • Entri 12 — Suryani (2021): tahun harus dalam kurung setelah nama penulis: 'Nama, I. (2024) ...' — bukan 'Nama, I. 2024.'; ada 'et al.'/'dkk' di daftar penulis — semua nama penulis wajib ditulis\n      • ... dan 1 entri lain\n⚠️ [4.4] Detail tanda baca & gaya entri (kutip judul, nomor halaman, inisial, italic, spasi)\n    → 3 entri perlu dirapikan. Samakan dengan contoh di lampiran panduan (mis. Tovey, H. (2002) 'Judul', Nama Jurnal, 11(1), pp. 23-42.).\n      • Entri 2 — Badan Pusat Statistik (BPS) (2021): awali URL dengan 'Tersedia di:'\n      • Entri 6 — Komnas Perempuan (2023): awali URL dengan 'Tersedia di:'\n      • Entri 11 — Raspberry Pi Foundation (2023): awali URL dengan 'Tersedia di:'\n✅ [4.5] Daftar Pustaka urut alfabetis (nama belakang penulis pertama)\n    → 13 entri terurut alfabetis.\n✅ [4.6] Konsistensi gaya antarentri (penghubung penulis, sufiks a/b tahun sama)\n    → Gaya antarentri konsisten.\n❌ [4.7] Setiap sitasi ada di Daftar Pustaka dan sebaliknya\n    → 3 sitasi tanpa pasangan, 5 entri tidak disitasi. Panduan: setiap pustaka yang dirujuk harus muncul di Daftar Pustaka, dan sebaliknya. (Deteksi otomatis — pastikan ejaan nama & tahun identik.)\n      • Disitasi tapi tidak ada di Daftar Pustaka (atau nama/tahun beda): (Rahmah, 2022)\n      • Disitasi tapi tidak ada di Daftar Pustaka (atau nama/tahun beda): (Politeknik Negeri Ujung Pandang, 2023)\n      • Disitasi tapi tidak ada di Daftar Pustaka (atau nama/tahun beda): (MDP, 2023)\n      • Ada di Daftar Pustaka tapi tidak disitasi di naskah: Hamzida (2020)\n      • Ada di Daftar Pustaka tapi tidak disitasi di naskah: Marcos (2021)\n      • Ada di Daftar Pustaka tapi tidak disitasi di naskah: Patel (2022)\n      • Ada di Daftar Pustaka tapi tidak disitasi di naskah: Rahardjo (2022)\n      • Ada di Daftar Pustaka tapi tidak disitasi di naskah: Raspberry Pi Foundation (2023)\n⚠️ [4.8] Format sitasi dalam naskah (Nama, Tahun)\n    → Format sitasi perlu dirapikan.\n      • Sitasi berkurung dipakai sebagai subjek kalimat: (Tan & Lim, 2023) → pakai sitasi naratif, mis. 'Joko et al. (2020) menunjukkan ...'.\n\n[MODUL 5: ANGGARAN & KEUANGAN]  Skor: 72%\n----------------------------------------\n✅ [6.1] Dana Belmawa Rp6–8 juta (dari Rekap Sumber Dana)\n    → Dana Belmawa Rp8.000.000 (Rekap Sumber Dana).\n✅ [6.2] Dana pendamping PT wajib ada (≤ Rp2 juta); instansi lain ≤ Rp1 juta\n    → Perguruan Tinggi Rp2.000.000; instansi lain -.\n❌ [6.3] Komposisi RAB: bahan ≤60%, sewa/jasa ≤15%, transport ≤30%, lain-lain ≤15%\n    → Batas persentase dilanggar baik dihitung dari dana Belmawa maupun total dana.\n      • Sewa dan jasa 15.6% dari dana Belmawa dan 16.0% dari total — melewati batas 15%\n      • Bahan habis pakai 63.7% dari dana Belmawa (batas 60%); terhadap total dana 53.5%\n❌ [6.4] Tidak ada item terlarang di RAB\n    → Item berikut tidak diperkenankan di RAB PKM 2026:\n      • publikasi hasil di jurnal (\"Publish Artikel\")\n✅ [6.4.c] Harga satuan alat/bahan ≤ Rp1.000.000 per item\n    → 34 baris dicek; tidak ada harga satuan > Rp1.000.000.\n✅ [6.4.e] Batas item khusus: kuota ≤Rp100rb/bulan, lisensi ≤6 bulan, kertas ≤2 rim\n    → Tidak ada pelanggaran batas item khusus.\n✅ [6.5] Alokasi promosi media sosial ada & Ads ≤ Rp500.000\n    → Ads/promosi media sosial Rp400.000.\n⚠️ [6.6] Aritmetika justifikasi (volume × harga, subtotal, grand total, terbilang)\n    → Panduan: kesalahan hasil perkalian dan penjumlahan dapat mempengaruhi penilaian. Perbaiki semua baris berikut.\n      • Format angka rusak: '800.00,00'\n      • Jumper Malet to: 2 × Rp25.000 = Rp50.000, tertulis Rp25.000\n      • Terbilang 'Sepuluh Juta Ribu RPT-Xah' ≠ Rp10.000.000 (seharusnya: sepuluh juta rPT-Xah)\n✅ [6.7] Tabel 4.1 Rekap konsisten dengan Lampiran Justifikasi\n    → Total Rp10.000.000 cocok dengan justifikasi.\n\n[MODUL 6: LAMPIRAN]  Skor: 100%\n----------------------------------------\n✅ [L-1] Lampiran: Biodata Ketua & Anggota\n    → 'Biodata Ketua & Anggota' ditemukan.\n✅ [L-1b] Lampiran: Biodata Dosen Pendamping\n    → 'Biodata Dosen Pendamping' ditemukan.\n✅ [L-2] Lampiran: Justifikasi Anggaran Kegiatan\n    → 'Justifikasi Anggaran Kegiatan' ditemukan.\n✅ [L-3] Lampiran: Susunan Tim Pengusul & Pembagian Tugas\n    → 'Susunan Tim Pengusul & Pembagian Tugas' ditemukan.\n✅ [L-4] Lampiran: Surat Pernyataan Ketua Tim Pengusul\n    → 'Surat Pernyataan Ketua Tim Pengusul' ditemukan.\n✅ [L-6] Lampiran: Hasil Uji Similaritas (≤25%, bagian inti)\n    → 'Hasil Uji Similaritas (≤25%, bagian inti)' ditemukan.\n✅ [L-KC] Lampiran khusus PKM-KC: Gambaran Teknologi yang akan Dikembangkan\n    → 'Gambaran Teknologi yang akan Dikembangkan' ditemukan.\n✅ [L-1.c] Biodata bertanda tangan basah (halaman penuh hasil scan/foto)\n    → 7 halaman biodata hasil scan/foto (hal. PDF [16, 17, 19, 20, 22, 23, 24]). Pastikan tanggal tanda tangan sesuai tahun pengusulan.\n✅ [L-4.c] Surat Pernyataan: scan halaman penuh, TT basah & meterai Rp10.000\n    → Surat Pernyataan berupa scan (hal. PDF 29). Verifikasi visual: meterai Rp10.000 tertempel & tertanda tangan, tanggal sesuai, judul sama dengan isian simbelmawa.\n\n[MODUL 7: TEMA & KONSISTENSI DATA]  Skor: 62%\n----------------------------------------\n❌ [7.1] Kaitan eksplisit dengan salah satu 10 tema PKM 2026\n    → Naskah mengaitkan proposal dengan tema tahun 2025, bukan 2026: \"Masalah proyek ini sejalan dengan tema PKM 2025, yaitu Kearifan Lokal dan Rekayasa Sosial untuk Mengatasi Permasalahan Sosial, dengan fokus pada peningkatan keamanan perempuan di ruang publik.\". Ganti dengan salah satu 10 tema 2026 — Tahap 1 menilai kesesuaian judul dengan tema yang dipilih.\n⚠️ [7.2] Referensi tahun PKM konsisten (2026)\n    → Ada rujukan ke tahun lain: \"tema PKM 2025\". Proposal daur ulang wajib diperbarui ke format, tema, dan tanggal 2026 (termasuk tanggal tanda tangan di biodata & Surat Pernyataan).\n✅ [7.3] Susunan Tim lengkap: setiap anggota bernama & ber-NIM\n    → 5 anggota lengkap dengan NIM: Nama Samaran 3/•••••••, Nama Samaran 2/•••••••, Nama Samaran 1/•••••••, Nama Samaran 5/•••••••, Nama Samaran 4/•••••••\n✅ [7.4] Ejaan nama anggota konsisten di seluruh dokumen (sesuai PDDikti)\n    → 5 nama dicek, ejaan konsisten.\n\n============================================================\nREKOMENDASI PRIORITAS:\n----------------------------------------\n1. [PERIKSA] Indeks similaritas ≤ 25%: Nilai similaritas tidak ditemukan secara otomatis. Pastikan lampiran hasil Turnitin/iThenticate tersedia dan terbaca.\n2. [WAJIB] Judul ditulis HURUF KAPITAL: Panduan 2026: judul 'ditulis menggunakan huruf kapital'. Samakan di isian simbelmawa dan Surat Pernyataan: \"PRODUK-E: AI-ENHANCED GUARDIAN SYSTEM BERBASIS ITDRS & IOT UNTUK MELINDUNGI WANITA DI JEMBATAN LAYANG\"\n3. [PERIKSA] Judul tanpa akronim/singkatan tidak baku: Kemungkinan akronim tidak baku: ITDRS. Panduan melarang akronim/singkatan tidak baku di judul — tulis kepanjangannya.\n4. [PERIKSA] Judul dalam Bahasa Indonesia: Kata bahasa Inggris di judul: Enhanced, Guardian, System. Panduan: judul 'ditulis dalam Bahasa Indonesia' — pakai padanan Indonesia bila ada.\n5. [PERIKSA] Heading bab kapital & bertitik ('BAB 1. PENDAHULUAN'): Format heading bab belum seragam dengan panduan.\n6. [WAJIB] Format entri Harvard (tahun dalam kurung, tanpa et al./dkk, diakhiri titik, tanggal akses URL): 13 dari 13 entri melanggar aturan pokok. Kesalahan Daftar Pustaka — walau hanya titik — sering menjadi penyebab proposal tidak lolos.\n7. [PERIKSA] Detail tanda baca & gaya entri (kutip judul, nomor halaman, inisial, italic, spasi): 3 entri perlu dirapikan. Samakan dengan contoh di lampiran panduan (mis. Tovey, H. (2002) 'Judul', Nama Jurnal, 11(1), pp. 23-42.).\n8. [WAJIB] Setiap sitasi ada di Daftar Pustaka dan sebaliknya: 3 sitasi tanpa pasangan, 5 entri tidak disitasi. Panduan: setiap pustaka yang dirujuk harus muncul di Daftar Pustaka, dan sebaliknya. (Deteksi otomatis — pastikan ejaan nama & tahun identik.)\n9. [PERIKSA] Format sitasi dalam naskah (Nama, Tahun): Format sitasi perlu dirapikan.\n10. [WAJIB] Komposisi RAB: bahan ≤60%, sewa/jasa ≤15%, transport ≤30%, lain-lain ≤15%: Batas persentase dilanggar baik dihitung dari dana Belmawa maupun total dana.\n11. [WAJIB] Tidak ada item terlarang di RAB: Item berikut tidak diperkenankan di RAB PKM 2026:\n12. [PERIKSA] Aritmetika justifikasi (volume × harga, subtotal, grand total, terbilang): Panduan: kesalahan hasil perkalian dan penjumlahan dapat mempengaruhi penilaian. Perbaiki semua baris berikut.\n13. [WAJIB] Kaitan eksplisit dengan salah satu 10 tema PKM 2026: Naskah mengaitkan proposal dengan tema tahun 2025, bukan 2026: \"Masalah proyek ini sejalan dengan tema PKM 2025, yaitu Kearifan Lokal dan Rekayasa Sosial untuk Mengatasi Permasalahan Sosial, dengan fokus pada peningkatan keamanan perempuan di ruang publik.\". Ganti dengan salah satu 10 tema 2026 — Tahap 1 menilai kesesuaian judul dengan tema yang dipilih.\n14. [PERIKSA] Referensi tahun PKM konsisten (2026): Ada rujukan ke tahun lain: \"tema PKM 2025\". Proposal daur ulang wajib diperbarui ke format, tema, dan tanggal 2026 (termasuk tanggal tanda tangan di biodata & Surat Pernyataan).\n\nCATATAN: checker ini hanya menilai ADMINISTRASI & FORMAT (Tahap 1).\nLolos administrasi tidak menjamin didanai — Tahap 2 menilai substansi\n(kreativitas gagasan, urgensi masalah, ketepatan IPTEK/metode, potensi).\n============================================================"
+  }
+ }
+]

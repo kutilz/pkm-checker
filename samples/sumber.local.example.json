@@ -1,0 +1,13 @@
+[
+  {
+    "id": "A",
+    "pdf": "C:/path/ke/proposal.pdf",
+    "jenis": "KI",
+    "status_asli": "Didanai",
+    "siklus": 2026,
+    "judul_samaran": "PRODUK-A: JUDUL SAMARAN YANG MEMPERTAHANKAN CIRI FORMAT JUDUL ASLI",
+    "samaran_produk": {"NamaProdukAsli": "Produk-A"},
+    "samaran_lain": {"Nama Perguruan Tinggi": "Universitas X", "SINGKATAN-PT": "PT-X"},
+    "catatan": "Keterangan singkat yang tampil di bawah pilihan sampel."
+  }
+]

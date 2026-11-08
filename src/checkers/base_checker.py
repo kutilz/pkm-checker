@@ -21,6 +21,8 @@ class CheckItem:
     status: Status
     detail: str = ""
     halaman: Optional[int] = None
+    # Rincian per temuan (mis. kesalahan per entri daftar pustaka), ditampilkan sebagai poin
+    catatan: list[str] = field(default_factory=list)
 
 
 @dataclass
@@ -31,11 +33,12 @@ class ModulResult:
 
     @property
     def skor(self) -> float:
-        """Hitung skor 0–100 berdasarkan item yang lulus."""
+        """Skor 0–100: LULUS = 1, PERINGATAN = 0,5 (perlu cek manual), TIDAK_LULUS = 0."""
         if not self.items:
             return 100.0
-        lulus = sum(1 for i in self.items if i.status == Status.LULUS)
-        return round(lulus / len(self.items) * 100, 1)
+        nilai = sum(1.0 if i.status == Status.LULUS else 0.5 if i.status == Status.PERINGATAN else 0.0
+                    for i in self.items)
+        return round(nilai / len(self.items) * 100, 1)
 
     @property
     def ada_tidak_lulus(self) -> bool:
