@@ -49,3 +49,4 @@ htmlcov/
 
 # ── Sumber sampel lokal (path & nama asli proposal) ─────────────────────────
 *.local.json
+.gstack/

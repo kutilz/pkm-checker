@@ -1,5 +1,5 @@
 pdfplumber>=0.11.0
 pymupdf>=1.24.3
 google-genai>=0.8.0
-streamlit>=1.36.0
+streamlit>=1.50.0
 python-dotenv>=1.0.0

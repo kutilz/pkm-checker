@@ -128,7 +128,7 @@ DAFPUS_FORMAT = "HARVARD"  # "HARVARD" | "APA" | "KEDUANYA"
 
 ```
 pkm-check/
-├── app.py                    # UI Streamlit
+├── app.py                    # UI Streamlit: alur halaman, mode cek & bandingkan
 ├── config.py                 # Semua konstanta & parameter
 ├── requirements.txt
 ├── .env.example              # Template environment variables
@@ -140,6 +140,8 @@ pkm-check/
 └── src/
     ├── engine.py             # Orkestrasi pipeline pengecekan
     ├── samples.py            # Loader sampel cepat untuk UI
+    ├── ui.py                 # Komponen tampilan (kartu ringkasan, daftar perbaikan, tampilan komparasi)
+    ├── compare.py            # Logika komparasi antarversi (murni, tanpa Streamlit)
     ├── parser/
     │   └── pdf_parser.py     # Ekstraksi & segmentasi PDF
     ├── checkers/
@@ -177,16 +179,37 @@ Dapatkan API key gratis di: https://aistudio.google.com/app/apikey
 
 ## 📌 Cara Pakai
 
-1. **Upload PDF** proposal PKM (maks. 5 MB, harus bisa dibaca teks — bukan scan penuh)
-2. **Isi Judul** persis seperti di simbelmawa/Surat Pernyataan (Panduan 2026: HURUF KAPITAL)
-3. **Pilih Jenis PKM** (atau biarkan deteksi otomatis)
-4. Klik **"Mulai Pengecekan"**
-5. Lihat laporan per modul, unduh sebagai `.txt`
+### Cek satu proposal
+
+1. **Unggah PDF** proposal PKM (maks. 5 MB, harus bisa dibaca teks — bukan scan penuh)
+2. *(Opsional)* **Isi judul** persis seperti di SIMBELMAWA/Surat Pernyataan (Panduan 2026: HURUF KAPITAL).
+   Kosongkan untuk dideteksi dari Surat Pernyataan.
+3. *(Opsional)* **Jenis PKM** — otomatis dari nama file (`..._PKM-KC.pdf`), atau pilih manual
+4. Klik **Periksa proposal**
+5. Hasil tampil berurutan: ringkasan status & skor → skor per modul → tab **Yang perlu diperbaiki**
+   (wajib dulu, lalu cek manual) → **Rincian per modul** → **Laporan teks** (unduh `.txt`)
+
+### Bandingkan versi (v1, v2, v3, …)
+
+Pilih mode **Bandingkan versi**, unggah 2–5 PDF dari proposal yang sama, atur urutan & label
+(mis. `v1`, `Revisi dosen`) di tabel, lalu klik **Bandingkan**. Semua versi diperiksa paralel, lalu tampil:
+
+- **Kartu tiap versi** — status, skor, selisih skor dari versi sebelumnya, jumlah temuan
+- **Apa yang berubah** — dari versi mana ke versi mana (default: pertama → terakhir), dikelompokkan jadi
+  *memburuk/baru muncul*, *masih bermasalah*, *membaik*, *sudah beres*
+- **Skor per modul** — tabel skor tiap modul per versi beserta selisihnya
+- **Semua pemeriksaan** — matriks status tiap item per versi (filter: berubah / masih bermasalah / semua),
+  klik baris untuk melihat rincian tiap versi berdampingan; bisa diunduh `.csv`
+- **Detail per versi** — laporan lengkap satu versi, sama seperti mode cek satu proposal
+
+Item dicocokkan antarversi lewat kodenya (`4.3`, `HD-05`, …). Mengganti label atau urutan tidak memeriksa
+ulang; mengganti judul/jenis memeriksa ulang versi itu saja.
 
 ### 🧪 Sampel cepat
 
 Tanpa upload, halaman utama menyediakan **5 sampel** (3 didanai, 2 tidak didanai, siklus 2025–2026).
-Pilih sampel → **Jalankan Sampel** → laporan lengkap tampil seperti pengecekan biasa.
+Pilih sampel → **Jalankan sampel** → laporan lengkap tampil seperti pengecekan biasa.
+Mode **Bandingkan versi** juga punya demo dari sampel yang sama (proposal berbeda, hanya untuk mencoba tampilan).
 Isinya adalah hasil *asli* checker pada proposal nyata, dengan nama, NIM, kontak, nama produk, judul,
 dan perguruan tinggi **disamarkan**. PDF aslinya tidak disimpan di repo.
 

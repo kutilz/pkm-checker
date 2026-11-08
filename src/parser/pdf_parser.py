@@ -5,10 +5,15 @@ Menggunakan pdfplumber untuk teks/tabel dan pymupdf untuk detail font/layout.
 
 import re
 import os
+import threading
 from dataclasses import dataclass, field
 from typing import Optional
 import pdfplumber
 import pymupdf as fitz  # nama modul "fitz" sudah deprecated
+
+# PyMuPDF tidak thread-safe, bahkan untuk dokumen berbeda. Streamlit menjalankan tiap sesi
+# (dan mode komparasi menjalankan tiap versi) di thread terpisah, jadi ekstraksi diserialkan.
+_PDF_LOCK = threading.Lock()
 
 
 @dataclass
@@ -107,8 +112,9 @@ def parse_pdf(file_path: str) -> ProposalDocument:
         file_size_mb=file_size_mb,
     )
 
-    doc.jenis_pkm = _detect_jenis_pkm(file_name)
-    doc.pages = _extract_pages(file_path)
+    doc.jenis_pkm = detect_jenis_pkm(file_name)
+    with _PDF_LOCK:
+        doc.pages = _extract_pages(file_path)
     doc.full_text = "\n".join(p.text for p in doc.pages)
     doc.judul = _extract_judul(doc.full_text)
 
@@ -120,7 +126,7 @@ def parse_pdf(file_path: str) -> ProposalDocument:
     return doc
 
 
-def _detect_jenis_pkm(file_name: str) -> Optional[str]:
+def detect_jenis_pkm(file_name: str) -> Optional[str]:
     """Deteksi jenis PKM dari nama file: namaketua_namaPT_PKM-[JENIS].pdf"""
     match = re.search(r'PKM-?([A-Z]+)', file_name, re.IGNORECASE)
     if match:

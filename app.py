@@ -1,320 +1,415 @@
 """
 Streamlit UI — PKM 2026 Proposal Checker.
 Jalankan: streamlit run app.py
+
+Dua mode:
+- Cek satu proposal  : unggah 1 PDF -> daftar perbaikan + rincian per modul.
+- Bandingkan versi   : unggah 2–5 versi (v1, v2, ...) -> apa yang beres, memburuk, dan masih tersisa.
 """
 
-import html
+import hashlib
 import os
+import re
 import tempfile
 import time
+from concurrent.futures import ThreadPoolExecutor, as_completed
+
+import pandas as pd
 import streamlit as st
 
-from src.engine import run_checks, FileSizeError
+from config import JENIS_PKM_VALID, MAX_FILE_SIZE_MB
+from src.engine import FileSizeError, run_checks
+from src.parser.pdf_parser import detect_jenis_pkm
 from src.samples import load_samples, with_current_timestamp
-from config import JENIS_PKM_VALID
+from src.ui import inject_css, legenda_html, render_banding, render_hasil
 
-st.set_page_config(
-    page_title="PKM 2026 Checker",
-    page_icon="📋",
-    layout="wide",
-)
+st.set_page_config(page_title="PKM Checker 2026", page_icon="📋", layout="wide")
 
-STATUS_COLOR = {
-    "LULUS": "green",
-    "PERINGATAN": "orange",
-    "TIDAK_LULUS": "red",
-}
-
-STATUS_ICON = {
-    "LULUS": "✅",
-    "PERINGATAN": "⚠️",
-    "TIDAK_LULUS": "❌",
-}
+MODES = {"tunggal": "Cek satu proposal", "banding": "Bandingkan versi"}
+MAX_VERSI = 5
+CACHE_MAX = 12          # hasil per sesi yang disimpan (supaya ganti label/urutan tidak memeriksa ulang)
+WORKER_MAX = 3          # paralel antar-file; ekstraksi PDF tetap serial, panggilan Gemini yang tumpang tindih
+OTOMATIS = "Otomatis"
 
 
-def render_item(item: dict):
-    status = item["status"]
-    icon = STATUS_ICON.get(status, "❓")
-    color = STATUS_COLOR.get(status, "gray")
-    detail = item.get("detail", "")
-    hal = f" *(hal. {item['halaman']})*" if item.get("halaman") else ""
-    st.markdown(
-        f"<div style='padding:4px 0'>"
-        f"<span style='color:{color}'>{icon}</span> "
-        f"<b>[{item['kode']}]</b> {item['deskripsi']}{hal}"
-        f"</div>",
-        unsafe_allow_html=True,
-    )
-    if detail:
-        st.caption(f"↳ {detail}")
-    if item.get("catatan"):
-        poin = "".join(f"<li>{html.escape(c)}</li>" for c in item["catatan"])
-        st.markdown(f"<ul style='margin:0 0 6px 2.2em;font-size:0.9em'>{poin}</ul>",
-                    unsafe_allow_html=True)
+# ─── Menjalankan checker ───────────────────────────────────────────────────────
+
+def _kunci(data: bytes, judul, jenis) -> str:
+    return f"{hashlib.sha1(data).hexdigest()}|{judul or ''}|{jenis or ''}"
 
 
-def main():
-    st.title("📋 PKM 2026 — Sistem Pengecekan Proposal Otomatis")
-    st.markdown(
-        "Upload file PDF proposal PKM 2026 untuk memeriksa kesesuaiannya "
-        "dengan ketentuan panduan secara otomatis."
-    )
+def _hash_dari_kunci(kunci: str) -> str:
+    return kunci.split("|", 1)[0]
 
-    with st.sidebar:
-        st.header("ℹ️ Informasi")
-        st.info(
-            "**Sistem ini memeriksa:**\n"
-            "- Hard Disqualifiers (langsung gugur)\n"
-            "- Identitas & Judul\n"
-            "- Format & Tipografi\n"
-            "- Struktur Dokumen\n"
-            "- Daftar Pustaka & Sitasi (ketat sampai tanda baca)\n"
-            "- Anggaran & Keuangan\n"
-            "- Lampiran & Tanda Tangan\n"
-            "- Tema & Konsistensi Data"
-        )
-        st.caption(
-            "Hanya administrasi (Tahap 1). Lolos administrasi belum tentu didanai: "
-            "Tahap 2 menilai kreativitas gagasan, urgensi masalah, dan ketepatan IPTEK."
-        )
-        st.warning(
-            "**Batasan:**\n"
-            "- Maks. ukuran file: 5 MB\n"
-            "- PDF harus bisa dibaca teks (bukan scan gambar)\n"
-            "- Isi halaman scan (tanggal TTD, meterai) tidak dibaca\n"
-            "- Gemini API (opsional) untuk cek sitasi tambahan"
-        )
-        st.markdown("---")
-        st.caption("Referensi: Panduan PKM 2026")
 
-    uploaded = st.file_uploader(
-        "Upload PDF Proposal PKM",
-        type=["pdf"],
-        help="Format nama file yang benar: namaketua_namaPT_PKM-[JENIS].pdf",
-    )
+def _nama_aman(file_name: str) -> str:
+    """Nama file asli dipertahankan karena jenis PKM dideteksi dari nama file."""
+    nama = re.sub(r'[<>:"/\\|?*\x00-\x1f]', "_", os.path.basename(file_name or "")).strip(" .")
+    return nama if nama.lower().endswith(".pdf") else (nama or "proposal") + ".pdf"
 
-    if not uploaded:
-        st.info("👆 Upload file PDF proposal untuk memulai pengecekan — atau coba sampel cepat di bawah.")
-        _render_sample_section()
-        return
 
-    st.markdown(f"**File:** `{uploaded.name}` — `{uploaded.size / 1024:.1f} KB`")
+def _periksa(data: bytes, file_name: str, judul, jenis) -> dict:
+    with tempfile.TemporaryDirectory() as d:
+        path = os.path.join(d, _nama_aman(file_name))
+        with open(path, "wb") as f:
+            f.write(data)
+        r = run_checks(path, judul_input=judul, jenis_pkm_input=jenis)
+    return {"structured": r["structured_report"], "text_report": r["text_report"]}
 
-    # Input manual dari user (wajib diisi untuk analisis yang akurat)
-    st.markdown("---")
-    st.markdown("### ✏️ Informasi Proposal")
-    st.caption(
-        "Isi informasi berikut untuk memastikan analisis akurat. "
-        "Panduan 2026: judul **HURUF KAPITAL**, maks. 20 kata, Bahasa Indonesia, tanpa akronim tidak baku."
-    )
 
-    col_a, col_b = st.columns([3, 1])
-    with col_a:
-        judul_input = st.text_area(
-            "Judul Proposal (persis seperti di simbelmawa / Surat Pernyataan)",
-            placeholder="Contoh: SISTEM PEMANTAU KUALITAS AIR BERBASIS INTERNET OF THINGS UNTUK BUDIDAYA IKAN",
-            height=80,
-            help=(
-                "Salin judul apa adanya (jangan diubah kapitalisasinya) supaya checker bisa menilai "
-                "apakah sudah ditulis huruf kapital sesuai Panduan PKM 2026."
-            ),
-        )
-    with col_b:
-        jenis_options = ["(Deteksi Otomatis)"] + [f"PKM-{j}" for j in JENIS_PKM_VALID]
-        jenis_selected = st.selectbox(
-            "Jenis PKM",
-            options=jenis_options,
-            help="Pilih jenis PKM sesuai yang diklaim di proposal.",
-        )
-        jenis_input = None if jenis_selected == "(Deteksi Otomatis)" else jenis_selected.replace("PKM-", "")
+def _cache() -> dict:
+    return st.session_state.setdefault("_cache_hasil", {})
 
-    st.markdown("---")
 
-    if st.button("🔍 Mulai Pengecekan", type="primary", use_container_width=True):
-        if not judul_input.strip():
-            st.warning("⚠️ Judul proposal belum diisi. Pengecekan judul akan dilewati.")
+def _simpan(kunci: str, hasil: dict):
+    c = _cache()
+    c.pop(kunci, None)
+    c[kunci] = hasil
+    while len(c) > CACHE_MAX:
+        c.pop(next(iter(c)))
 
-        with st.spinner("Menganalisis proposal... harap tunggu."):
-            try:
-                with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as tmp:
-                    tmp.write(uploaded.read())
-                    tmp_path = tmp.name
 
-                result = run_checks(
-                    tmp_path,
-                    judul_input=judul_input.strip() or None,
-                    jenis_pkm_input=jenis_input,
-                )
-                os.unlink(tmp_path)
+def _pesan_error(e: Exception) -> str:
+    if isinstance(e, FileSizeError):
+        return str(e)
+    return f"Gagal memproses PDF: {e}. Pastikan PDF berisi teks (bukan hasil scan gambar)."
 
-                _render_results(result)
 
-            except FileSizeError as e:
-                st.error(f"❌ {e}")
-            except FileNotFoundError as e:
-                st.error(f"❌ {e}")
-            except Exception as e:
-                st.error(f"❌ Terjadi kesalahan saat memproses PDF: {e}")
-                st.exception(e)
-
+# ─── Sampel ────────────────────────────────────────────────────────────────────
 
 @st.cache_data(show_spinner=False)
 def _load_samples() -> list[dict]:
     return load_samples()
 
 
-def _render_sample_section():
-    """Sampel cepat: hasil checker asli pada proposal nyata (data pribadi disamarkan)."""
+# ─── Halaman ───────────────────────────────────────────────────────────────────
+
+def _sidebar():
+    with st.sidebar:
+        st.markdown("### Cara membaca hasil")
+        st.html(f'<div class="pk">{legenda_html()}</div>')
+        st.markdown("**Skor administrasi (0–100)**")
+        st.caption(
+            "Rata-rata berbobot 7 modul. Tiap pemeriksaan: sesuai = 1, cek manual = ½, wajib diperbaiki = 0. "
+            "Satu saja item Hard Disqualifier gagal, proposal langsung gugur berapa pun skornya."
+        )
+        st.caption("Layak: skor ≥85 tanpa item wajib · Perlu perbaikan: masih ada item wajib · "
+                   "Tidak lolos: skor <60.")
+        with st.expander("Apa saja yang dicek"):
+            st.markdown(
+                "- **Hard Disqualifier**: sampul, pengesahan, abstrak, similaritas\n"
+                "- **Identitas**: judul kapital ≤20 kata, anggota, NUPTK\n"
+                "- **Format**: Times New Roman 12, spasi 1,15, A4, margin, nomor halaman\n"
+                "- **Struktur**: daftar isi, judul BAB per bidang, ≤10 halaman inti\n"
+                "- **Daftar pustaka**: Harvard 2026, ketat sampai tanda baca\n"
+                "- **Anggaran**: sumber dana, komposisi, item terlarang, aritmetika\n"
+                "- **Lampiran**: lampiran umum & khusus bidang, tanda tangan\n"
+                "- **Tema & konsistensi**: 10 tema 2026, NIM, ejaan nama"
+            )
+        with st.expander("Batasan"):
+            st.markdown(
+                f"- Ukuran file maks. {MAX_FILE_SIZE_MB} MB\n"
+                "- PDF harus berisi teks (bukan scan gambar)\n"
+                "- Isi halaman scan (tanggal TTD, meterai) tidak dibaca\n"
+                "- Hanya administrasi Tahap 1, bukan substansi"
+            )
+        st.caption("Referensi: Panduan PKM 2026")
+
+
+def _jaga_mode():
+    """segmented_control bisa di-unselect; kembalikan ke mode terakhir supaya selalu ada yang aktif."""
+    if st.session_state.get("mode") is None:
+        st.session_state["mode"] = st.session_state.get("_mode_terakhir", "tunggal")
+    st.session_state["_mode_terakhir"] = st.session_state["mode"]
+
+
+def main():
+    inject_css()
+    _sidebar()
+
+    st.title("PKM Checker 2026")
+    st.markdown("Cek administrasi proposal PKM terhadap **Panduan PKM 2026** sebelum diunggah ke SIMBELMAWA.")
+
+    st.session_state.setdefault("mode", "tunggal")
+    mode = st.segmented_control("Mode", list(MODES), format_func=MODES.get, key="mode",
+                                on_change=_jaga_mode, label_visibility="collapsed") or "tunggal"
+    if mode == "tunggal":
+        st.caption("Unggah satu PDF dan dapatkan daftar yang perlu diperbaiki.")
+        _mode_tunggal()
+    else:
+        st.caption("Unggah 2–5 versi dari proposal yang sama (mis. v1, v2, v3) untuk melihat "
+                   "apa yang sudah beres, apa yang memburuk, dan apa yang masih tersisa.")
+        _mode_banding()
+
+
+# ─── Mode: cek satu proposal ───────────────────────────────────────────────────
+
+def _format_jenis(det):
+    def f(j):
+        if j is None:
+            return f"{OTOMATIS} (PKM-{det})" if det else f"{OTOMATIS} (tidak terdeteksi)"
+        return f"PKM-{j}"
+    return f
+
+
+def _mode_tunggal():
+    up = st.file_uploader(
+        "PDF proposal", type=["pdf"], key="up_tunggal",
+        help=f"Maks. {MAX_FILE_SIZE_MB} MB. Nama file sesuai panduan: namaketua_namaPT_PKM-JENIS.pdf "
+             "(jenis PKM dideteksi dari nama file).",
+    )
+    if up is None:
+        st.session_state.pop("hasil_tunggal", None)
+        _contoh_tunggal()
+        return
+
+    st.session_state.pop("sampel_aktif", None)
+    data = up.getvalue()
+    det = detect_jenis_pkm(up.name)
+
+    with st.container(border=True):
+        st.markdown("**Data pendukung** · opsional, tapi membuat hasil lebih akurat")
+        c1, c2 = st.columns([3, 1])
+        judul = c1.text_area(
+            "Judul proposal",
+            key="judul_tunggal", height=80,
+            placeholder="Kosongkan untuk dideteksi dari Surat Pernyataan",
+            help="Salin persis seperti di SIMBELMAWA / Surat Pernyataan, jangan ubah kapitalisasinya, "
+                 "supaya aturan judul HURUF KAPITAL ≤20 kata bisa dinilai.",
+        )
+        jenis = c2.selectbox("Jenis PKM", [None] + JENIS_PKM_VALID, format_func=_format_jenis(det),
+                             key="jenis_tunggal")
+        if det is None and jenis is None:
+            c2.caption(":orange[Jenis tidak terdeteksi dari nama file. Pilih manual supaya struktur BAB "
+                       "dan lampiran khusus dicek sesuai bidang.]")
+        mulai = st.button("Periksa proposal", type="primary", icon=":material/search:", width="stretch")
+
+    judul = judul.strip() or None
+    kunci = _kunci(data, judul, jenis)
+
+    if mulai:
+        if kunci not in _cache():
+            with st.spinner("Memeriksa proposal… biasanya 10–40 detik."):
+                try:
+                    _simpan(kunci, _periksa(data, up.name, judul, jenis))
+                except Exception as e:  # noqa: BLE001 — tampilkan ke pengguna, jangan crash
+                    st.error(_pesan_error(e))
+                    with st.expander("Detail teknis"):
+                        st.exception(e)
+                    return
+        st.session_state["hasil_tunggal"] = kunci
+
+    aktif = st.session_state.get("hasil_tunggal")
+    if not aktif:
+        return
+    if _hash_dari_kunci(aktif) != _hash_dari_kunci(kunci) or aktif not in _cache():
+        st.session_state.pop("hasil_tunggal", None)   # file diganti
+        return
+    if aktif != kunci:
+        st.info("Judul atau jenis PKM diubah. Klik **Periksa proposal** lagi untuk memperbarui hasil.")
+    hasil = _cache()[aktif]
+    st.write("")
+    render_hasil(hasil["structured"], hasil["text_report"], key="tunggal")
+
+
+def _contoh_tunggal():
     samples = _load_samples()
     if not samples:
         return
-    st.markdown("---")
-    st.markdown("### 🧪 Coba Sampel Cepat")
-    st.caption(
-        f"{len(samples)} proposal PKM nyata — "
-        f"{sum(s['status_asli'] == 'Didanai' for s in samples)} didanai, "
-        f"{sum(s['status_asli'] != 'Didanai' for s in samples)} tidak didanai. "
-        "Nama, NIM, kontak, nama produk, judul, dan perguruan tinggi disamarkan."
-    )
-    col_a, col_b = st.columns([3, 1])
-    with col_a:
-        idx = st.selectbox("Pilih sampel", range(len(samples)),
-                           format_func=lambda i: samples[i]["label"], key="pilih_sampel")
-        if samples[idx].get("catatan_sampel"):
-            st.caption(samples[idx]["catatan_sampel"])
-    with col_b:
-        st.write("")
-        if st.button("▶️ Jalankan Sampel", type="primary", use_container_width=True):
+    st.write("")
+    with st.container(border=True):
+        st.markdown("#### Belum punya file? Coba sampel")
+        didanai = sum(s["status_asli"] == "Didanai" for s in samples)
+        st.caption(f"{len(samples)} proposal PKM nyata ({didanai} didanai, {len(samples) - didanai} tidak). "
+                   "Nama, NIM, kontak, nama produk, judul, dan perguruan tinggi disamarkan.")
+        c1, c2 = st.columns([3, 1], vertical_alignment="bottom")
+        idx = c1.selectbox("Pilih sampel", range(len(samples)), format_func=lambda i: samples[i]["label"],
+                           key="pilih_sampel")
+        if c2.button("Jalankan sampel", type="primary", icon=":material/play_arrow:", width="stretch"):
             st.session_state["sampel_aktif"] = samples[idx]["id"]
             st.session_state["sampel_animasi"] = True
+        if samples[idx].get("catatan_sampel"):
+            st.caption(samples[idx]["catatan_sampel"])
 
     aktif = next((s for s in samples if s["id"] == st.session_state.get("sampel_aktif")), None)
     if aktif:
-        _run_sample(aktif, animate=st.session_state.pop("sampel_animasi", False))
+        _jalankan_sampel(aktif, animate=st.session_state.pop("sampel_animasi", False))
 
 
-def _run_sample(sample: dict, animate: bool):
-    st.markdown("---")
-    st.markdown(f"**File:** `{sample['file_name']}` — `{sample['file_size_kb']:.1f} KB`")
-    col_a, col_b = st.columns([3, 1])
-    with col_a:
-        st.text_area("Judul Proposal (persis seperti di simbelmawa / Surat Pernyataan)",
-                     value=sample["judul"], height=80, disabled=True, key=f"judul_sampel_{sample['id']}")
-    with col_b:
-        st.text_input("Jenis PKM", value=f"PKM-{sample['jenis']}", disabled=True,
-                      key=f"jenis_sampel_{sample['id']}")
-
+def _jalankan_sampel(sample: dict, animate: bool):
+    st.write("")
     langkah = sample.get("langkah", [])
     if animate and langkah:
-        with st.status("Menganalisis proposal... harap tunggu.", expanded=True) as status:
+        with st.status("Memeriksa proposal…", expanded=True) as status:
             bar = st.progress(0.0)
             for i, step in enumerate(langkah, 1):
                 time.sleep(0.45 if i <= 5 else 0.2)
                 st.write(f"• {step}")
                 bar.progress(i / len(langkah))
-            status.update(label="Analisis selesai", state="complete", expanded=False)
-    elif langkah:
-        with st.expander("Langkah analisis"):
-            st.markdown("\n".join(f"- {html.escape(s)}" for s in langkah))
+            status.update(label="Pemeriksaan selesai", state="complete", expanded=False)
 
-    st.info(
-        f"**{sample['label']}** — hasil asli checker pada proposal PKM nyata. "
-        f"Status sebenarnya: **{sample['status_asli']} (PKM {sample['siklus']})**. "
-        "Bandingkan dengan temuan di bawah."
+    st.info(f"**{sample['label']}**: ini hasil asli checker pada proposal nyata. Status sebenarnya: "
+            f"**{sample['status_asli']} (PKM {sample['siklus']})**. Bandingkan dengan temuan di bawah.",
+            icon=":material/science:")
+    hasil = with_current_timestamp(sample["result"])
+    render_hasil(hasil["structured_report"], hasil["text_report"], key=f"sampel_{sample['id']}")
+
+
+# ─── Mode: bandingkan versi ────────────────────────────────────────────────────
+
+def _teks(x) -> str:
+    return "" if x is None or pd.isna(x) else str(x).strip()
+
+
+def _konfigurasi_versi(ups) -> tuple[str, list[dict]]:
+    """Tabel urutan/label/judul/jenis per file. Return (id set file, daftar versi terurut)."""
+    files = [(u.name, u.getvalue()) for u in ups]
+    hashes = [hashlib.sha1(d).hexdigest() for _, d in files]
+    set_id = hashlib.sha1("".join(hashes).encode()).hexdigest()[:12]
+
+    jenis_opsi = [OTOMATIS] + [f"PKM-{j}" for j in JENIS_PKM_VALID]
+    df = pd.DataFrame({
+        "Urutan": list(range(1, len(files) + 1)),
+        "Label": [f"v{i}" for i in range(1, len(files) + 1)],
+        "File": [n for n, _ in files],
+        "Judul (opsional)": [""] * len(files),
+        "Jenis PKM": [f"PKM-{detect_jenis_pkm(n)}" if detect_jenis_pkm(n) else OTOMATIS for n, _ in files],
+    })
+    st.markdown("**Atur urutan dan label**")
+    st.caption("Urutan awal mengikuti urutan unggah, versi paling lama di atas. Klik sel untuk mengubah. "
+               "Judul boleh dikosongkan (dideteksi dari Surat Pernyataan).")
+    edited = st.data_editor(
+        df, key=f"editor_{set_id}", hide_index=True, num_rows="fixed", width="stretch",
+        column_config={
+            "Urutan": st.column_config.NumberColumn(min_value=1, max_value=len(files), step=1, width="small",
+                                                    help="1 = versi paling lama"),
+            "Label": st.column_config.TextColumn(max_chars=24, width="small", help="Mis. v1, Revisi dosen"),
+            "File": st.column_config.TextColumn(disabled=True, width="medium"),
+            "Judul (opsional)": st.column_config.TextColumn(width="medium"),
+            "Jenis PKM": st.column_config.SelectboxColumn(options=jenis_opsi, width="small"),
+        },
     )
-    _render_results(with_current_timestamp(sample["result"]))
+
+    versi = []
+    for i, row in edited.reset_index(drop=True).iterrows():
+        urut = row["Urutan"]
+        jenis_txt = _teks(row["Jenis PKM"])
+        judul = _teks(row["Judul (opsional)"]) or None
+        jenis = jenis_txt.replace("PKM-", "") if jenis_txt.startswith("PKM-") else None
+        name, data = files[i]
+        versi.append({
+            "i": i, "urut": i + 1 if pd.isna(urut) else int(urut),
+            "label": _teks(row["Label"]) or f"v{i + 1}",
+            "file_name": name, "data": data, "judul": judul, "jenis": jenis,
+            "kunci": _kunci(data, judul, jenis),
+        })
+    versi.sort(key=lambda v: (v["urut"], v["i"]))
+
+    dipakai: dict[str, int] = {}
+    for v in versi:
+        n = dipakai.get(v["label"], 0)
+        dipakai[v["label"]] = n + 1
+        if n:
+            v["label"] = f"{v['label']} ({n + 1})"
+    return set_id, versi
 
 
-def _render_results(result: dict):
-    structured = result["structured_report"]
-    overall = structured["overall"]
+def _periksa_banyak(versi: list[dict]) -> bool:
+    """Periksa versi yang belum ada di cache, paralel. Return True kalau semua berhasil."""
+    unik = {v["kunci"]: v for v in versi if v["kunci"] not in _cache()}
+    if not unik:
+        return True
+    tugas = list(unik.values())
+    gagal = []
+    with st.status(f"Memeriksa {len(tugas)} versi… biasanya 10–40 detik per file.", expanded=True) as status:
+        bar = st.progress(0.0)
+        with ThreadPoolExecutor(max_workers=min(WORKER_MAX, len(tugas))) as ex:
+            futs = {ex.submit(_periksa, v["data"], v["file_name"], v["judul"], v["jenis"]): v for v in tugas}
+            for k, fut in enumerate(as_completed(futs), 1):
+                v = futs[fut]
+                try:
+                    _simpan(v["kunci"], fut.result())
+                    st.write(f"✓ **{v['label']}** · {v['file_name']}")
+                except Exception as e:  # noqa: BLE001
+                    gagal.append((v, e))
+                    st.write(f"✕ **{v['label']}** · {_pesan_error(e)}")
+                bar.progress(k / len(tugas))
+        if gagal:
+            status.update(label=f"{len(gagal)} versi gagal diperiksa", state="error", expanded=True)
+        else:
+            status.update(label="Semua versi selesai diperiksa", state="complete", expanded=False)
+    return not gagal
 
-    st.markdown("---")
 
-    # Header status
-    kategori = overall["kategori"]
-    skor = overall["skor"]
-    col1, col2, col3, col4 = st.columns(4)
-    with col1:
-        st.metric("Status", kategori)
-    with col2:
-        st.metric("Skor Keseluruhan", f"{skor:.1f}%" if not structured["is_gugur"] else "—")
-    with col3:
-        st.metric("Jenis PKM", f"PKM-{structured['jenis_pkm'] or '?'}")
-    with col4:
-        st.metric("Ukuran File", f"{structured['file_size_mb']:.2f} MB")
+def _mode_banding():
+    ups = st.file_uploader(
+        f"PDF tiap versi (2–{MAX_VERSI} file)", type=["pdf"], accept_multiple_files=True, key="up_banding",
+        help=f"Pilih beberapa file sekaligus. Maks. {MAX_FILE_SIZE_MB} MB per file.",
+    )
+    if not ups:
+        st.session_state.pop("banding_aktif", None)
+        _contoh_banding()
+        return
+    st.session_state.pop("demo_banding", None)
+    if len(ups) == 1:
+        st.info("Tambahkan minimal satu versi lagi untuk mulai membandingkan.", icon=":material/add:")
+        return
+    if len(ups) > MAX_VERSI:
+        st.warning(f"Maksimal {MAX_VERSI} versi. Hanya {MAX_VERSI} file pertama yang dipakai.")
+        ups = ups[:MAX_VERSI]
 
-    if structured["judul"]:
-        st.info(f"**Judul:** {structured['judul']}")
+    with st.container(border=True):
+        set_id, versi = _konfigurasi_versi(ups)
+        mulai = st.button(f"Bandingkan {len(versi)} versi", type="primary", icon=":material/compare_arrows:",
+                          width="stretch")
 
-    if structured["is_gugur"]:
-        st.error("🚫 **PROPOSAL GUGUR DI TAHAP 1** — Perbaiki Hard Disqualifier berikut:")
+    if mulai:
+        if _periksa_banyak(versi):
+            st.session_state["banding_aktif"] = set_id
+        else:
+            return
 
-    # Tampilan skor per modul
-    if not structured["is_gugur"] and overall.get("modul_scores"):
-        st.markdown("### Skor per Modul")
-        cols = st.columns(len(overall["modul_scores"]))
-        for col, (nama, skor_m) in zip(cols, overall["modul_scores"].items()):
-            short_name = nama.split(":")[0] if ":" in nama else nama
-            col.metric(short_name, f"{skor_m:.0f}%")
-
-    st.markdown("---")
-
-    # Hard Disqualifiers
-    with st.expander("🚨 FASE 1: Hard Disqualifiers", expanded=True):
-        for item in structured["hard_disqualifiers"]["items"]:
-            render_item(item)
-
-    if structured["is_gugur"]:
-        st.warning("Proses pengecekan dihentikan karena proposal gugur di Fase 1.")
-        _render_text_report(result["text_report"])
+    if st.session_state.get("banding_aktif") != set_id:
+        return
+    if not all(v["kunci"] in _cache() for v in versi):
+        st.info("Judul atau jenis PKM diubah. Klik **Bandingkan** lagi untuk memperbarui hasil.")
         return
 
-    # Modul-modul
-    for modul in structured["modul_results"]:
-        ada_wajib = any(i["status"] == "TIDAK_LULUS" for i in modul["items"])
-        icon = "❌" if ada_wajib else ("✅" if modul["skor"] >= 85 else "⚠️")
-        with st.expander(f"{icon} {modul['nama']} — Skor: {modul['skor']:.0f}%"):
-            for item in modul["items"]:
-                render_item(item)
-
-    # Rekomendasi
-    st.markdown("---")
-    st.markdown("### 📌 Rekomendasi Prioritas")
-    all_items = (
-        structured["hard_disqualifiers"]["items"]
-        + [i for m in structured["modul_results"] for i in m["items"]]
-    )
-    wajib = [i for i in all_items if i["status"] == "TIDAK_LULUS"]
-    periksa = [i for i in all_items if i["status"] == "PERINGATAN"]
-
-    if wajib:
-        st.error(f"**{len(wajib)} item WAJIB diperbaiki:**")
-        for i, item in enumerate(wajib, 1):
-            st.markdown(f"{i}. **[{item['kode']}] {item['deskripsi']}** — {item['detail']}")
-
-    if periksa:
-        st.warning(f"**{len(periksa)} item perlu diperiksa manual:**")
-        for i, item in enumerate(periksa, 1):
-            st.markdown(f"{i}. **[{item['kode']}] {item['deskripsi']}** — {item['detail']}")
-
-    if not wajib and not periksa:
-        st.success("✅ Tidak ada temuan administrasi. Tetap cek manual hal-hal yang tidak bisa dibaca "
-                   "otomatis (isi scan, tanggal tanda tangan, meterai) dan perkuat substansi gagasan.")
-
-    _render_text_report(result["text_report"])
+    st.write("")
+    render_banding([
+        {"label": v["label"], "file_name": v["file_name"], **_cache()[v["kunci"]]} for v in versi
+    ], key=f"bd_{set_id}")
 
 
-def _render_text_report(text_report: str):
-    st.markdown("---")
-    with st.expander("📄 Laporan Lengkap (Teks)"):
-        st.code(text_report, language="text")
-        st.download_button(
-            "⬇️ Unduh Laporan (.txt)",
-            data=text_report,
-            file_name="laporan_pkm.txt",
-            mime="text/plain",
-        )
+def _contoh_banding():
+    samples = _load_samples()
+    if len(samples) < 2:
+        return
+    by_id = {s["id"]: s for s in samples}
+    st.write("")
+    with st.container(border=True):
+        st.markdown("#### Belum punya beberapa versi? Coba demo")
+        st.caption("Demo memakai sampel proposal yang **berbeda** (bukan versi dari proposal yang sama), "
+                   "jadi hanya untuk melihat cara kerja tampilan perbandingan.")
+        bawaan = [i for i in ("E", "C", "B") if i in by_id] or list(by_id)[:2]
+        c1, c2 = st.columns([3, 1], vertical_alignment="bottom")
+        pilih = c1.multiselect("Sampel, urut dari yang dianggap versi paling lama", list(by_id), default=bawaan,
+                               format_func=lambda i: by_id[i]["label"], max_selections=MAX_VERSI,
+                               key="demo_pilih")
+        if c2.button("Jalankan demo", type="primary", icon=":material/play_arrow:", width="stretch",
+                     disabled=len(pilih) < 2):
+            st.session_state["demo_banding"] = list(pilih)
+
+    aktif = [i for i in st.session_state.get("demo_banding", []) if i in by_id]
+    if len(aktif) < 2:
+        return
+    versions = []
+    for i in aktif:
+        r = with_current_timestamp(by_id[i]["result"])
+        versions.append({"label": f"Sampel {i}", "file_name": by_id[i]["file_name"],
+                         "structured": r["structured_report"], "text_report": r["text_report"]})
+    st.write("")
+    render_banding(versions, key="demo_" + "".join(aktif))
 
 
 if __name__ == "__main__":

@@ -5,3 +5,10 @@ maxUploadSize = 5
 [client]
 # Sembunyikan menu developer dari pengunjung
 toolbarMode = "minimal"
+
+# Aksen biru: merah default Streamlit terbaca seperti "error" di aplikasi checker.
+[theme.light]
+primaryColor = "#2563eb"
+
+[theme.dark]
+primaryColor = "#5b8def"
